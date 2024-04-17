@@ -1,0 +1,222 @@
+.item-img {
+  width: 100%;
+}
+
+.product-detail .image-side .item-img {
+  overflow: hidden;
+}
+
+.product-detail .image-side .item-img > img {
+  cursor: zoom-in;
+  transition: all 0.2s ease;
+}
+
+.product-detail .image-side .item-other-img .items-sm-img > img {
+  border: 1px solid #ccc;
+  width: 100%;
+  cursor: pointer;
+}
+
+.product-detail .details-side {
+  margin-top: 30px;
+}
+
+.product-detail .details-side .product-price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  margin-top: 15px;
+}
+
+.product-detail .details-side .product-price .price {
+  font-weight: bold;
+}
+
+.product-detail .details-side .product-price .stock {
+  display: flex;
+  align-items: center;
+  color: #26c29f;
+  font-weight: 600;
+}
+
+.product-detail .details-side .item-add-sub .button {
+  border: 3px solid #f5f5f5;
+  max-width: 35%;
+  padding: 10px;
+}
+
+.product-detail .details-side .cart-now > button {
+  background-color: var(--color4);
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  padding: 17px;
+}
+.product-detail .details-side .cart-now > button:hover {
+  background-color: var(--color2);
+}
+
+.product-detail .details-side .buy-now > button {
+  border: 2px solid var(--color4);
+  color: var(--color4);
+  transition: all 0.3s ease-in-out;
+  padding: 17px;
+  width: 100%;
+  text-align: center;
+}
+
+.card {
+  border: none;
+  z-index: -1;
+  background-color: #fff;
+  box-shadow: inset 0 0 rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.3);
+  line-height: 18px;
+}
+
+.card .card-body .store-img > img {
+  float: left;
+  max-width: 15% !important;
+  border-radius: 50% !important;
+}
+
+.product-detail .product-info {
+  border: 1px solid #ecebeb;
+}
+
+.product-detail .product-info .button {
+  font-size: 1.125rem;
+  /* border: none; */
+  padding: 1.75em 20px 1.5em;
+
+  border-bottom: 1px solid;
+}
+.product-detail .product-info .button.active {
+  color: var(--color2);
+}
+
+.product-detail .descr .content {
+  padding: 1.75em 50px 1.5em;
+}
+
+.product-detail .descr .content .content-title .item-quote {
+  color: #1d2128;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+}
+.product-detail .descr .content .item-desc {
+  color: #1d2128;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 32px;
+}
+
+.product-detail .content .item-img > img {
+  margin-top: 1.3em;
+  width: 100%;
+}
+
+.more-info .h2 {
+  border: 3px solid #f5f5f5;
+  display: inline-block;
+  padding: 10px;
+}
+
+.more-info .desc-list > ul {
+  list-style: disc;
+  max-width: 50%;
+}
+.more-info .desc-list > ul > li {
+  color: #1d2128;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 25px;
+}
+
+/* shipping & return */
+.content :is(.shipping-details, .returns-details) {
+  padding: 1.75em 5em 1.5em;
+  max-width: 75%;
+  line-height: 32px;
+}
+
+.content
+  :is(.shipping-details, .returns-details)
+  :is(.dimension, .weight, .package, .instruction, .return-note) {
+  margin-bottom: 1.5em;
+  font-size: 16px;
+  color: var(--color8);
+  font-weight: 400;
+}
+
+/* =========================reviiew side sectionm==================== */
+
+.reviews {
+  padding: 1.75em 2em;
+  /* width: ; */
+}
+.rating {
+  border: 2px solid #f5f5f5;
+}
+.rating .rating-num {
+  font-size: 4.5rem;
+  font-weight: 500;
+  line-height: 1;
+  margin: 0 17px 0 0;
+}
+.rating .rating-stars :is(.star1, .star2, .star3, .star4, .star5) > svg {
+  fill: #f9ae54;
+  color: #f5f5f5;
+}
+.rts {
+  font-size: 1.125rem;
+  line-height: 1;
+  font-weight: 500;
+  margin-top: 26px;
+  margin-bottom: 0;
+  padding-bottom: 24px;
+}
+.rate-list {
+  width: 334px;
+}
+
+.customer {
+  font-size: 1.125rem;
+  line-height: 1;
+  font-weight: 500;
+  margin-top: 26px;
+  margin-bottom: 0;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #ecf0f4;
+}
+
+.client .client-img > img {
+  width: 40px;
+  height: 40px;
+  border: none;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.client .client-img .client-name {
+  display: block;
+  font-weight: 500;
+  /* font-size: 16px; */
+  font-size: 1rem;
+  color: #1d2128;
+}
+
+.client .client-img .client-name .posted-date {
+  font-size: 0.75rem;
+  color: #7c818b;
+  font-weight: 500;
+}
+
+.client .client-stars :is(.star1, .star2, .star3, .star4, .star5) > svg {
+  fill: #f9ae54;
+  color: #f5f5f5;
+}

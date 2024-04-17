@@ -1,0 +1,69 @@
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+/* font-family: 'Roboto', sans-serif;  */
+/* font-family: "Oswald", sans-serif; */
+
+:root {
+  --color1: #dadfe3;
+  --color2: #ffbe7b;
+  --color3: #eed971;
+  --color4: #ffa351;
+  --color5: #232323;
+  --color6: #fff;
+  --color7: #e7ecef;
+
+  --color8: #282c33;
+  /* --surface-color: #fff; */
+  --curve: 40;
+  /* --primary: rebeccapurple; */
+
+  --body-fonts: "Oswald", sans-serif;
+
+  /* --color1: ;
+  --color2: #ffffff;
+  --color3: #9bdc28;
+
+  --color4: ;
+  --color5: ;
+  --color6: ;
+--color7:#282c33; */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  scroll-behavior: smooth;
+  /* transition: 1s all ease-in-out; */
+}
+/* .container{
+  width: 1200px;
+} */
+
+h2 {
+  color: var(--color4);
+}
+
+a {
+  text-decoration: none;
+  color: #1d2128;
+  cursor: pointer;
+}
+
+a:hover {
+  color: var(--color2);
+}
+ul {
+  list-style: none;
+}
+
+.icon {
+  border: none;
+  /* color: #/; */
+}

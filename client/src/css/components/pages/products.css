@@ -1,0 +1,39 @@
+
+input.price-selector{
+  max-width: 20px;
+  width: 20px;
+  /* border: px solid var(--color4); */
+}
+
+.page-banner .banner_title {
+  position: absolute;
+  top: 25% !important;
+  z-index: 1;
+  left: 20%;
+}
+
+
+.filter_list_box{
+  line-height: 32px;
+}
+
+.number-range > ul :is(.range-input){
+  width: 31%;
+  padding: 8px;
+  /* width: ; */
+}.number-range > ul > li :is(input,  button){
+  /* width: 31%; */
+  padding: 8px;
+  color: var(--color6);
+  /* width: ; */
+}
+.number-range > ul > li > button {
+  width: 50%;
+  background-color: var(--color2);
+  /* padding: 8px; */
+}.number-range > ul > li > button:hover {
+  /* width: 50%; */
+  background-color: var(--color4);
+  color: var(--color6);
+  /* padding: 8px; */
+}

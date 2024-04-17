@@ -1,0 +1,135 @@
+.carousel .carousel-inner {
+  border-radius: 25px;
+}
+
+.carousel-item .slider-content {
+  /* font-size: 16px; */
+  /* color: var(--color7); */
+  position: absolute;
+  top: 20%;
+  width: 485px;
+  left: -10px;
+  padding: 20px 50px 20px 80px;
+  /* font-weight: 700; */
+  /* text-transform: uppercase; */
+  font-family: "Outfit", sans-serif;
+  /* line-height: 24px; */
+}
+
+.carousel .carousel-inner .carousel-item .slider-content .slider-category {
+  font-size: 0.6875rem;
+  line-height: 1;
+  font-weight: 700;
+  margin-bottom: 13px;
+}
+
+.carousel .carousel-inner .carousel-item .slider-content .slider-title {
+  font-size: 2.75rem;
+  margin-bottom: 19px;
+  font-weight: 700;
+  line-height: 48px;
+}
+
+.carousel .carousel-inner .carousel-item .slider-content .slider-description {
+  margin-bottom: 15px;
+}
+.carousel .carousel-inner .carousel-item .slider-content .slider-shopnow .btn {
+  width: 30%;
+  color: #fff;
+  background: var(--color4) !important;
+}
+.carousel
+  .carousel-inner
+  .carousel-item
+  .slider-content
+  .slider-shopnow
+  .btn:hover {
+  background: var(--color2) !important;
+}
+
+.category-menu-main-carousel .col-md-4 {
+  margin-left: -15px;
+}
+.category-menu-main-carousel .new-arrival {
+  padding: 33px;
+
+  height: 197px;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  --motta-banner__duration-time: 0.3s;
+  width: 100%;
+  background-image: url("../../assets/images/banner/newarrivals.jpg");
+}
+
+.category-menu-main-carousel .new-arrival:hover {
+  background-position: center;
+
+  -webkit-transition: all 0.3s ease-in-out;
+}
+
+.category-menu-main-carousel .new-arrival .arrival-title,
+.category-menu-main-carousel .featured .featured-title {
+  font-size: 24px;
+  margin-bottom: 4px;
+  font-weight: bolder;
+  letter-spacing: normal;
+}
+
+.category-menu-main-carousel .new-arrival .arrival-heading,
+.category-menu-main-carousel .featured .featured-heading {
+  margin-bottom: 4px;
+  font-size: 11px;
+  letter-spacing: normal;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+}
+
+.category-menu-main-carousel .new-arrival .arrival-description,
+.category-menu-main-carousel .featured .featured-description {
+  margin-bottom: 4px;
+  font-size: 11px;
+  letter-spacing: normal;
+  /* font-weight: 700; */
+  /* font-family: 'Roboto', sans-serif; ; */
+  text-transform: uppercase;
+}
+
+.category-menu-main-carousel .featured {
+  padding: 33px;
+
+  height: 197px;
+  border-radius: 10px;
+  background-size: cover;
+  width: 100%;
+  background-image: url("../../assets/images/banner/featured.jpg");
+}
+
+.category-menu-main-carousel .featured:hover {
+  -webkit-transition: all 0.3s ease-in-out;
+  background-position: center;
+}
+
+.category-menu-main-carousel .new-arrival .arrival-shopnow > a,
+.category-menu-main-carousel .featured .featured-shopnow > a {
+  font-size: 14px;
+  text-align: start;
+  color: var(--color8);
+  font-family: var(--body-fonts);
+}
+
+.category-menu-main-carousel .new-arrival .arrival-shopnow > a:hover,
+.category-menu-main-carousel .featured .featured-shopnow > a:hover {
+  color: var(--color2);
+}
+
+.car-prev,
+.car-next {
+  background-color: var(--color7);
+  padding: 10px;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%);
+  top: 50%;
+}
