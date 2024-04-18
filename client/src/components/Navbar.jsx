@@ -45,6 +45,7 @@ export default function Navbar() {
                 <li><a className="dropdown-item" href="#"><i className="fa fa-list" /> My Orders</a></li>
                 <li><a className="dropdown-item" href="#"><i className="fa fa-heart" /> My Wishlist</a></li>
                 <li><a className="dropdown-item" href="#"><i className="fa fa-shopping-cart" /> My Cart</a></li>
+                <li><Link className="dropdown-item" to="/auth/login"><i className="fa fa-sign-out" /> LogIn</Link></li>
                 <li><a className="dropdown-item" href="#"><i className="fa fa-sign-out" /> Logout</a></li>
               </ul>
             </li>
