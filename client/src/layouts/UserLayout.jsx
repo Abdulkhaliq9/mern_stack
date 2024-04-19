@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar.jsx';
 import BackToTop from '../components/BackToTop.jsx';
+// import { ToastContainer } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 
 export default function UserLayout({ children }) {
   const [showButton, setShowButton] = useState(false);
@@ -34,6 +36,7 @@ export default function UserLayout({ children }) {
           </header>
             <main>
               <div className="container main-content">
+              {/* <ToastContainer /> */}
             {children}
               </div>
 

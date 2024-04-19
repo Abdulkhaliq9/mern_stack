@@ -123,10 +123,11 @@
   border-radius: 1.5rem;
   padding: 2%;
   background: #ffa351;
-  color: #fff;
+  color: #fff !important;
   font-weight: 600;
   width: 50%;
   cursor: pointer;
+  text-align: center;
 }
 
 .register-heading {
