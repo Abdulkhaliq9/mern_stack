@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../css/components/auth.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 
 export default function Register() {
@@ -11,45 +12,46 @@ export default function Register() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [phone, setPhone] = useState("");
   const [city, setCity] = useState("");
+  const navigate = useNavigate();
 
   
   const handleTabChange = (tab) => {
     setActiveTab(tab);
   };
 
-  const handleSubmit =  async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-     if (!validateForm()) return;
-     
-     let dataToSend = {
-       name: name,
-       email: email,
-       password: password,
-       phone: phone,
-       city: city,
-     };
+    try {
+      const res = await axios.post(`${process.env.REACT_APP_API}/api/v1/auth/register`, {
+        name,
+        email,
+        password,
+        phone,
+        city
+      });
 
-     try{
-        await fetch(`http://localhost:8080/api/${activeTab}s`, {
-          method: 'POST',
-          headers: {'Content-Type': 'application/json'},
-           body: JSON.stringify(dataToSend),
-         });
-        toast.success('Registration successful');
-     } catch(err){
-       console.log(err);
+      if (res.data.success) {
+        toast.success(res.data.message);
+        navigate("/login"); // Redirect to login page after successful registration
+      } else {
+        toast.error(res.data.message); // Display error message from server
+      }
+    } catch (err) {
+      console.log(err);
       toast.error('Error with registration');
-     }
+    }
   }
 
   const validateForm = () => {
-    if ((!name || !email || !password || !phone || !city)  || (password !== confirmPassword)) {
-      toast.pending('Please fill out all fields and the passwords must match');
+    if ((!name || !email || !password || !phone || !city) || (password !== confirmPassword)) {
+      toast.error('Please fill out all fields and the passwords must match');
       return false;
     }
     return true;
   }
 
+
+// console.log(process.env.REACT_APP_API)
   return (
     <>
       <div className="user-registration">
