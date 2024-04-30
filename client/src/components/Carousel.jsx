@@ -87,7 +87,7 @@ export default function Carousel() {
         <div className="row">
           <div className="col-xxl-12 col-lg-6 col-md-6 mb-3 new-arrival-container">
             <div className="new-arrival" >
-{/* <img src={NewArrival} class=" img-fluid" alt="Image 3" /> */}
+{/* <img src={NewArrival} className=" img-fluid" alt="Image 3" /> */}
               <div className="arrival-content">
                 <div className="arrival-heading " >New Arrival</div>
                 <div className="arrival-title">Stay Comfy</div>
@@ -103,7 +103,7 @@ export default function Carousel() {
           <div className="col-xxl-12 col-lg-6 col-md-6 ">
             <div className="featured">
 {/* <img src={Featured} className="img-fluid" alt="Image 4" /> */}
-              {/* <img src="/images/banner/newarrivals.jpg" class="img-fluid" alt="Image 3"> */}
+              {/* <img src="/images/banner/newarrivals.jpg" className="img-fluid" alt="Image 3"> */}
               <div className="featured-content">
                 <div className="featured-heading">New Arrival</div>
                 <div className="featured-title">Stay Comfy</div>

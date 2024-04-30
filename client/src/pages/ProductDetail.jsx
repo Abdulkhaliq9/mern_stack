@@ -10,7 +10,7 @@ import "../css/components/pages/productdetail.css";
 import Description from "../components/product-detail/Description";
 import Reviews from "../components/product-detail/Reviews";
 import ShippingReturn from "../components/product-detail/ShippingReturn";
-
+import { useAuth } from "../context/auth";
 export default function ProductDetail() {
   const [zoomed, setZoomed] = useState(false);
   const [mainImage, setMainImage] = useState(Laptop);
@@ -55,14 +55,22 @@ export default function ProductDetail() {
     }
   };
 
+
+
+  const [auth, setAuth] = useAuth()
+
   return (
     <UserLayout>
       <div className="product-detail mt-5" >
         <div className="container-fluid">
           <div className="row">
+            <pre>{JSON.stringify(auth, null, 3)}</pre>
             <div className="col-md-6">
               <div className="image-side">
                 <div className="item-img">
+
+
+
                   <img
                     className="w-100"
                     src={mainImage}

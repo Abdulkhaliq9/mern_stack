@@ -22,93 +22,93 @@ export default function ProductCarousel() {
             <div className="row">
               <div className="col-3">
                 {" "}
-                <a class=" card-1">
-                  <img src={IMI} class="card__image" alt="" />
-                  <div class="card__overlay">
-                    <div class="card__header">
-                      <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                <a className=" card-1">
+                  <img src={IMI} className="card__image" alt="" />
+                  <div className="card__overlay">
+                    <div className="card__header">
+                      <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
                         <path />
                       </svg>
                       <img
-                        class="card__thumb"
+                        className="card__thumb"
                         src="https://i.imgur.com/7D7I6dI.png"
                         alt=""
                       />
-                      <div class="card__header-text">
-                        <h3 class="card__title">Jessica Parker</h3>
-                        <span class="card__status">1 hour ago</span>
+                      <div className="card__header-text">
+                        <h3 className="card__title">Jessica Parker</h3>
+                        <span className="card__status">1 hour ago</span>
                       </div>
                     </div>
-                    <p class="card__description"></p>
+                    <p className="card__description"></p>
                   </div>
                 </a>{" "}
               </div>
               <div className="col-3">
                 {" "}
-                <a class=" card-1">
-                  <img src={IMI} class="card__image" alt="" />
-                  <div class="card__overlay">
-                    <div class="card__header">
-                      <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                <a className=" card-1">
+                  <img src={IMI} className="card__image" alt="" />
+                  <div className="card__overlay">
+                    <div className="card__header">
+                      <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
                         <path />
                       </svg>
                       <img
-                        class="card__thumb"
+                        className="card__thumb"
                         src="https://i.imgur.com/7D7I6dI.png"
                         alt=""
                       />
-                      <div class="card__header-text">
-                        <h3 class="card__title">Jessica Parker</h3>
-                        <span class="card__status">1 hour ago</span>
+                      <div className="card__header-text">
+                        <h3 className="card__title">Jessica Parker</h3>
+                        <span className="card__status">1 hour ago</span>
                       </div>
                     </div>
-                    <p class="card__description"></p>
+                    <p className="card__description"></p>
                   </div>
                 </a>{" "}
               </div>
               <div className="col-3">
                 {" "}
-                <a class=" card-1">
-                  <img src={IMI} class="card__image" alt="" />
-                  <div class="card__overlay">
-                    <div class="card__header">
-                      <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                <a className=" card-1">
+                  <img src={IMI} className="card__image" alt="" />
+                  <div className="card__overlay">
+                    <div className="card__header">
+                      <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
                         <path />
                       </svg>
                       <img
-                        class="card__thumb"
+                        className="card__thumb"
                         src="https://i.imgur.com/7D7I6dI.png"
                         alt=""
                       />
-                      <div class="card__header-text">
-                        <h3 class="card__title">Jessica Parker</h3>
-                        <span class="card__status">1 hour ago</span>
+                      <div className="card__header-text">
+                        <h3 className="card__title">Jessica Parker</h3>
+                        <span className="card__status">1 hour ago</span>
                       </div>
                     </div>
-                    <p class="card__description"></p>
+                    <p className="card__description"></p>
                   </div>
                 </a>{" "}
               </div>
               <div className="col-3">
                 {" "}
-                <a class=" card-1">
-                  <img src={IMI} class="card__image" alt="" />
-                  <div class="card__overlay">
-                    <div class="card__header">
-                      <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                <a className=" card-1">
+                  <img src={IMI} className="card__image" alt="" />
+                  <div className="card__overlay">
+                    <div className="card__header">
+                      <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
                         <path />
                       </svg>
                       <img
-                        class="card__thumb"
+                        className="card__thumb"
                         src="https://i.imgur.com/7D7I6dI.png"
                         alt=""
                       />
-                      <div class="card__header-text">
-                        <h3 class="card__title">Jessica Parker</h3>
-                        <span class="card__status">1 hour ago</span>
+                      <div className="card__header-text">
+                        <h3 className="card__title">Jessica Parker</h3>
+                        <span className="card__status">1 hour ago</span>
                       </div>
                     </div>
-                    <p class="card__description"></p>
+                    <p className="card__description"></p>
                   </div>
                 </a>{" "}
               </div>
@@ -119,93 +119,93 @@ export default function ProductCarousel() {
             <div className="row">
               <div className="col-3">
                 {" "}
-                <a class=" card-1">
-                  <img src={IMI} class="card__image" alt="" />
-                  <div class="card__overlay">
-                    <div class="card__header">
-                      <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                <a className=" card-1">
+                  <img src={IMI} className="card__image" alt="" />
+                  <div className="card__overlay">
+                    <div className="card__header">
+                      <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
                         <path />
                       </svg>
                       <img
-                        class="card__thumb"
+                        className="card__thumb"
                         src="https://i.imgur.com/7D7I6dI.png"
                         alt=""
                       />
-                      <div class="card__header-text">
-                        <h3 class="card__title">Jessica Parker</h3>
-                        <span class="card__status">1 hour ago</span>
+                      <div className="card__header-text">
+                        <h3 className="card__title">Jessica Parker</h3>
+                        <span className="card__status">1 hour ago</span>
                       </div>
                     </div>
-                    <p class="card__description"></p>
+                    <p className="card__description"></p>
                   </div>
                 </a>{" "}
               </div>
               <div className="col-3">
                 {" "}
-                <a class=" card-1">
-                  <img src={IMI} class="card__image" alt="" />
-                  <div class="card__overlay">
-                    <div class="card__header">
-                      <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                <a className=" card-1">
+                  <img src={IMI} className="card__image" alt="" />
+                  <div className="card__overlay">
+                    <div className="card__header">
+                      <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
                         <path />
                       </svg>
                       <img
-                        class="card__thumb"
+                        className="card__thumb"
                         src="https://i.imgur.com/7D7I6dI.png"
                         alt=""
                       />
-                      <div class="card__header-text">
-                        <h3 class="card__title">Jessica Parker</h3>
-                        <span class="card__status">1 hour ago</span>
+                      <div className="card__header-text">
+                        <h3 className="card__title">Jessica Parker</h3>
+                        <span className="card__status">1 hour ago</span>
                       </div>
                     </div>
-                    <p class="card__description"></p>
+                    <p className="card__description"></p>
                   </div>
                 </a>{" "}
               </div>
               <div className="col-3">
                 {" "}
-                <a class=" card-1">
-                  <img src={IMI} class="card__image" alt="" />
-                  <div class="card__overlay">
-                    <div class="card__header">
-                      <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                <a className=" card-1">
+                  <img src={IMI} className="card__image" alt="" />
+                  <div className="card__overlay">
+                    <div className="card__header">
+                      <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
                         <path />
                       </svg>
                       <img
-                        class="card__thumb"
+                        className="card__thumb"
                         src="https://i.imgur.com/7D7I6dI.png"
                         alt=""
                       />
-                      <div class="card__header-text">
-                        <h3 class="card__title">Jessica Parker</h3>
-                        <span class="card__status">1 hour ago</span>
+                      <div className="card__header-text">
+                        <h3 className="card__title">Jessica Parker</h3>
+                        <span className="card__status">1 hour ago</span>
                       </div>
                     </div>
-                    <p class="card__description"></p>
+                    <p className="card__description"></p>
                   </div>
                 </a>{" "}
               </div>
               <div className="col-3">
                 {" "}
-                <a class=" card-1">
-                  <img src={IMI} class="card__image" alt="" />
-                  <div class="card__overlay">
-                    <div class="card__header">
-                      <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                <a className=" card-1">
+                  <img src={IMI} className="card__image" alt="" />
+                  <div className="card__overlay">
+                    <div className="card__header">
+                      <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
                         <path />
                       </svg>
                       <img
-                        class="card__thumb"
+                        className="card__thumb"
                         src="https://i.imgur.com/7D7I6dI.png"
                         alt=""
                       />
-                      <div class="card__header-text">
-                        <h3 class="card__title">Jessica Parker</h3>
-                        <span class="card__status">1 hour ago</span>
+                      <div className="card__header-text">
+                        <h3 className="card__title">Jessica Parker</h3>
+                        <span className="card__status">1 hour ago</span>
                       </div>
                     </div>
-                    <p class="card__description"></p>
+                    <p className="card__description"></p>
                   </div>
                 </a>{" "}
               </div>
@@ -215,93 +215,93 @@ export default function ProductCarousel() {
             <div className="row">
               <div className="col-3">
                 {" "}
-                <a class=" card-1">
-                  <img src={IMI} class="card__image" alt="" />
-                  <div class="card__overlay">
-                    <div class="card__header">
-                      <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                <a className=" card-1">
+                  <img src={IMI} className="card__image" alt="" />
+                  <div className="card__overlay">
+                    <div className="card__header">
+                      <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
                         <path />
                       </svg>
                       <img
-                        class="card__thumb"
+                        className="card__thumb"
                         src="https://i.imgur.com/7D7I6dI.png"
                         alt=""
                       />
-                      <div class="card__header-text">
-                        <h3 class="card__title">Jessica Parker</h3>
-                        <span class="card__status">1 hour ago</span>
+                      <div className="card__header-text">
+                        <h3 className="card__title">Jessica Parker</h3>
+                        <span className="card__status">1 hour ago</span>
                       </div>
                     </div>
-                    <p class="card__description"></p>
+                    <p className="card__description"></p>
                   </div>
                 </a>{" "}
               </div>
               <div className="col-3">
                 {" "}
-                <a class=" card-1">
-                  <img src={IMI} class="card__image" alt="" />
-                  <div class="card__overlay">
-                    <div class="card__header">
-                      <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                <a className=" card-1">
+                  <img src={IMI} className="card__image" alt="" />
+                  <div className="card__overlay">
+                    <div className="card__header">
+                      <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
                         <path />
                       </svg>
                       <img
-                        class="card__thumb"
+                        className="card__thumb"
                         src="https://i.imgur.com/7D7I6dI.png"
                         alt=""
                       />
-                      <div class="card__header-text">
-                        <h3 class="card__title">Jessica Parker</h3>
-                        <span class="card__status">1 hour ago</span>
+                      <div className="card__header-text">
+                        <h3 className="card__title">Jessica Parker</h3>
+                        <span className="card__status">1 hour ago</span>
                       </div>
                     </div>
-                    <p class="card__description"></p>
+                    <p className="card__description"></p>
                   </div>
                 </a>{" "}
               </div>
               <div className="col-3">
                 {" "}
-                <a class=" card-1">
-                  <img src={IMI} class="card__image" alt="" />
-                  <div class="card__overlay">
-                    <div class="card__header">
-                      <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                <a className=" card-1">
+                  <img src={IMI} className="card__image" alt="" />
+                  <div className="card__overlay">
+                    <div className="card__header">
+                      <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
                         <path />
                       </svg>
                       <img
-                        class="card__thumb"
+                        className="card__thumb"
                         src="https://i.imgur.com/7D7I6dI.png"
                         alt=""
                       />
-                      <div class="card__header-text">
-                        <h3 class="card__title">Jessica Parker</h3>
-                        <span class="card__status">1 hour ago</span>
+                      <div className="card__header-text">
+                        <h3 className="card__title">Jessica Parker</h3>
+                        <span className="card__status">1 hour ago</span>
                       </div>
                     </div>
-                    <p class="card__description"></p>
+                    <p className="card__description"></p>
                   </div>
                 </a>{" "}
               </div>
               <div className="col-3">
                 {" "}
-                <a class=" card-1">
-                  <img src={IMI} class="card__image" alt="" />
-                  <div class="card__overlay">
-                    <div class="card__header">
-                      <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                <a className=" card-1">
+                  <img src={IMI} className="card__image" alt="" />
+                  <div className="card__overlay">
+                    <div className="card__header">
+                      <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
                         <path />
                       </svg>
                       <img
-                        class="card__thumb"
+                        className="card__thumb"
                         src="https://i.imgur.com/7D7I6dI.png"
                         alt=""
                       />
-                      <div class="card__header-text">
-                        <h3 class="card__title">Jessica Parker</h3>
-                        <span class="card__status">1 hour ago</span>
+                      <div className="card__header-text">
+                        <h3 className="card__title">Jessica Parker</h3>
+                        <span className="card__status">1 hour ago</span>
                       </div>
                     </div>
-                    <p class="card__description"></p>
+                    <p className="card__description"></p>
                   </div>
                 </a>{" "}
               </div>

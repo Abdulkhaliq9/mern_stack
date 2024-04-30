@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../css/components/auth.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function Register() {
   const [activeTab, setActiveTab] = useState("employee");
@@ -11,7 +11,7 @@ export default function Register() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [phone, setPhone] = useState("");
-  const [city, setCity] = useState("");
+  const [address, setAddress] = useState("");
   const navigate = useNavigate();
 
   
@@ -22,17 +22,17 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`${process.env.REACT_APP_API}/api/v1/auth/register`, {
+      const res = await axios.post("http://localhost:8080/api/v1/auth/register", {
         name,
         email,
         password,
         phone,
-        city
+        address
       });
 
-      if (res.data.success) {
-        toast.success(res.data.message);
-        navigate("/login"); // Redirect to login page after successful registration
+      if (res && res.data.success) {
+        toast.success(res.data && res.data.message);
+        navigate("/auth/login"); // Redirect to login page after successful registration
       } else {
         toast.error(res.data.message); // Display error message from server
       }
@@ -42,24 +42,24 @@ export default function Register() {
     }
   }
 
-  const validateForm = () => {
-    if ((!name || !email || !password || !phone || !city) || (password !== confirmPassword)) {
-      toast.error('Please fill out all fields and the passwords must match');
-      return false;
-    }
-    return true;
-  }
+  // const validateForm = () => {
+  //   if ((!name || !email || !password || !phone || !address) || (password !== confirmPassword)) {
+  //     toast.error('Please fill out all fields and the passwords must match');
+  //     return false;
+  //   }
+  //   return true;
+  // }
 
 
 // console.log(process.env.REACT_APP_API)
   return (
     <>
       <div className="user-registration">
-        <ToastContainer/>
+        <Toaster/>
         <div className="container register">
           <div className="row">
             <div className="col-md-3 register-left d-flex flex-column align-items-center justify-content-center">
-              <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+              <img src="" alt="" />
               <h3>Welcome</h3>
               <p>Already have an account?</p>
               <Link to="/auth/login" className="login-btn fw-medium">
@@ -69,7 +69,7 @@ export default function Register() {
             </div>
             <div className="col-md-9 register-right">
               <ul className="nav nav-tabs nav-justified" role="tablist">
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <a
                     className={`nav-link ${
                       activeTab === "employee" ? "active" : ""
@@ -78,7 +78,7 @@ export default function Register() {
                   >
                     User
                   </a>
-                </li>
+                </li> */}
                 <li className="nav-item">
                   <a
                     className={`nav-link ${
@@ -116,9 +116,9 @@ export default function Register() {
                           <input
                             type="text"
                             className="form-control"
-                            placeholder="City *"
-                            value={city}
-                            onChange={(e) => setCity(e.target.value)}
+                            placeholder="address *"
+                            value={address}
+                            onChange={(e) => setAddress(e.target.value)}
                             required
                           />
                         </div>
@@ -147,9 +147,8 @@ export default function Register() {
                         <div className="form-group">
                           <input
                             type="text"
-                            minLength="10"
-                            maxLength="10"
-                            name="txtEmpPhone"
+                           
+                           
                             className="form-control"
                             placeholder="Your Phone *"
                             value={phone}
@@ -205,9 +204,9 @@ export default function Register() {
                           <input
                             type="text"
                             className="form-control"
-                            placeholder="City *"
-                            value={city}
-                            onChange={(e) => setCity(e.target.value)}
+                            placeholder="address *"
+                            value={address}
+                            onChange={(e) => setAddress(e.target.value)}
                             required
                           />
                         </div>
