@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar.jsx';
 import BackToTop from '../components/BackToTop.jsx';
+import { Toaster } from 'react-hot-toast';
 // import { ToastContainer } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 
@@ -30,6 +31,7 @@ export default function UserLayout({ children }) {
     <>
       <div className="user-layout">
         <div className="conatiner-layout">
+          <Toaster/>
           <header>
 
               <Navbar/>
