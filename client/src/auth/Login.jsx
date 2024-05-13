@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "../css/components/auth.css";
 import { Link, useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import { useAuth } from "../context/auth";
 import UserLayout from "../layouts/UserLayout";
+
 export default function Login() {
   const [auth, setAuth] = useAuth();
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [isAdmin, setIsAdmin] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -21,43 +19,39 @@ export default function Login() {
         password,
       });
 
-      if (res && res.data.success) {
-        toast.success(res.data && res.data.message);
+      if (res.data.success) {
         setAuth({
-          ...auth,
           user: res.data.user,
           token: res.data.token,
         });
-        localStorage.setItem(
-          "auth",
-          JSON.stringify({ user: res.data.user, token: res.data.token })
-        );
-
-        navigate("/"); // Redirect to login page after successful registration
+        toast.success(res.data.message);
+        localStorage.setItem("auth", JSON.stringify({
+          user: res.data.user,
+          token: res.data.token
+        }));
+        navigate("/");
       } else {
-        toast.error(res.data.message); // Display error message from server
+        toast.error(res.data.message);
       }
     } catch (err) {
-      console.log(err);
+      console.error("Error with login:", err);
       toast.error("Error with Login");
     }
   };
+
   return (
     <UserLayout>
-      <div className="user-ragistration">
+      <div className="user-registration">
         <Toaster />
         <div className="container register">
           <div className="row">
             <div className="col-md-5 register-left d-flex flex-column align-items-center justify-content-center mt-0">
-              <img src="  " alt="" />
+              <img src="" alt="" />
               <h3>Welcome</h3>
               <p>Don't have an account?</p>
-              {/* <button className="login-btn border-0  "> */}
               <Link to="/auth/register" className="login-btn fw-medium">
                 Register
               </Link>
-
-              {/* </button> */}
               <br />
             </div>
             <div className="col-md-7 register-right">
@@ -69,7 +63,7 @@ export default function Login() {
                   aria-labelledby="home-tab"
                 >
                   <h3 className="register-heading">Log In to your account!</h3>
-                  <form action="" onSubmit={handleSubmit}>
+                  <form onSubmit={handleSubmit}>
                     <div className="row register-form">
                       <div className="col-md-12">
                         <div className="form-group">
@@ -84,16 +78,15 @@ export default function Login() {
                         </div>
                         <div className="form-group">
                           <input
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
                             type="password"
                             className="form-control"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                             placeholder="Password *"
                             required
                           />
                         </div>
-
-                        <button className="btnRegister" type="submit">
+                        <button type="submit" className="btnRegister">
                           Log In
                         </button>
                       </div>

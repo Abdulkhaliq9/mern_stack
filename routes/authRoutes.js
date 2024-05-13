@@ -2,11 +2,10 @@ import express from "express";
 import {
   registerController,
   loginController,
-  testController
-
+  testController,
 } from "../controllers/authController.js";
 
-import { verifyToken, isAdmin  } from "../middlewares/authMiddleware.js";
+import { verifyToken, isAdmin } from "../middlewares/authMiddleware.js";
 // router object
 const router = express.Router();
 // routing
@@ -17,6 +16,11 @@ router.post("/register", registerController);
 router.post("/login", loginController);
 
 // test || method get
-router.get("/test", verifyToken,isAdmin, testController);
+router.get("/test", verifyToken, isAdmin, testController);
+
+// protected route
+router.get("/user-auth", (req, res) => {
+  res.status(200).send({ ok:true });
+});
 // Export the router
 export default router;
