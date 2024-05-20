@@ -10,7 +10,6 @@ import "../css/components/pages/productdetail.css";
 import Description from "../components/product-detail/Description";
 import Reviews from "../components/product-detail/Reviews";
 import ShippingReturn from "../components/product-detail/ShippingReturn";
-import { useAuth } from "../context/auth";
 export default function ProductDetail() {
   const [zoomed, setZoomed] = useState(false);
   const [mainImage, setMainImage] = useState(Laptop);
@@ -46,8 +45,6 @@ export default function ProductDetail() {
     if (count < 5) {
       setCount(count + 1);
     }
-
-
   };
   const handleCountDecrease = () => {
     if (count > 0) {
@@ -56,21 +53,14 @@ export default function ProductDetail() {
   };
 
 
-
-  const [auth, setAuth] = useAuth()
-
   return (
     <UserLayout>
-      <div className="product-detail mt-5" >
+      <div className="product-detail mt-5">
         <div className="container-fluid">
           <div className="row">
-            <pre>{JSON.stringify(auth, null, 3)}</pre>
             <div className="col-md-6">
               <div className="image-side">
                 <div className="item-img">
-
-
-
                   <img
                     className="w-100"
                     src={mainImage}
@@ -128,7 +118,7 @@ export default function ProductDetail() {
                   <div className="button d-flex align-items-center">
                     <button
                       className={`btn btn-add icon ${
-                        count === 0  ? "disabled" : ""
+                        count === 0 ? "disabled" : ""
                       }`}
                       onClick={handleCountDecrease}
                     >
@@ -137,7 +127,7 @@ export default function ProductDetail() {
                     <div className="mx-auto fw-bold">{count}</div>
                     <button
                       className={`btn btn-add icon ${
-                        count === 5  ? "disabled" : ""
+                        count === 5 ? "disabled" : ""
                       }`}
                       onClick={handleCountIncrease}
                     >
@@ -149,7 +139,11 @@ export default function ProductDetail() {
                   <div className="row">
                     <div className="col-md-6">
                       <div className="cart-now">
-                        <button className={`btn text-uppercase fs-5 me-3 ${count === 0 ? " disabled" : ""}`}>
+                        <button
+                          className={`btn text-uppercase fs-5 me-3 ${
+                            count === 0 ? " disabled" : ""
+                          }`}
+                        >
                           <ShoppingCart />
                           <span className="ms-2">Add to cart</span>
                         </button>

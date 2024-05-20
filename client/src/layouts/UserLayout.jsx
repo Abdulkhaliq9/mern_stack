@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import Navbar from '../components/Navbar.jsx';
-import BackToTop from '../components/BackToTop.jsx';
-import { Toaster } from 'react-hot-toast';
-// import { ToastContainer } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
+import React, { useState, useEffect } from "react";
+import Navbar from "../components/Navbar.jsx";
+import BackToTop from "../components/BackToTop.jsx";
+import { Toaster } from "react-hot-toast";
+import Footer from "../components/Footer.jsx";
 
 export default function UserLayout({ children }) {
   const [showButton, setShowButton] = useState(false);
@@ -13,17 +12,17 @@ export default function UserLayout({ children }) {
       window.pageYOffset > 300 ? setShowButton(true) : setShowButton(false);
     };
 
-    window.addEventListener('scroll', handleToTop);
+    window.addEventListener("scroll", handleToTop);
 
     return () => {
-      window.removeEventListener('scroll', handleToTop);
+      window.removeEventListener("scroll", handleToTop);
     };
   }, []);
 
   const handleScrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 
@@ -31,39 +30,27 @@ export default function UserLayout({ children }) {
     <>
       <div className="user-layout">
         <div className="conatiner-layout">
-          <Toaster/>
+          <Toaster />
           <header>
-
-              <Navbar/>
+            <Navbar />
           </header>
-            <main>
-              <div className="container main-content">
-              {/* <ToastContainer /> */}
-            {children}
-              </div>
+          <main>
+            <div className="container main-content">
+             
+              {children}
+            </div>
+          </main>
 
-            </main>
-
-
-
-
-            {showButton && (
+          {showButton && (
             <div className="back-to-top">
               <BackToTop handleScrollToTop={handleScrollToTop} />
             </div>
-          )}            
-            <footer>
-
-              
-            </footer>
-            
-            
-            
-
-
-
+          )}
+          <footer className="mt-5">
+            <Footer />
+          </footer>
         </div>
       </div>
     </>
-  )
+  );
 }

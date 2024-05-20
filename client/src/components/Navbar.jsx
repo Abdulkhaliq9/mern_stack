@@ -17,7 +17,8 @@ export default function Navbar() {
   };
   return (
     <>
-      <div className="main-navbar shadow-sm sticky-top mb-3">
+   <div className="container">
+   <div className="main-navbar shadow-sm sticky-top mb-3">
         <Toaster />
         <div className="top-navbar">
           <div className="container-fluid">
@@ -204,6 +205,7 @@ export default function Navbar() {
           </div>
         </nav>
       </div>
+   </div>
     </>
   );
 }
