@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import DashBoard from "./admin/pages/Dashboard.jsx";
 import User from "./pages/User.jsx";
+import Cart from "./pages/Cart.jsx"
 import ProductDetail from "./pages/ProductDetail.jsx";
 import Products from "./pages/Products.jsx";
 import Private from "./routes/Private.jsx";
@@ -17,6 +18,7 @@ function App() {
           <Route exact path="" element={<DashBoard />} />
         </Route>
 
+        <Route exact path="/cart" element={<Cart />} />
         <Route exact path="/details" element={<ProductDetail />} />
         <Route exact path="/products" element={<Products />} />
         <Route exact path="/auth/login" element={<LogIn />} />
