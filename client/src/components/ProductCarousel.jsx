@@ -1,8 +1,12 @@
 import React from "react";
 import "../css/components/productcarousel.css";
-import IMI from "../assets/images/products/1.jpg";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import {Link} from "react-router-dom"
+import Shoes from "../assets/images/products/shoe2.jpg";
+import Boot from "../assets/images/products/shoe1.jpg";
+import Boots from "../assets/images/products/shoe4.jpg";
+// import Boss from "../assets/images/products/shoe6.jpg";
+import Shoe from "../assets/images/products/shoe3.jpg";
+import { ChevronLeft, ChevronRight, Star, StarHalf } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function ProductCarousel() {
   return (
@@ -17,295 +21,316 @@ export default function ProductCarousel() {
       <div id="carouselExample" className="carousel slide">
         <div className="carousel-inner">
           <div className="carousel-item active">
-            {/* <img src="..." className="d-block w-100" alt="..." /> */}
-
-            <div className="row">
-              <div className="col-3">
-                {" "}
-                <a className=" card-1">
-                  <img src={IMI} className="card__image" alt="" />
-                  <div className="card__overlay">
-                    <div className="card__header">
-                      <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
-                        <path />
-                      </svg>
-                      <img
-                        className="card__thumb"
-                        src="https://i.imgur.com/7D7I6dI.png"
-                        alt=""
-                      />
-                      <div className="card__header-text">
-                        <h3 className="card__title">Jessica Parker</h3>
-                        <span className="card__status">1 hour ago</span>
+            <div className=" row mt-4 product_listing justify-content-center align-items-center ">
+              <div className="col-md-3 card-col">
+                <a className="product-link" href="">
+                  <div className="product-card">
+                    <div className="product-list-items">
+                      <div className="list-img">
+                        <img className="img-fluid" src={Shoes} alt="item-img" />
+                      </div>
+                      <div className="product-name_price d-flex flex-row justify-content-between">
+                        <div className="product-name fw-semibold">Laptop</div>
+                        <div className="product-price">
+                          <strong>$480.99</strong>
+                        </div>
+                      </div>
+                      <div className="product-rating mt-2 w-75 d-flex flex-row">
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <StarHalf className="text-secondary " />
+                        <div className="rating-number">(123)</div>
                       </div>
                     </div>
-                    <p className="card__description"></p>
                   </div>
-                </a>{" "}
+                </a>
               </div>
-              <div className="col-3">
-                {" "}
-                <a className=" card-1">
-                  <img src={IMI} className="card__image" alt="" />
-                  <div className="card__overlay">
-                    <div className="card__header">
-                      <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
-                        <path />
-                      </svg>
-                      <img
-                        className="card__thumb"
-                        src="https://i.imgur.com/7D7I6dI.png"
-                        alt=""
-                      />
-                      <div className="card__header-text">
-                        <h3 className="card__title">Jessica Parker</h3>
-                        <span className="card__status">1 hour ago</span>
+              <div className="col-md-3 card-col">
+                <a className="product-link" href="">
+                  <div className="product-card">
+                    <div className="product-list-items">
+                      <div className="list-img">
+                        <img className="img-fluid" src={Shoe} alt="item-img" />
+                      </div>
+                      <div className="product-name_price d-flex flex-row justify-content-between">
+                        <div className="product-name fw-semibold">Laptop</div>
+                        <div className="product-price">
+                          <strong>$480.99</strong>
+                        </div>
+                      </div>
+                      <div className="product-rating mt-2 w-75 d-flex flex-row">
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <StarHalf className="text-secondary " />
+                        <div className="rating-number">(123)</div>
                       </div>
                     </div>
-                    <p className="card__description"></p>
                   </div>
-                </a>{" "}
+                </a>
               </div>
-              <div className="col-3">
-                {" "}
-                <a className=" card-1">
-                  <img src={IMI} className="card__image" alt="" />
-                  <div className="card__overlay">
-                    <div className="card__header">
-                      <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
-                        <path />
-                      </svg>
-                      <img
-                        className="card__thumb"
-                        src="https://i.imgur.com/7D7I6dI.png"
-                        alt=""
-                      />
-                      <div className="card__header-text">
-                        <h3 className="card__title">Jessica Parker</h3>
-                        <span className="card__status">1 hour ago</span>
+              <div className="col-md-3 card-col">
+                <a className="product-link" href="">
+                  <div className="product-card">
+                    <div className="product-list-items">
+                      <div className="list-img">
+                        <img className="img-fluid" src={Boot} alt="item-img" />
+                      </div>
+                      <div className="product-name_price d-flex flex-row justify-content-between">
+                        <div className="product-name fw-semibold">Laptop</div>
+                        <div className="product-price">
+                          <strong>$480.99</strong>
+                        </div>
+                      </div>
+                      <div className="product-rating mt-2 w-75 d-flex flex-row">
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <StarHalf className="text-secondary " />
+                        <div className="rating-number">(123)</div>
                       </div>
                     </div>
-                    <p className="card__description"></p>
                   </div>
-                </a>{" "}
-              </div>
-              <div className="col-3">
-                {" "}
-                <a className=" card-1">
-                  <img src={IMI} className="card__image" alt="" />
-                  <div className="card__overlay">
-                    <div className="card__header">
-                      <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
-                        <path />
-                      </svg>
-                      <img
-                        className="card__thumb"
-                        src="https://i.imgur.com/7D7I6dI.png"
-                        alt=""
-                      />
-                      <div className="card__header-text">
-                        <h3 className="card__title">Jessica Parker</h3>
-                        <span className="card__status">1 hour ago</span>
+                </a>
+              </div>{" "}
+              <div className="col-md-3 card-col">
+                <a className="product-link" href="">
+                  <div className="product-card">
+                    <div className="product-list-items">
+                      <div className="list-img">
+                        <img className="img-fluid" src={Boots} alt="item-img" />
+                      </div>
+                      <div className="product-name_price d-flex flex-row justify-content-between">
+                        <div className="product-name fw-semibold">Laptop</div>
+                        <div className="product-price">
+                          <strong>$480.99</strong>
+                        </div>
+                      </div>
+                      <div className="product-rating mt-2 w-75 d-flex flex-row">
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <StarHalf className="text-secondary " />
+                        <div className="rating-number">(123)</div>
                       </div>
                     </div>
-                    <p className="card__description"></p>
                   </div>
-                </a>{" "}
+                </a>
               </div>
             </div>
-          </div>
-
-          <div className="carousel-item">
-            <div className="row">
-              <div className="col-3">
-                {" "}
-                <a className=" card-1">
-                  <img src={IMI} className="card__image" alt="" />
-                  <div className="card__overlay">
-                    <div className="card__header">
-                      <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
-                        <path />
-                      </svg>
-                      <img
-                        className="card__thumb"
-                        src="https://i.imgur.com/7D7I6dI.png"
-                        alt=""
-                      />
-                      <div className="card__header-text">
-                        <h3 className="card__title">Jessica Parker</h3>
-                        <span className="card__status">1 hour ago</span>
+          </div>{" "}
+          <div className="carousel-item active">
+            <div className=" row mt-4 product_listing justify-content-center align-items-center ">
+              <div className="col-md-3 card-col">
+                <a className="product-link" href="">
+                  <div className="product-card">
+                    <div className="product-list-items">
+                      <div className="list-img">
+                        <img className="img-fluid" src={Shoes} alt="item-img" />
+                      </div>
+                      <div className="product-name_price d-flex flex-row justify-content-between">
+                        <div className="product-name fw-semibold">Laptop</div>
+                        <div className="product-price">
+                          <strong>$480.99</strong>
+                        </div>
+                      </div>
+                      <div className="product-rating mt-2 w-75 d-flex flex-row">
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <StarHalf className="text-secondary " />
+                        <div className="rating-number">(123)</div>
                       </div>
                     </div>
-                    <p className="card__description"></p>
                   </div>
-                </a>{" "}
+                </a>
               </div>
-              <div className="col-3">
-                {" "}
-                <a className=" card-1">
-                  <img src={IMI} className="card__image" alt="" />
-                  <div className="card__overlay">
-                    <div className="card__header">
-                      <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
-                        <path />
-                      </svg>
-                      <img
-                        className="card__thumb"
-                        src="https://i.imgur.com/7D7I6dI.png"
-                        alt=""
-                      />
-                      <div className="card__header-text">
-                        <h3 className="card__title">Jessica Parker</h3>
-                        <span className="card__status">1 hour ago</span>
+              <div className="col-md-3 card-col">
+                <a className="product-link" href="">
+                  <div className="product-card">
+                    <div className="product-list-items">
+                      <div className="list-img">
+                        <img className="img-fluid" src={Shoe} alt="item-img" />
+                      </div>
+                      <div className="product-name_price d-flex flex-row justify-content-between">
+                        <div className="product-name fw-semibold">Laptop</div>
+                        <div className="product-price">
+                          <strong>$480.99</strong>
+                        </div>
+                      </div>
+                      <div className="product-rating mt-2 w-75 d-flex flex-row">
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <StarHalf className="text-secondary " />
+                        <div className="rating-number">(123)</div>
                       </div>
                     </div>
-                    <p className="card__description"></p>
                   </div>
-                </a>{" "}
+                </a>
               </div>
-              <div className="col-3">
-                {" "}
-                <a className=" card-1">
-                  <img src={IMI} className="card__image" alt="" />
-                  <div className="card__overlay">
-                    <div className="card__header">
-                      <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
-                        <path />
-                      </svg>
-                      <img
-                        className="card__thumb"
-                        src="https://i.imgur.com/7D7I6dI.png"
-                        alt=""
-                      />
-                      <div className="card__header-text">
-                        <h3 className="card__title">Jessica Parker</h3>
-                        <span className="card__status">1 hour ago</span>
+              <div className="col-md-3 card-col">
+                <a className="product-link" href="">
+                  <div className="product-card">
+                    <div className="product-list-items">
+                      <div className="list-img">
+                        <img className="img-fluid" src={Boot} alt="item-img" />
+                      </div>
+                      <div className="product-name_price d-flex flex-row justify-content-between">
+                        <div className="product-name fw-semibold">Laptop</div>
+                        <div className="product-price">
+                          <strong>$480.99</strong>
+                        </div>
+                      </div>
+                      <div className="product-rating mt-2 w-75 d-flex flex-row">
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <StarHalf className="text-secondary " />
+                        <div className="rating-number">(123)</div>
                       </div>
                     </div>
-                    <p className="card__description"></p>
                   </div>
-                </a>{" "}
-              </div>
-              <div className="col-3">
-                {" "}
-                <a className=" card-1">
-                  <img src={IMI} className="card__image" alt="" />
-                  <div className="card__overlay">
-                    <div className="card__header">
-                      <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
-                        <path />
-                      </svg>
-                      <img
-                        className="card__thumb"
-                        src="https://i.imgur.com/7D7I6dI.png"
-                        alt=""
-                      />
-                      <div className="card__header-text">
-                        <h3 className="card__title">Jessica Parker</h3>
-                        <span className="card__status">1 hour ago</span>
+                </a>
+              </div>{" "}
+              <div className="col-md-3 card-col">
+                <a className="product-link" href="">
+                  <div className="product-card">
+                    <div className="product-list-items">
+                      <div className="list-img">
+                        <img className="img-fluid" src={Boots} alt="item-img" />
+                      </div>
+                      <div className="product-name_price d-flex flex-row justify-content-between">
+                        <div className="product-name fw-semibold">Laptop</div>
+                        <div className="product-price">
+                          <strong>$480.99</strong>
+                        </div>
+                      </div>
+                      <div className="product-rating mt-2 w-75 d-flex flex-row">
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <StarHalf className="text-secondary " />
+                        <div className="rating-number">(123)</div>
                       </div>
                     </div>
-                    <p className="card__description"></p>
                   </div>
-                </a>{" "}
+                </a>
               </div>
-            </div>{" "}
-          </div>
-          <div className="carousel-item">
-            <div className="row">
-              <div className="col-3">
-                {" "}
-                <a className=" card-1">
-                  <img src={IMI} className="card__image" alt="" />
-                  <div className="card__overlay">
-                    <div className="card__header">
-                      <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
-                        <path />
-                      </svg>
-                      <img
-                        className="card__thumb"
-                        src="https://i.imgur.com/7D7I6dI.png"
-                        alt=""
-                      />
-                      <div className="card__header-text">
-                        <h3 className="card__title">Jessica Parker</h3>
-                        <span className="card__status">1 hour ago</span>
+            </div>
+          </div>{" "}
+          <div className="carousel-item active">
+            <div className=" row mt-4 product_listing justify-content-center align-items-center ">
+              <div className="col-md-3 card-col">
+                <a className="product-link" href="">
+                  <div className="product-card">
+                    <div className="product-list-items">
+                      <div className="list-img">
+                        <img className="img-fluid" src={Boots} alt="item-img" />
+                      </div>
+                      <div className="product-name_price d-flex flex-row justify-content-between">
+                        <div className="product-name fw-semibold">Laptop</div>
+                        <div className="product-price">
+                          <strong>$480.99</strong>
+                        </div>
+                      </div>
+                      <div className="product-rating mt-2 w-75 d-flex flex-row">
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <StarHalf className="text-secondary " />
+                        <div className="rating-number">(123)</div>
                       </div>
                     </div>
-                    <p className="card__description"></p>
                   </div>
-                </a>{" "}
+                </a>
               </div>
-              <div className="col-3">
-                {" "}
-                <a className=" card-1">
-                  <img src={IMI} className="card__image" alt="" />
-                  <div className="card__overlay">
-                    <div className="card__header">
-                      <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
-                        <path />
-                      </svg>
-                      <img
-                        className="card__thumb"
-                        src="https://i.imgur.com/7D7I6dI.png"
-                        alt=""
-                      />
-                      <div className="card__header-text">
-                        <h3 className="card__title">Jessica Parker</h3>
-                        <span className="card__status">1 hour ago</span>
+              <div className="col-md-3 card-col">
+                <a className="product-link" href="">
+                  <div className="product-card">
+                    <div className="product-list-items">
+                      <div className="list-img">
+                        <img className="img-fluid" src={Shoes} alt="item-img" />
+                      </div>
+                      <div className="product-name_price d-flex flex-row justify-content-between">
+                        <div className="product-name fw-semibold">Laptop</div>
+                        <div className="product-price">
+                          <strong>$480.99</strong>
+                        </div>
+                      </div>
+                      <div className="product-rating mt-2 w-75 d-flex flex-row">
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <StarHalf className="text-secondary " />
+                        <div className="rating-number">(123)</div>
                       </div>
                     </div>
-                    <p className="card__description"></p>
                   </div>
-                </a>{" "}
+                </a>
               </div>
-              <div className="col-3">
-                {" "}
-                <a className=" card-1">
-                  <img src={IMI} className="card__image" alt="" />
-                  <div className="card__overlay">
-                    <div className="card__header">
-                      <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
-                        <path />
-                      </svg>
-                      <img
-                        className="card__thumb"
-                        src="https://i.imgur.com/7D7I6dI.png"
-                        alt=""
-                      />
-                      <div className="card__header-text">
-                        <h3 className="card__title">Jessica Parker</h3>
-                        <span className="card__status">1 hour ago</span>
+              <div className="col-md-3 card-col">
+                <a className="product-link" href="">
+                  <div className="product-card">
+                    <div className="product-list-items">
+                      <div className="list-img">
+                        <img className="img-fluid" src={Shoe} alt="item-img" />
+                      </div>
+                      <div className="product-name_price d-flex flex-row justify-content-between">
+                        <div className="product-name fw-semibold">Laptop</div>
+                        <div className="product-price">
+                          <strong>$480.99</strong>
+                        </div>
+                      </div>
+                      <div className="product-rating mt-2 w-75 d-flex flex-row">
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <StarHalf className="text-secondary " />
+                        <div className="rating-number">(123)</div>
                       </div>
                     </div>
-                    <p className="card__description"></p>
                   </div>
-                </a>{" "}
+                </a>
               </div>
-              <div className="col-3">
-                {" "}
-                <a className=" card-1">
-                  <img src={IMI} className="card__image" alt="" />
-                  <div className="card__overlay">
-                    <div className="card__header">
-                      <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
-                        <path />
-                      </svg>
-                      <img
-                        className="card__thumb"
-                        src="https://i.imgur.com/7D7I6dI.png"
-                        alt=""
-                      />
-                      <div className="card__header-text">
-                        <h3 className="card__title">Jessica Parker</h3>
-                        <span className="card__status">1 hour ago</span>
+              <div className="col-md-3 card-col">
+                <a className="product-link" href="">
+                  <div className="product-card">
+                    <div className="product-list-items">
+                      <div className="list-img">
+                        <img className="img-fluid" src={Boot} alt="item-img" />
+                      </div>
+                      <div className="product-name_price d-flex flex-row justify-content-between">
+                        <div className="product-name fw-semibold">Laptop</div>
+                        <div className="product-price">
+                          <strong>$480.99</strong>
+                        </div>
+                      </div>
+                      <div className="product-rating mt-2 w-75 d-flex flex-row">
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <Star className="text-secondary " />
+                        <StarHalf className="text-secondary " />
+                        <div className="rating-number">(123)</div>
                       </div>
                     </div>
-                    <p className="card__description"></p>
                   </div>
-                </a>{" "}
-              </div>
-            </div>{" "}
+                </a>
+              </div>{" "}
+            </div>
           </div>
         </div>
 
@@ -318,8 +343,7 @@ export default function ProductCarousel() {
           >
             <ChevronLeft />
 
-            {/* <span className="carousel-control-prev-icon" aria-hidden="true" /> */}
-            {/* <span className="visually-hidden">Previous</span> */}
+          
           </a>
         </div>
         <div className="carousel-next  top-50 start-100 translate-middle   ">
@@ -330,8 +354,7 @@ export default function ProductCarousel() {
             data-bs-slide="next"
           >
             <ChevronRight />
-            {/* <span className="carousel-control-next-icon" aria-hidden="true" /> */}
-            {/* <span className="visually-hidden">Next</span> */}
+            
           </a>
         </div>
       </div>
