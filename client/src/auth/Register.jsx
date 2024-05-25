@@ -4,9 +4,12 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import UserLayout from "../layouts/UserLayout";
+import Person from "../assets/images/auth/person.png";
+import Fb from "../assets/images/auth/fb.png";
+import Apple from "../assets/images/auth/apple.png";
+import Google from "../assets/images/auth/google.png";
 
 export default function Register() {
-  const [activeTab, setActiveTab] = useState("employee");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -15,12 +18,12 @@ export default function Register() {
   const [address, setAddress] = useState("");
   const navigate = useNavigate();
 
-  const handleTabChange = (tab) => {
-    setActiveTab(tab);
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (password !== confirmPassword) {
+      toast.error("Passwords do not match");
+      return;
+    }
     try {
       const res = await axios.post(
         "http://localhost:8080/api/v1/auth/register",
@@ -46,225 +49,149 @@ export default function Register() {
   };
 
   return (
-   <UserLayout>
-     <div className="user-registration">
-        <Toaster />
-        <div className="container register">
-          <div className="row">
-            <div className="col-md-3 register-left d-flex flex-column align-items-center justify-content-center">
-              <img src="" alt="" />
-              <h3>Welcome</h3>
-              <p>Already have an account?</p>
-              <Link to="/auth/login" className="login-btn fw-medium">
-                LogIn
-              </Link>
-              <br />
-            </div>
-            <div className="col-md-9 register-right">
-              <ul className="nav nav-tabs nav-justified" role="tablist">
-                {/* <li className="nav-item">
-                  <a
-                    className={`nav-link ${
-                      activeTab === "employee" ? "active" : ""
-                    }`}
-                    onClick={() => handleTabChange("employee")}
-                  >
-                    User
-                  </a>
-                </li> */}
-                <li className="nav-item">
-                  <a
-                    className={`nav-link ${
-                      activeTab === "hirer" ? "active" : ""
-                    }`}
-                    onClick={() => handleTabChange("hirer")}
-                  >
-                    Seller
-                  </a>
-                </li>
-              </ul>
-              <div className="tab-content" id="myTabContent">
-                {activeTab === "employee" && (
-                  <div
-                    className="tab-pane fade show active"
-                    id="home"
-                    role="tabpanel"
-                    aria-labelledby="home-tab"
-                  >
-                    <h3 className="register-heading">Register as a User</h3>
-                    <form onSubmit={handleSubmit} action="">
-                      <div className="row register-form">
-                        <div className="col-md-6">
-                          <div className="form-group">
-                            <input
-                              type="text"
-                              className="form-control"
-                              placeholder="Name *"
-                              value={name}
-                              onChange={(e) => setName(e.target.value)}
-                              required
-                            />
-                          </div>
-                          <div className="form-group">
-                            <input
-                              type="text"
-                              className="form-control"
-                              placeholder="address *"
-                              value={address}
-                              onChange={(e) => setAddress(e.target.value)}
-                              required
-                            />
-                          </div>
-                          <div className="form-group">
-                            <input
-                              type="password"
-                              className="form-control"
-                              placeholder="Password *"
-                              value={password}
-                              onChange={(e) => setPassword(e.target.value)}
-                              required
-                            />
-                          </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="form-group">
-                            <input
-                              type="email"
-                              className="form-control"
-                              placeholder="Your Email *"
-                              value={email}
-                              onChange={(e) => setEmail(e.target.value)}
-                              required
-                            />
-                          </div>
-                          <div className="form-group">
-                            <input
-                              type="text"
-                              className="form-control"
-                              placeholder="Your Phone *"
-                              value={phone}
-                              onChange={(e) => setPhone(e.target.value)}
-                              required
-                            />
-                          </div>
-                          <div className="form-group">
-                            <input
-                              type="password"
-                              className="form-control"
-                              placeholder="Confirm Password *"
-                              value={confirmPassword}
-                              onChange={(e) =>
-                                setConfirmPassword(e.target.value)
-                              }
-                              required
-                            />
-                          </div>
-                          <input
-                            type="submit"
-                            className="btnRegister"
-                            value="Register"
-                          />
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                )}
+    <UserLayout>
+      <div className="background">
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+      </div>
 
-                {activeTab === "hirer" && (
-                  <div
-                    className="tab-pane fade show active"
-                    id="profile"
-                    role="tabpanel"
-                    aria-labelledby="profile-tab"
-                  >
-                    <h3 className="register-heading">Register as a Seller</h3>
-                    <form onSubmit={handleSubmit} action="">
-                      <div className="row register-form">
-                        <div className="col-md-6">
-                          <div className="form-group">
-                            <input
-                              type="text"
-                              className="form-control"
-                              placeholder="Name *"
-                              value={name}
-                              onChange={(e) => setName(e.target.value)}
-                              required
-                            />
-                          </div>
-                          <div className="form-group">
-                            <input
-                              type="text"
-                              className="form-control"
-                              placeholder="address *"
-                              value={address}
-                              onChange={(e) => setAddress(e.target.value)}
-                              required
-                            />
-                          </div>
-                          <div className="form-group">
-                            <input
-                              type="email"
-                              className="form-control"
-                              placeholder="Email *"
-                              value={email}
-                              onChange={(e) => setEmail(e.target.value)}
-                              required
-                            />
-                          </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="form-group">
-                            <input
-                              type="password"
-                              className="form-control"
-                              placeholder="Password *"
-                              value={password}
-                              onChange={(e) => setPassword(e.target.value)}
-                              required
-                            />
-                          </div>
-                          <div className="form-group">
-                            <input
-                              type="password"
-                              className="form-control"
-                              placeholder="Confirm Password *"
-                              value={confirmPassword}
-                              onChange={(e) =>
-                                setConfirmPassword(e.target.value)
-                              }
-                              required
-                            />
-                          </div>
-                          <div className="form-group">
-                            <input
-                              type="text"
-                              maxLength="10"
-                              minLength="10"
-                              className="form-control"
-                              placeholder="Phone *"
-                              value={phone}
-                              onChange={(e) => setPhone(e.target.value)}
-                              required
-                            />
-                          </div>
-                          {/* <button 
-                          type="submit"
-                          className="btnRegister"
-                          value="Register"
-                        /> */}
-                          <button className="btnRegister" type="submit">
-                            Register
-                          </button>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                )}
+      <div className=" login-card mt-5">
+        <Toaster />
+        <div className="row">
+          <div className="col-lg-6 col-sm-12">
+            <div className="not-member d-flex justify-content-start">
+              <p>
+                Already a Member?
+                <Link to="/auth/login" className="ps-2">
+                  LogIn Now
+                </Link>
+              </p>
+            </div>
+            <form
+              onSubmit={handleSubmit}
+              method="post "
+              className="d-flex flex-column justify-content-center align-items-center mt-5 w-100"
+            >
+              <div className="w-100  p-3">
+                <div className="d-flex flex-column align-items-center">
+                  <h1>Welcome!</h1>
+                  <p>Start your journey!</p>
+                </div>
+               <div className="row">
+               <div className="input-fields col-md-6 mt-3">
+                  <input
+                    type="text"
+                    required
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="input-holders"
+                    placeholder="Name"
+                  />
+                </div>{" "}
+                <div className="input-fields col-md-6 mt-3">
+                  <input
+                    type="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="input-holders"
+                    placeholder="Email"
+                  />
+                </div>
+                <div className="input-fields col-md-6 mt-3">
+                  <input
+                    type="password"
+                    required
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="input-holders"
+                    placeholder="Password"
+                  />
+                </div>{" "}
+                <div className="input-fields col-md-6 mt-3">
+                  <input
+                    type="password"
+                    required
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    className="input-holders"
+                    placeholder="Confirm Password"
+                  />
+                </div>{" "}
+                <div className="input-fields col-md-6 mt-3">
+                  <input
+                    type="number"
+                    required
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    className="input-holders"
+                    placeholder="phone No."
+                  />
+                </div>{" "}
+                <div className="input-fields col-md-6 mt-3">
+                  <input
+                    type="text"
+                    required
+                    value={address}
+                    onChange={(e) => setAddress(e.target.value)}
+                    className="input-holders"
+                    placeholder="Enter Address"
+                  />
+                </div>
+               </div>
+                <button className="btn text-white mt-5 w-100 p-3" type="submit">
+                  SignUp
+                </button>
               </div>
+            </form>
+
+            <div className="social-media mt-5">
+              <p className="text-center">Or continue with</p>
+              <div className="d-flex justify-content-center align-items-center">
+                <ul className="list-unstyled d-flex justify-content-center social-icons">
+                  <li className="login-brands">
+                    <img src={Google} className="img-fluid" alt="logo" />
+                  </li>
+                  <li className="login-brands">
+                    <img
+                      src={Apple}
+                      className="img-fluid bg-white apple"
+                      alt="logo"
+                    />
+                  </li>
+                  <li className="login-brands">
+                    <img src={Fb} className="img-fluid" alt="logo" />
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6 img-bg">
+            <div className="">
+              <img src={Person} alt="" className="img-fluid w-100 " />
             </div>
           </div>
         </div>
       </div>
-   </UserLayout>
+    </UserLayout>
+    
   );
 }

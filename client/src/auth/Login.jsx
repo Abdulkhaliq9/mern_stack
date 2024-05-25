@@ -4,6 +4,10 @@ import { Link, useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import { useAuth } from "../context/auth";
 import UserLayout from "../layouts/UserLayout";
+import Person from "../assets/images/auth/person.png";
+import Fb from "../assets/images/auth/fb.png";
+import Apple from "../assets/images/auth/apple.png";
+import Google from "../assets/images/auth/google.png";
 
 export default function Login() {
   const [auth, setAuth] = useAuth();
@@ -25,10 +29,13 @@ export default function Login() {
           token: res.data.token,
         });
         toast.success(res.data.message);
-        localStorage.setItem("auth", JSON.stringify({
-          user: res.data.user,
-          token: res.data.token
-        }));
+        localStorage.setItem(
+          "auth",
+          JSON.stringify({
+            user: res.data.user,
+            token: res.data.token,
+          })
+        );
         navigate("/");
       } else {
         toast.error(res.data.message);
@@ -41,58 +48,102 @@ export default function Login() {
 
   return (
     <UserLayout>
-      <div className="user-registration">
+      <div className="background">
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
+      </div>
+
+      <div className=" login-card mt-5">
         <Toaster />
-        <div className="container register">
-          <div className="row">
-            <div className="col-md-5 register-left d-flex flex-column align-items-center justify-content-center mt-0">
-              <img src="" alt="" />
-              <h3>Welcome</h3>
-              <p>Don't have an account?</p>
-              <Link to="/auth/register" className="login-btn fw-medium">
-                Register
-              </Link>
-              <br />
+        <div className="row">
+          <div className="col-md-6 img-bg">
+            <div className="">
+              <img src={Person} alt="" className="img-fluid w-100 " />
             </div>
-            <div className="col-md-7 register-right">
-              <div className="tab-content" id="myTabContent">
-                <div
-                  className="tab-pane fade show active"
-                  id="home"
-                  role="tabpanel"
-                  aria-labelledby="home-tab"
-                >
-                  <h3 className="register-heading">Log In to your account!</h3>
-                  <form onSubmit={handleSubmit}>
-                    <div className="row register-form">
-                      <div className="col-md-12">
-                        <div className="form-group">
-                          <input
-                            type="email"
-                            className="form-control"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            placeholder="Your Email *"
-                            required
-                          />
-                        </div>
-                        <div className="form-group">
-                          <input
-                            type="password"
-                            className="form-control"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            placeholder="Password *"
-                            required
-                          />
-                        </div>
-                        <button type="submit" className="btnRegister">
-                          Log In
-                        </button>
-                      </div>
-                    </div>
-                  </form>
+          </div>
+
+          <div className="col-lg-6 col-sm-12">
+            <div className="not-member d-flex justify-content-end">
+              <p>
+                Not a member?
+                <Link to="/auth/register" className="ps-2">
+                  Register Now
+                </Link>
+              </p>
+            </div>
+            <form
+              onSubmit={handleSubmit}
+              method="post "
+              className="d-flex flex-column justify-content-center align-items-center mt-5 w-100"
+            >
+              <div className="w-75">
+                <div className="d-flex flex-column align-items-center">
+                  <h1>Hello Again!</h1>
+                  <p>Welcome back you've been missed!</p>
                 </div>
+                <div className="input-fields mt-3">
+                  <input
+                    type="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="input-holders"
+                    placeholder="Email"
+                  />
+                </div>
+                <div className="input-fields mt-3">
+                  <input
+                    type="password"
+                    required
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="input-holders"
+                    placeholder="Password"
+                  />
+                </div>
+
+                <button className="btn text-white mt-5 w-100 p-3" type="submit">
+                  Log In
+                </button>
+              </div>
+            </form>
+
+            <div className="social-media mt-5">
+              <p className="text-center">Or continue with</p>
+              <div className="d-flex justify-content-center align-items-center">
+                <ul className="list-unstyled d-flex justify-content-center social-icons">
+                  <li className="login-brands">
+                    <img src={Google} className="img-fluid" alt="logo" />
+                  </li>
+                  <li className="login-brands">
+                    <img
+                      src={Apple}
+                      className="img-fluid bg-white apple"
+                      alt="logo"
+                    />
+                  </li>
+                  <li className="login-brands">
+                    <img src={Fb} className="img-fluid" alt="logo" />
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
