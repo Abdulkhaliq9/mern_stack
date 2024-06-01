@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import { useAuth } from "../context/auth";
 import UserLayout from "../layouts/UserLayout";
 import Person from "../assets/images/auth/person.png";
@@ -10,7 +10,7 @@ import Apple from "../assets/images/auth/apple.png";
 import Google from "../assets/images/auth/google.png";
 
 export default function Login() {
-  const [auth, setAuth] = useAuth();
+  const [ setAuth] = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -72,7 +72,7 @@ export default function Login() {
       </div>
 
       <div className=" login-card mt-5">
-        <Toaster />
+    
         <div className="row">
           <div className="col-md-6 img-bg">
             <div className="">
@@ -97,7 +97,7 @@ export default function Login() {
               <div className="w-75">
                 <div className="d-flex flex-column align-items-center">
                   <h1>Hello Again!</h1>
-                  <p>Welcome back you've been missed!</p>
+                  <p>Welcome back you have been missed!</p>
                 </div>
                 <div className="input-fields mt-3">
                   <input
