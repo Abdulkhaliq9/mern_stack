@@ -10,7 +10,7 @@ import Apple from "../assets/images/auth/apple.png";
 import Google from "../assets/images/auth/google.png";
 
 export default function Login() {
-  const [ setAuth] = useAuth();
+  const [auth, setAuth] = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();

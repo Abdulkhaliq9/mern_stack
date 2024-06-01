@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import "../css/components/auth.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import UserLayout from "../layouts/UserLayout";
 import Person from "../assets/images/auth/person.png";
 import Fb from "../assets/images/auth/fb.png";
@@ -74,7 +74,7 @@ export default function Register() {
       </div>
 
       <div className=" login-card mt-5">
-        <Toaster />
+      
         <div className="row">
           <div className="col-lg-6 col-sm-12">
             <div className="not-member d-flex justify-content-start">
