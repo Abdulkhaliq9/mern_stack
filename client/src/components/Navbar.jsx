@@ -17,14 +17,14 @@ export default function Navbar() {
   };
   return (
     <>
-   <div className="container">
-   <div className="main-navbar shadow-sm sticky-top mb-3">
+   <div className="container-fluid p-0">
+   <div className="main-navbar shadow-sm sticky-top mb-4  ">
         <Toaster />
         <div className="top-navbar">
           <div className="container-fluid">
             <div className="row">
               <div className="col-md-2 my-auto d-none d-sm-none d-md-block d-lg-block">
-                <h5 className="brand-name">Funda Ecom</h5>
+                <h5 className="brand-name">Mega Bazar</h5>
               </div>
               <div className="col-md-5 my-auto">
                 <form role="search">
@@ -42,17 +42,7 @@ export default function Navbar() {
               </div>
               <div className="col-md-5 my-auto">
                 <ul className="nav justify-content-end">
-                  {/* <li className="nav-item">
-                    <a className="nav-link" href="#">
-                      <i className="fa fa-shopping-cart" /> Cart (0)
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">
-                      <i className="fa fa-heart" /> Wishlist (0)
-                    </a>
-                  </li> */}
-
+                
                   {!auth.user ? (
                     <>
                       {" "}
