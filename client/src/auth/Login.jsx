@@ -72,7 +72,6 @@ export default function Login() {
       </div>
 
       <div className=" login-card mt-5">
-    
         <div className="row">
           <div className="col-md-6 img-bg">
             <div className="">
