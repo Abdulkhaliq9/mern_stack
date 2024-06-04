@@ -8,6 +8,7 @@ import Person from "../assets/images/auth/person.png";
 import Fb from "../assets/images/auth/fb.png";
 import Apple from "../assets/images/auth/apple.png";
 import Google from "../assets/images/auth/google.png";
+import BackGround from "../components/BackGround";
 
 export default function Login() {
   const [auth, setAuth] = useAuth();
@@ -48,28 +49,7 @@ export default function Login() {
 
   return (
     <UserLayout>
-      <div className="background">
-        <span />
-        <span />
-        <span />
-        <span />
-        <span />
-        <span />
-        <span />
-        <span />
-        <span />
-        <span />
-        <span />
-        <span />
-        <span />
-        <span />
-        <span />
-        <span />
-        <span />
-        <span />
-        <span />
-        <span />
-      </div>
+    <BackGround/>
 
       <div className=" login-card mt-5">
         <div className="row">

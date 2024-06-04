@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../css/components/navbar.css";
-import { ShoppingBag, Heart, Search , User, UserCog, LogOut, Scroll} from "lucide-react";
+import { Search, ChevronRight, ChevronLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/auth";
 import toast, { Toaster } from "react-hot-toast";
+
 export default function Navbar() {
   const [auth, setAuth] = useAuth();
+  const menuRef = useRef(null);
+  const burgerRef = useRef(null);
+  const overlayRef = useRef(null);
+  const menuArrowRef = useRef(null);
+  const [darkMode, setDarkMode] = useState(
+    localStorage.getItem("darkMode") === "enabled"
+  );
+
   const handleLogOut = () => {
     setAuth({
       ...auth,
@@ -15,187 +24,324 @@ export default function Navbar() {
     localStorage.removeItem("token");
     toast.success("You have logged out successfully!");
   };
+
+  const toggleMenu = () => {
+    menuRef.current.classList.toggle("is-active");
+    overlayRef.current.classList.toggle("is-active");
+  };
+
+  const showSubMenu = (children) => {
+    const subMenu = children.querySelector(".submenu");
+    subMenu.classList.add("is-active");
+    subMenu.style.animation = "slideLeft 0.35s ease forwards";
+    const menuTitle =
+      children.querySelector("i").parentNode.childNodes[0].textContent;
+    menuRef.current.querySelector(".menu-title").textContent = menuTitle;
+    menuRef.current.querySelector(".menu-header").classList.add("is-active");
+  };
+
+  const hideSubMenu = () => {
+    const subMenu = menuRef.current.querySelector(".submenu.is-active");
+    subMenu.style.animation = "slideRight 0.35s ease forwards";
+    setTimeout(() => {
+      subMenu.classList.remove("is-active");
+    }, 300);
+    menuRef.current.querySelector(".menu-title").textContent = "";
+    menuRef.current.querySelector(".menu-header").classList.remove("is-active");
+  };
+
+  const toggleSubMenu = (e) => {
+    if (!menuRef.current.classList.contains("is-active")) {
+      return;
+    }
+    if (e.target.closest(".menu-dropdown")) {
+      const children = e.target.closest(".menu-dropdown");
+      showSubMenu(children);
+    }
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 992) {
+        if (
+          menuRef.current &&
+          menuRef.current.classList.contains("is-active")
+        ) {
+          toggleMenu();
+        }
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    if (burgerRef.current) {
+      burgerRef.current.addEventListener("click", toggleMenu);
+    }
+    if (overlayRef.current) {
+      overlayRef.current.addEventListener("click", toggleMenu);
+    }
+    if (menuArrowRef.current) {
+      menuArrowRef.current.addEventListener("click", hideSubMenu);
+    }
+    if (menuRef.current) {
+      menuRef.current.addEventListener("click", toggleSubMenu);
+    }
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+
+      if (burgerRef.current) {
+        burgerRef.current.removeEventListener("click", toggleMenu);
+      }
+      if (overlayRef.current) {
+        overlayRef.current.removeEventListener("click", toggleMenu);
+      }
+      if (menuArrowRef.current) {
+        menuArrowRef.current.removeEventListener("click", hideSubMenu);
+      }
+      if (menuRef.current) {
+        menuRef.current.removeEventListener("click", toggleSubMenu);
+      }
+    };
+  }, []);
+
   return (
+    // <header className="header" id="header">
     <>
-   <div className="container-fluid p-0">
-   <div className="main-navbar shadow-sm sticky-top mb-4  ">
-        <Toaster />
-        <div className="top-navbar">
-          <div className="container-fluid">
-            <div className="row">
-              <div className="col-md-2 my-auto d-none d-sm-none d-md-block d-lg-block">
-                <h5 className="brand-name">Mega Bazar</h5>
-              </div>
-              <div className="col-md-5 my-auto">
-                <form role="search">
-                  <div className="input-group">
-                    <input
-                      type="search"
-                      placeholder="Search your product"
-                      className="form-control"
-                    />
-                    <button className="btn bg-white" type="submit">
-                      <Search/>
-                    </button>
+      <nav className="navbar ">
+       <div className="container-fluid">
+       <section className="navbar-left">
+          <Link to="/" className="brand">
+            Mega Bazar
+          </Link>
+          <div className="burger" id="burger" ref={burgerRef}>
+            <span className="burger-line"></span>
+            <span className="burger-line"></span>
+            <span className="burger-line"></span>
+          </div>
+        </section>
+        <section className="navbar-center">
+          <span className="overlay" ref={overlayRef}></span>
+          <div className="menu" id="menu" ref={menuRef}>
+            <div className="menu-header">
+              <span className="menu-arrow" ref={menuArrowRef}>
+                <ChevronLeft />
+              </span>
+              <span className="menu-title"></span>
+            </div>
+            <ul className="menu-inner mb-0">
+              <li className="menu-item">
+                <Link to="/ " className="menu-link">
+                  Home
+                </Link>
+              </li>
+              <li className="menu-item menu-dropdown">
+                <span className="menu-link">
+                  Collection <ChevronRight />
+                </span>
+                <div className="submenu megamenu megamenu-column-4">
+                  <div className="submenu-inner">
+                    <h4 className="submenu-title">Men</h4>
+                    <ul className="submenu-list">
+                      <li className="submenu-item">
+                        <a href="#" className="submenu-link">
+                          Product Name
+                        </a>
+                      </li>
+                      <li className="submenu-item">
+                        <a href="#" className="submenu-link">
+                          Product Name
+                        </a>
+                      </li>
+                      <li className="submenu-item">
+                        <a href="#" className="submenu-link">
+                          Product Name
+                        </a>
+                      </li>
+                      <li className="submenu-item">
+                        <a href="#" className="submenu-link">
+                          Product Name
+                        </a>
+                      </li>
+                    </ul>
+                    <h4 className="submenu-title">Kids</h4>
+                    <ul className="submenu-list">
+                      <li className="submenu-item">
+                        <a href="#" className="submenu-link">
+                          Product Name
+                        </a>
+                      </li>
+                      <li className="submenu-item">
+                        <a href="#" className="submenu-link">
+                          Product Name
+                        </a>
+                      </li>
+                      <li className="submenu-item">
+                        <a href="#" className="submenu-link">
+                          Product Name
+                        </a>
+                      </li>
+                      <li className="submenu-item">
+                        <a href="#" className="submenu-link">
+                          Product Name
+                        </a>
+                      </li>
+                    </ul>
                   </div>
+                  <div className="submenu-inner">
+                    <h4 className="submenu-title">Women</h4>
+                    <ul className="submenu-list">
+                      <li className="submenu-item">
+                        <a href="#" className="submenu-link">
+                          Product Name
+                        </a>
+                      </li>
+                      <li className="submenu-item">
+                        <a href="#" className="submenu-link">
+                          Product Name
+                        </a>
+                      </li>
+                      <li className="submenu-item">
+                        <a href="#" className="submenu-link">
+                          Product Name
+                        </a>
+                      </li>
+                      <li className="submenu-item">
+                        <a href="#" className="submenu-link">
+                          Product Name
+                        </a>
+                      </li>
+                    </ul>
+                    <h4 className="submenu-title">Beauty</h4>
+                    <ul className="submenu-list">
+                      <li className="submenu-item">
+                        <a href="#" className="submenu-link">
+                          Product Name
+                        </a>
+                      </li>
+                      <li className="submenu-item">
+                        <a href="#" className="submenu-link">
+                          Product Name
+                        </a>
+                      </li>
+                      <li className="submenu-item">
+                        <a href="#" className="submenu-link">
+                          Product Name
+                        </a>
+                      </li>
+                      <li className="submenu-item">
+                        <a href="#" className="submenu-link">
+                          Product Name
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="submenu-inner">
+                    <h4 className="submenu-title">Sport</h4>
+                    <ul className="submenu-list">
+                      <li className="submenu-item">
+                        <a href="#" className="submenu-link">
+                          Product Name
+                        </a>
+                      </li>
+                      <li className="submenu-item">
+                        <a href="#" className="submenu-link">
+                          Product Name
+                        </a>
+                      </li>
+                      <li className="submenu-item">
+                        <a href="#" className="submenu-link">
+                          Product Name
+                        </a>
+                      </li>
+                      <li className="submenu-item">
+                        <a href="#" className="submenu-link">
+                          Product Name
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="submenu-inner">
+                    <img
+                      src="https://i.ibb.co/3Bj3gbS/Product-1.jpg"
+                      className="submenu-image"
+                      alt="Product"
+                    />
+                  </div>
+                </div>
+              </li>
+              <li className="menu-item menu-dropdown">
+                <span className="menu-link">
+                  New Arrival <ChevronRight />
+                </span>
+                <div className="submenu megamenu megamenu-column-4">
+                  <div className="submenu-inner">
+                    <a href="#" className="submenu-link">
+                      <img
+                        src="https://i.ibb.co/kgNX8ks/Product-2.jpg"
+                        className="submenu-image"
+                        alt="Product"
+                      />
+                      <span className="submenu-title">Product Name</span>
+                    </a>
+                  </div>
+                  <div className="submenu-inner">
+                    <a href="#" className="submenu-link">
+                      <img
+                        src="https://i.ibb.co/ZTD2wF6/Product-3.jpg"
+                        className="submenu-image"
+                        alt="Product"
+                      />
+                      <span className="submenu-title">Product Name</span>
+                    </a>
+                  </div>
+                  <div className="submenu-inner">
+                    <a href="#" className="submenu-link">
+                      <img
+                        src="https://i.ibb.co/prb0Vz9/Product-4.jpg"
+                        className="submenu-image"
+                        alt="Product"
+                      />
+                      <span className="submenu-title">Product Name</span>
+                    </a>
+                  </div>
+                  <div className="submenu-inner">
+                    <a href="#" className="submenu-link">
+                      <img
+                        src="https://i.ibb.co/zPJm9jy/Product-5.jpg"
+                        className="submenu-image"
+                        alt="Product"
+                      />
+                      <span className="submenu-title">Product Name</span>
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li className="menu-item">
+                <a href="#" className="menu-link">
+                  Support
+                </a>
+              </li>
+             
+              <li className="menu-item">
+                <form id="navbar-search" action="/search" method="get">
+                  <input type="text" name="q" placeholder="Search..." />
+                  <button type="submit">
+                    <span className="material-symbols-outlined">
+                      <Search />
+                    </span>
+                  </button>
                 </form>
-              </div>
-              <div className="col-md-5 my-auto">
-                <ul className="nav justify-content-end">
-                
-                  {!auth.user ? (
-                    <>
-                      {" "}
-                      <li className="nav-item">
-                        <a className="nav-link" href="#">
-                        <ShoppingBag /> Cart (0)
-                        </a>
-                      </li>
-                    
-                      <li className="nav-item">
-                        <Link className="nav-link" to="/auth/login">
-                        <User /> Log In
-                        </Link>
-                      </li>
-                    </>
-                  ) : (
-                    <>
-                      <li className="nav-item">
-                        <Link className="nav-link" to="/cart">
-                        <ShoppingBag /> Cart (0)
-                        </Link>
-                      </li>
-                      <li className="nav-item">
-                        <a className="nav-link" href="#">
-                          <Heart/> Wishlist (0)
-                        </a>
-                      </li>
-
-                      <li className="nav-item dropdown">
-                        <a
-                          className="nav-link dropdown-toggle"
-                          href="#"
-                          id="navbarDropdown"
-                          role="button"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
-                         <User/> Username
-                        </a>{" "}
-                        <ul
-                          className="dropdown-menu"
-                          aria-labelledby="navbarDropdown"
-                        >
-                          <li>
-                            <a className="dropdown-item" href="#">
-                              <UserCog/> Profile
-                            </a>
-                          </li>
-                          <li>
-                            <a className="dropdown-item" href="#">
-                              <Scroll/> My Orders
-                            </a>
-                          </li>
-                          <li>
-                            <a className="dropdown-item" href="#">
-                              <Heart/> My Wishlist
-                            </a>
-                          </li>
-                         
-
-                          <li>
-                            <Link
-                              className="dropdown-item"
-                              to="/"
-                              onClick={handleLogOut}
-                            >
-                            <LogOut/> Logout
-                            </Link>
-                          </li>
-                        </ul>
-                      </li>
-                    </>
-                  )}
-                </ul>
-              </div>
-            </div>
+              </li>
+            </ul>
           </div>
-        </div>
-        <nav className="navbar navbar-expand-lg">
-          <div className="container-fluid">
-            <a
-              className="navbar-brand d-block d-sm-block d-md-none d-lg-none"
-              href="#"
-            >
-              Funda Ecom
-            </a>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon" />
-            </button>
-            <div
-              className="collapse navbar-collapse"
-              id="navbarSupportedContent"
-            >
-              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                  <Link className="nav-link" to="/">
-                    Home
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    All Categories
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    New Arrivals
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Featured Products
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Electronics
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Fashions
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Accessories
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/details">
-                    Details
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Appliances
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
-   </div>
+        </section>
+        <section className="navbar-right">
+     <Link to="/auth/login" className=" text-light">SignUp / LogIn</Link>
+     
+        </section>
+       </div>
+      </nav>
     </>
   );
 }

@@ -7,10 +7,14 @@ import Category from "../components/Category";
 import BestSeller from "../components/BestSeller";
 import ProductCarousel from "../components/ProductCarousel";
 import { Toaster } from "react-hot-toast";
+// import BackGround from "../components/BackGround";
 export default function DashBoard() {
   return (
     <>
       <UserLayout>
+
+
+
         <div className="main-content">
 
           <Toaster/>

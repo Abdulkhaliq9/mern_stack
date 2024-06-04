@@ -39,7 +39,7 @@ export default function Carousel() {
                 aria-label="Slide 3"
               />
             </div>
-            <div className="carousel-inner">
+            <div className="carousel-inner" style={{height:"410px"}}>
               <div className="carousel-item active">
                 <img src={Slider1} className="d-block w-100 " alt="..." />
                 <div className="slider-content">
@@ -106,7 +106,7 @@ export default function Carousel() {
             </div>
           </div>
         </div>
-        <div className="col-xxl-4  col-lg-12 col-md-12 col-sm-12  mt-sm-3">
+        <div className="col-xxl-4  col-lg-12 col-md-12 col-sm-12 ">
           <div className="row">
             <div className="col-xxl-12 col-lg-6 col-md-6 mb-3 new-arrival-container">
               <div className="new-arrival">

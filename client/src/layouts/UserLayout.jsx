@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar.jsx";
 import BackToTop from "../components/BackToTop.jsx";
 import { Toaster } from "react-hot-toast";
 import Footer from "../components/Footer.jsx";
+import BackGround from "../components/BackGround.jsx";
 
 export default function UserLayout({ children }) {
   const [showButton, setShowButton] = useState(false);
@@ -28,8 +29,15 @@ export default function UserLayout({ children }) {
 
   return (
     <>
+    <BackGround/>
       <div className="user-layout">
+        
         <div className="conatiner-layout">
+
+
+
+
+          
           <Toaster />
           <header>
             <Navbar />
