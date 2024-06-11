@@ -16,23 +16,14 @@
   --color7: #e7ecef;
 
   --color8: #282c33;
-  /* --surface-color: #fff; */
+  --color9: #c0c0c0;
+
   --curve: 40;
-  /* --primary: rebeccapurple; */
 
   --body-fonts: "Oswald", sans-serif;
   --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-  0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --night-300: hsl(217, 27%, 12%);
-
-  /* --color1: ;
-  --color2: #ffffff;
-  --color3: #9bdc28;
-
-  --color4: ;
-  --color5: ;
-  --color6: ;
---color7:#282c33; */
 }
 
 * {

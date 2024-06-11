@@ -30,7 +30,7 @@ export default function DashBoard() {
           </section>
 
           <section className="trending-products mb-5">
-            <BestSeller />
+            {/* <BestSeller /> */}
           </section>
 
           <section className="mb-5 ">

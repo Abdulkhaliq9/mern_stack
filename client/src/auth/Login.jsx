@@ -49,7 +49,7 @@ export default function Login() {
 
   return (
     <UserLayout>
-    <BackGround/>
+    {/* <BackGround/> */}
 
       <div className=" login-card mt-5">
         <div className="row">

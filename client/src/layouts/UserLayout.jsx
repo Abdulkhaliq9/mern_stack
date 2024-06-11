@@ -29,7 +29,7 @@ export default function UserLayout({ children }) {
 
   return (
     <>
-    <BackGround/>
+    {/* <BackGround/> */}
       <div className="user-layout">
         
         <div className="conatiner-layout">

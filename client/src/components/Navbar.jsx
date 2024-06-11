@@ -1,6 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../css/components/navbar.css";
-import { Search, ChevronRight, ChevronLeft } from "lucide-react";
+import {
+  Search,
+  ChevronRight,
+  ChevronLeft,
+  User,
+  LogOut,
+  List,
+  ShoppingBag,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/auth";
 import toast, { Toaster } from "react-hot-toast";
@@ -108,239 +116,300 @@ export default function Navbar() {
   return (
     // <header className="header" id="header">
     <>
-      <nav className="navbar ">
-       <div className="container-fluid">
-       <section className="navbar-left">
-          <Link to="/" className="brand">
-            Mega Bazar
-          </Link>
-          <div className="burger" id="burger" ref={burgerRef}>
-            <span className="burger-line"></span>
-            <span className="burger-line"></span>
-            <span className="burger-line"></span>
-          </div>
-        </section>
-        <section className="navbar-center">
-          <span className="overlay" ref={overlayRef}></span>
-          <div className="menu" id="menu" ref={menuRef}>
-            <div className="menu-header">
-              <span className="menu-arrow" ref={menuArrowRef}>
-                <ChevronLeft />
-              </span>
-              <span className="menu-title"></span>
+      <nav className="navbar navbar-expand-lg ">
+        <div className="container-fluid">
+          <section className="navbar-left d-flex align-items-center">
+            <Link to="/" className="brand">
+              Mega Bazar
+            </Link>
+            <div className="burger" id="burger" ref={burgerRef}>
+              <span className="burger-line"></span>
+              <span className="burger-line"></span>
+              <span className="burger-line"></span>
             </div>
-            <ul className="menu-inner mb-0">
-              <li className="menu-item">
-                <Link to="/ " className="menu-link">
-                  Home
+          </section>
+          <section className="navbar-center">
+            <span className="overlay" ref={overlayRef}></span>
+            <div className="menu" id="menu" ref={menuRef}>
+              <div className="menu-header">
+                <span className="menu-arrow" ref={menuArrowRef}>
+                  <ChevronLeft />
+                </span>
+                <span className="menu-title"></span>
+              </div>
+              <ul className="menu-inner mb-0">
+                <li className="menu-item">
+                  <Link to="/ " className="menu-link">
+                    Home
+                  </Link>
+                </li>
+                <li className="menu-item menu-dropdown">
+                  <span className="menu-link">
+                    Collection <ChevronRight />
+                  </span>
+                  <div className="submenu megamenu megamenu-column-4">
+                    <div className="submenu-inner">
+                      <h4 className="submenu-title">Men</h4>
+                      <ul className="submenu-list">
+                        <li className="submenu-item">
+                          <a href="#" className="submenu-link">
+                            Product Name
+                          </a>
+                        </li>
+                        <li className="submenu-item">
+                          <a href="#" className="submenu-link">
+                            Product Name
+                          </a>
+                        </li>
+                        <li className="submenu-item">
+                          <a href="#" className="submenu-link">
+                            Product Name
+                          </a>
+                        </li>
+                        <li className="submenu-item">
+                          <a href="#" className="submenu-link">
+                            Product Name
+                          </a>
+                        </li>
+                      </ul>
+                      <h4 className="submenu-title">Kids</h4>
+                      <ul className="submenu-list">
+                        <li className="submenu-item">
+                          <a href="#" className="submenu-link">
+                            Product Name
+                          </a>
+                        </li>
+                        <li className="submenu-item">
+                          <a href="#" className="submenu-link">
+                            Product Name
+                          </a>
+                        </li>
+                        <li className="submenu-item">
+                          <a href="#" className="submenu-link">
+                            Product Name
+                          </a>
+                        </li>
+                        <li className="submenu-item">
+                          <a href="#" className="submenu-link">
+                            Product Name
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="submenu-inner">
+                      <h4 className="submenu-title">Women</h4>
+                      <ul className="submenu-list">
+                        <li className="submenu-item">
+                          <a href="#" className="submenu-link">
+                            Product Name
+                          </a>
+                        </li>
+                        <li className="submenu-item">
+                          <a href="#" className="submenu-link">
+                            Product Name
+                          </a>
+                        </li>
+                        <li className="submenu-item">
+                          <a href="#" className="submenu-link">
+                            Product Name
+                          </a>
+                        </li>
+                        <li className="submenu-item">
+                          <a href="#" className="submenu-link">
+                            Product Name
+                          </a>
+                        </li>
+                      </ul>
+                      <h4 className="submenu-title">Beauty</h4>
+                      <ul className="submenu-list">
+                        <li className="submenu-item">
+                          <a href="#" className="submenu-link">
+                            Product Name
+                          </a>
+                        </li>
+                        <li className="submenu-item">
+                          <a href="#" className="submenu-link">
+                            Product Name
+                          </a>
+                        </li>
+                        <li className="submenu-item">
+                          <a href="#" className="submenu-link">
+                            Product Name
+                          </a>
+                        </li>
+                        <li className="submenu-item">
+                          <a href="#" className="submenu-link">
+                            Product Name
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="submenu-inner">
+                      <h4 className="submenu-title">Sport</h4>
+                      <ul className="submenu-list">
+                        <li className="submenu-item">
+                          <a href="#" className="submenu-link">
+                            Product Name
+                          </a>
+                        </li>
+                        <li className="submenu-item">
+                          <a href="#" className="submenu-link">
+                            Product Name
+                          </a>
+                        </li>
+                        <li className="submenu-item">
+                          <a href="#" className="submenu-link">
+                            Product Name
+                          </a>
+                        </li>
+                        <li className="submenu-item">
+                          <a href="#" className="submenu-link">
+                            Product Name
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="submenu-inner">
+                      <img
+                        src="https://i.ibb.co/3Bj3gbS/Product-1.jpg"
+                        className="submenu-image"
+                        alt="Product"
+                      />
+                    </div>
+                  </div>
+                </li>
+                <li className="menu-item menu-dropdown">
+                  <span className="menu-link">
+                    New Arrival <ChevronRight />
+                  </span>
+                  <div className="submenu megamenu megamenu-column-4">
+                    <div className="submenu-inner">
+                      <a href="#" className="submenu-link">
+                        <img
+                          src="https://i.ibb.co/kgNX8ks/Product-2.jpg"
+                          className="submenu-image"
+                          alt="Product"
+                        />
+                        <span className="submenu-title">Product Name</span>
+                      </a>
+                    </div>
+                    <div className="submenu-inner">
+                      <a href="#" className="submenu-link">
+                        <img
+                          src="https://i.ibb.co/ZTD2wF6/Product-3.jpg"
+                          className="submenu-image"
+                          alt="Product"
+                        />
+                        <span className="submenu-title">Product Name</span>
+                      </a>
+                    </div>
+                    <div className="submenu-inner">
+                      <a href="#" className="submenu-link">
+                        <img
+                          src="https://i.ibb.co/prb0Vz9/Product-4.jpg"
+                          className="submenu-image"
+                          alt="Product"
+                        />
+                        <span className="submenu-title">Product Name</span>
+                      </a>
+                    </div>
+                    <div className="submenu-inner">
+                      <a href="#" className="submenu-link">
+                        <img
+                          src="https://i.ibb.co/zPJm9jy/Product-5.jpg"
+                          className="submenu-image"
+                          alt="Product"
+                        />
+                        <span className="submenu-title">Product Name</span>
+                      </a>
+                    </div>
+                  </div>
+                </li>{" "}
+                <li className="menu-item">
+                  <a href="#" className="menu-link">
+                    Support
+                  </a>
+                </li>
+                <li className="menu-item">
+                  <a href="#" className="menu-link">
+                    My Cart
+                  </a>
+                </li>
+                <li className="menu-item">
+                  <form id="navbar-search" action="/search" method="get">
+                    <input type="text" name="q" placeholder="Search..." />
+                    <button type="submit">
+                      <span className="material-symbols-outlined">
+                        <Search />
+                      </span>
+                    </button>
+                  </form>
+                </li>
+              </ul>
+              {!auth.user ? ( <></> ) : (
+                <>
+                  <ul className="menu-inner d-block d-lg-none ">
+                    <li className="menu-item">
+                      <a href="" className="menu-link">
+                        Profile
+                      </a>
+                    </li>
+                    <li className="menu-item">
+                      <Link to="/" onClick={handleLogOut} className="menu-link">
+                        LogOut
+                      </Link>
+                    </li>
+                  </ul>
+                </>
+              )}
+            </div>
+          </section>
+          <section className="navbar-right">
+            {!auth.user ? (
+              <>
+                <Link to="/auth/login" className=" text-light">
+                  SignUp / LogIn
                 </Link>
-              </li>
-              <li className="menu-item menu-dropdown">
-                <span className="menu-link">
-                  Collection <ChevronRight />
-                </span>
-                <div className="submenu megamenu megamenu-column-4">
-                  <div className="submenu-inner">
-                    <h4 className="submenu-title">Men</h4>
-                    <ul className="submenu-list">
-                      <li className="submenu-item">
-                        <a href="#" className="submenu-link">
-                          Product Name
-                        </a>
-                      </li>
-                      <li className="submenu-item">
-                        <a href="#" className="submenu-link">
-                          Product Name
-                        </a>
-                      </li>
-                      <li className="submenu-item">
-                        <a href="#" className="submenu-link">
-                          Product Name
-                        </a>
-                      </li>
-                      <li className="submenu-item">
-                        <a href="#" className="submenu-link">
-                          Product Name
-                        </a>
-                      </li>
-                    </ul>
-                    <h4 className="submenu-title">Kids</h4>
-                    <ul className="submenu-list">
-                      <li className="submenu-item">
-                        <a href="#" className="submenu-link">
-                          Product Name
-                        </a>
-                      </li>
-                      <li className="submenu-item">
-                        <a href="#" className="submenu-link">
-                          Product Name
-                        </a>
-                      </li>
-                      <li className="submenu-item">
-                        <a href="#" className="submenu-link">
-                          Product Name
-                        </a>
-                      </li>
-                      <li className="submenu-item">
-                        <a href="#" className="submenu-link">
-                          Product Name
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="submenu-inner">
-                    <h4 className="submenu-title">Women</h4>
-                    <ul className="submenu-list">
-                      <li className="submenu-item">
-                        <a href="#" className="submenu-link">
-                          Product Name
-                        </a>
-                      </li>
-                      <li className="submenu-item">
-                        <a href="#" className="submenu-link">
-                          Product Name
-                        </a>
-                      </li>
-                      <li className="submenu-item">
-                        <a href="#" className="submenu-link">
-                          Product Name
-                        </a>
-                      </li>
-                      <li className="submenu-item">
-                        <a href="#" className="submenu-link">
-                          Product Name
-                        </a>
-                      </li>
-                    </ul>
-                    <h4 className="submenu-title">Beauty</h4>
-                    <ul className="submenu-list">
-                      <li className="submenu-item">
-                        <a href="#" className="submenu-link">
-                          Product Name
-                        </a>
-                      </li>
-                      <li className="submenu-item">
-                        <a href="#" className="submenu-link">
-                          Product Name
-                        </a>
-                      </li>
-                      <li className="submenu-item">
-                        <a href="#" className="submenu-link">
-                          Product Name
-                        </a>
-                      </li>
-                      <li className="submenu-item">
-                        <a href="#" className="submenu-link">
-                          Product Name
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="submenu-inner">
-                    <h4 className="submenu-title">Sport</h4>
-                    <ul className="submenu-list">
-                      <li className="submenu-item">
-                        <a href="#" className="submenu-link">
-                          Product Name
-                        </a>
-                      </li>
-                      <li className="submenu-item">
-                        <a href="#" className="submenu-link">
-                          Product Name
-                        </a>
-                      </li>
-                      <li className="submenu-item">
-                        <a href="#" className="submenu-link">
-                          Product Name
-                        </a>
-                      </li>
-                      <li className="submenu-item">
-                        <a href="#" className="submenu-link">
-                          Product Name
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="submenu-inner">
-                    <img
-                      src="https://i.ibb.co/3Bj3gbS/Product-1.jpg"
-                      className="submenu-image"
-                      alt="Product"
-                    />
-                  </div>
-                </div>
-              </li>
-              <li className="menu-item menu-dropdown">
-                <span className="menu-link">
-                  New Arrival <ChevronRight />
-                </span>
-                <div className="submenu megamenu megamenu-column-4">
-                  <div className="submenu-inner">
-                    <a href="#" className="submenu-link">
-                      <img
-                        src="https://i.ibb.co/kgNX8ks/Product-2.jpg"
-                        className="submenu-image"
-                        alt="Product"
-                      />
-                      <span className="submenu-title">Product Name</span>
-                    </a>
-                  </div>
-                  <div className="submenu-inner">
-                    <a href="#" className="submenu-link">
-                      <img
-                        src="https://i.ibb.co/ZTD2wF6/Product-3.jpg"
-                        className="submenu-image"
-                        alt="Product"
-                      />
-                      <span className="submenu-title">Product Name</span>
-                    </a>
-                  </div>
-                  <div className="submenu-inner">
-                    <a href="#" className="submenu-link">
-                      <img
-                        src="https://i.ibb.co/prb0Vz9/Product-4.jpg"
-                        className="submenu-image"
-                        alt="Product"
-                      />
-                      <span className="submenu-title">Product Name</span>
-                    </a>
-                  </div>
-                  <div className="submenu-inner">
-                    <a href="#" className="submenu-link">
-                      <img
-                        src="https://i.ibb.co/zPJm9jy/Product-5.jpg"
-                        className="submenu-image"
-                        alt="Product"
-                      />
-                      <span className="submenu-title">Product Name</span>
-                    </a>
-                  </div>
-                </div>
-              </li>
-              <li className="menu-item">
-                <a href="#" className="menu-link">
-                  Support
-                </a>
-              </li>
-             
-              <li className="menu-item">
-                <form id="navbar-search" action="/search" method="get">
-                  <input type="text" name="q" placeholder="Search..." />
-                  <button type="submit">
-                    <span className="material-symbols-outlined">
-                      <Search />
+              </>
+            ) : (
+              <>
+                <ul className="menu-inner mb-0 d-none d-lg-block ">
+                  <li className="menu-item menu-dropdown">
+                    <span className="menu-link">
+                      UserName <ChevronRight />
                     </span>
-                  </button>
-                </form>
-              </li>
-            </ul>
-          </div>
-        </section>
-        <section className="navbar-right">
-     <Link to="/auth/login" className=" text-light">SignUp / LogIn</Link>
-     
-        </section>
-       </div>
+                    <div className="submenu megamenu megamenu-column-1 text-center p-0">
+                      <div className="submenu-inner">
+                        <Link href="#" className="submenu-link">
+                          <User /> Profile
+                        </Link>
+                      </div>{" "}
+                      <div className="submenu-inner">
+                        <Link href="#" className="submenu-link">
+                          <ShoppingBag /> My Cart
+                        </Link>
+                      </div>{" "}
+                      <div className="submenu-inner">
+                        <Link href="#" className="submenu-link">
+                          <List /> Check Out
+                        </Link>
+                      </div>{" "}
+                      <div className="submenu-inner">
+                        <Link
+                          to="/"
+                          onClick={handleLogOut}
+                          className="submenu-link"
+                        >
+                          <LogOut /> LogOut
+                        </Link>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </>
+            )}
+          </section>
+        </div>
       </nav>
     </>
   );
