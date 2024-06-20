@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import UserLayout from "../layouts/UserLayout";
 import "../css/components/pages/cart.css";
 import { Minus, Plus, X } from "lucide-react";

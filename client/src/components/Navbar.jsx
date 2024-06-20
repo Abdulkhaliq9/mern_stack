@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import  { useEffect, useRef} from "react";
 import "../css/components/navbar.css";
 import {
   Search,
@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/auth";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 export default function Navbar() {
   const [auth, setAuth] = useAuth();
@@ -19,9 +19,6 @@ export default function Navbar() {
   const burgerRef = useRef(null);
   const overlayRef = useRef(null);
   const menuArrowRef = useRef(null);
-  const [darkMode, setDarkMode] = useState(
-    localStorage.getItem("darkMode") === "enabled"
-  );
 
   const handleLogOut = () => {
     setAuth({

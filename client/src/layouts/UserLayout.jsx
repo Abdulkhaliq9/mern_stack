@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar.jsx";
 import BackToTop from "../components/BackToTop.jsx";
 import { Toaster } from "react-hot-toast";
@@ -29,7 +29,7 @@ export default function UserLayout({ children }) {
 
   return (
     <>
-    {/* <BackGround/> */}
+    <BackGround/>
       <div className="user-layout">
         
         <div className="conatiner-layout">

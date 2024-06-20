@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import UserLayout from "../layouts/UserLayout";
 import Laptop from "../assets/images/products/1.jpg";
 import Zara from "../assets/images/brands/zara.png";
