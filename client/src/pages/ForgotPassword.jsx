@@ -2,7 +2,6 @@ import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import { useAuth } from "../context/auth";
 import UserLayout from "../layouts/UserLayout";
 import Person from "../assets/images/auth/person.png";
 import Fb from "../assets/images/auth/fb.png";
@@ -10,40 +9,33 @@ import Apple from "../assets/images/auth/apple.png";
 import Google from "../assets/images/auth/google.png";
 
 
-export default function Login() {
-  const [auth, setAuth] = useAuth();
+export default function ForgotPassword() {
+
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [question, setQuestion] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:8080/api/v1/auth/login", {
+      const res = await axios.post("http://localhost:8080/api/v1/auth/forgot-password", {
         email,
-        password,
+        newPassword,
+        question
       });
 
       if (res.data.success) {
-        setAuth({
-          user: res.data.user,
-          token: res.data.token,
-        });
+
         toast.success(res.data.message);
-        localStorage.setItem(
-          "auth",
-          JSON.stringify({
-            user: res.data.user,
-            token: res.data.token,
-          })
-        );
-        navigate("/");
+
+        navigate("/auth/login");
       } else {
         toast.error(res.data.message);
       }
     } catch (err) {
-      console.error("Error with login:", err);
-      toast.error("Error with Login");
+      console.error("Error with rest:", err);
+      toast.error("🥲 Error with reset");
     }
   };
 
@@ -75,8 +67,8 @@ export default function Login() {
             >
               <div className="w-75">
                 <div className="d-flex flex-column align-items-center">
-                  <h1>Hello Again!</h1>
-                  <p>Welcome back you have been missed!</p>
+                  <h1>Forgot Password!</h1>
+                  <p>Dont worry we have you😊!</p>
                 </div>
                 <div className="input-fields mt-3">
                   <input
@@ -92,25 +84,31 @@ export default function Login() {
                   <input
                     type="password"
                     required
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    value={newPassword}
+                    onChange={(e) => setNewPassword(e.target.value)}
                     className="input-holders"
                     placeholder="Password"
                   />
-                </div>
-
+                </div>  
+                <div className="input-fields mt-3">
+                  <input
+                    type="text"
+                    required
+                    value={question}
+                    onChange={(e) => setQuestion(e.target.value)}
+                    className="input-holders"
+                    placeholder="What is your pet name?"
+                  />
+                </div>  
+            
 
 
                 <button className="btn text-white mt-5 w-100 p-3" type="submit">
-                  Log In
+                  Reset Password
                 </button>
 
 
-                <div className="mt-5 d-flex justify-content-end reset-password">
-                  <Link className="forgot" to="/pages/forgotpassword" style={{
-                    color: "var(--color4)"
-                  }}>Forgot Password!</Link>
-                </div>
+
               </div>
             </form>
 

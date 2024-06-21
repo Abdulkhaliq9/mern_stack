@@ -1,4 +1,4 @@
-import  { useEffect, useRef} from "react";
+import { useEffect, useRef } from "react";
 import "../css/components/navbar.css";
 import {
   Search,
@@ -142,54 +142,54 @@ export default function Navbar() {
                 </li>
                 <li className="menu-item menu-dropdown">
                   <span className="menu-link">
-                    Collection <ChevronRight />
+                    Category <ChevronRight />
                   </span>
                   <div className="submenu megamenu megamenu-column-4">
                     <div className="submenu-inner">
                       <h4 className="submenu-title">Men</h4>
                       <ul className="submenu-list">
                         <li className="submenu-item">
-                          <a href="#" className="submenu-link">
+                          <Link to="/details" className="submenu-link">
                             Product Name
-                          </a>
+                          </Link>
                         </li>
                         <li className="submenu-item">
-                          <a href="#" className="submenu-link">
+                          <Link to="/details" className="submenu-link">
                             Product Name
-                          </a>
+                          </Link>
                         </li>
                         <li className="submenu-item">
-                          <a href="#" className="submenu-link">
+                          <Link to="/details" className="submenu-link">
                             Product Name
-                          </a>
+                          </Link>
                         </li>
                         <li className="submenu-item">
-                          <a href="#" className="submenu-link">
+                          <Link to="/details" className="submenu-link">
                             Product Name
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                       <h4 className="submenu-title">Kids</h4>
                       <ul className="submenu-list">
                         <li className="submenu-item">
-                          <a href="#" className="submenu-link">
+                          <Link to="/details" className="submenu-link">
                             Product Name
-                          </a>
+                          </Link>
                         </li>
                         <li className="submenu-item">
-                          <a href="#" className="submenu-link">
+                          <Link to="/details" className="submenu-link">
                             Product Name
-                          </a>
+                          </Link>
                         </li>
                         <li className="submenu-item">
-                          <a href="#" className="submenu-link">
+                          <Link to="/details" className="submenu-link">
                             Product Name
-                          </a>
+                          </Link>
                         </li>
                         <li className="submenu-item">
-                          <a href="#" className="submenu-link">
+                          <Link to="/details" className="submenu-link">
                             Product Name
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                     </div>
@@ -197,47 +197,47 @@ export default function Navbar() {
                       <h4 className="submenu-title">Women</h4>
                       <ul className="submenu-list">
                         <li className="submenu-item">
-                          <a href="#" className="submenu-link">
+                          <Link to="/details" className="submenu-link">
                             Product Name
-                          </a>
+                          </Link>
                         </li>
                         <li className="submenu-item">
-                          <a href="#" className="submenu-link">
+                          <Link to="/details" className="submenu-link">
                             Product Name
-                          </a>
+                          </Link>
                         </li>
                         <li className="submenu-item">
-                          <a href="#" className="submenu-link">
+                          <Link to="/details" className="submenu-link">
                             Product Name
-                          </a>
+                          </Link>
                         </li>
                         <li className="submenu-item">
-                          <a href="#" className="submenu-link">
+                          <Link to="/details" className="submenu-link">
                             Product Name
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                       <h4 className="submenu-title">Beauty</h4>
                       <ul className="submenu-list">
                         <li className="submenu-item">
-                          <a href="#" className="submenu-link">
+                          <Link to="/details" className="submenu-link">
                             Product Name
-                          </a>
+                          </Link>
                         </li>
                         <li className="submenu-item">
-                          <a href="#" className="submenu-link">
+                          <Link to="/details" className="submenu-link">
                             Product Name
-                          </a>
+                          </Link>
                         </li>
                         <li className="submenu-item">
-                          <a href="#" className="submenu-link">
+                          <Link to="/details" className="submenu-link">
                             Product Name
-                          </a>
+                          </Link>
                         </li>
                         <li className="submenu-item">
-                          <a href="#" className="submenu-link">
+                          <Link to="/details" className="submenu-link">
                             Product Name
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                     </div>
@@ -245,24 +245,24 @@ export default function Navbar() {
                       <h4 className="submenu-title">Sport</h4>
                       <ul className="submenu-list">
                         <li className="submenu-item">
-                          <a href="#" className="submenu-link">
+                          <Link to="/details" className="submenu-link">
                             Product Name
-                          </a>
+                          </Link>
                         </li>
                         <li className="submenu-item">
-                          <a href="#" className="submenu-link">
+                          <Link to="/details" className="submenu-link">
                             Product Name
-                          </a>
+                          </Link>
                         </li>
                         <li className="submenu-item">
-                          <a href="#" className="submenu-link">
+                          <Link to="/details" className="submenu-link">
                             Product Name
-                          </a>
+                          </Link>
                         </li>
                         <li className="submenu-item">
-                          <a href="#" className="submenu-link">
+                          <Link to="/details" className="submenu-link">
                             Product Name
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                     </div>
@@ -328,9 +328,9 @@ export default function Navbar() {
                   </a>
                 </li>
                 <li className="menu-item">
-                  <a href="#" className="menu-link">
+                  <Link to="/cart" className="menu-link">
                     My Cart
-                  </a>
+                  </Link>
                 </li>
                 <li className="menu-item">
                   <form id="navbar-search" action="/search" method="get">
@@ -343,7 +343,7 @@ export default function Navbar() {
                   </form>
                 </li>
               </ul>
-              {!auth.user ? ( <></> ) : (
+              {!auth.user ? (<></>) : (
                 <>
                   <ul className="menu-inner d-block d-lg-none ">
                     <li className="menu-item">
@@ -382,7 +382,7 @@ export default function Navbar() {
                         </Link>
                       </div>{" "}
                       <div className="submenu-inner">
-                        <Link href="#" className="submenu-link">
+                        <Link to="/cart" className="submenu-link">
                           <ShoppingBag /> My Cart
                         </Link>
                       </div>{" "}

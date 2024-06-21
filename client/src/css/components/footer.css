@@ -5,6 +5,7 @@
 .footer-section {
     background: var(--color4);
     position: relative;
+    z-index: -1;
   }
   .footer-cta {
     border-bottom: 1px solid var(--color6);
@@ -100,7 +101,7 @@
   }
   .footer-widget ul li {
     display: inline-block;
-    float: left;
+    /* float: left; */
     width: 50%;
     margin-bottom: 12px;
   }

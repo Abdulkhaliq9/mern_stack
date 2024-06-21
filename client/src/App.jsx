@@ -8,6 +8,7 @@ import Products from "./pages/Products.jsx";
 import Private from "./routes/Private.jsx";
 import LogIn from "./auth/Login.jsx";
 import Register from "./auth/Register.jsx";
+import ForgotPassword from "./pages/ForgotPassword.jsx";
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
         <Route exact path="/products" element={<Products />} />
         <Route exact path="/auth/login" element={<LogIn />} />
         <Route exact path="/auth/register" element={<Register />} />
+        <Route exact path="/pages/forgotpassword" element={<ForgotPassword />} />
+
       </Routes>
     </>
   );

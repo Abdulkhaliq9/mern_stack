@@ -3,6 +3,7 @@ import {
   registerController,
   loginController,
   testController,
+  forgotPasswordController,
 } from "../controllers/authController.js";
 
 import { verifyToken, isAdmin } from "../middlewares/authMiddleware.js";
@@ -14,6 +15,11 @@ router.post("/register", registerController);
 
 // login || method post
 router.post("/login", loginController);
+
+
+// forgot password || method post
+router.post("/forgot-password",  forgotPasswordController)
+
 
 // test || method get
 router.get("/test", verifyToken, isAdmin, testController);

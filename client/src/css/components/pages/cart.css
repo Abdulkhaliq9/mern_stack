@@ -1,5 +1,6 @@
 .cart_products,.add_check {
   border: 3px solid #eee;
+  background-color: #f3f3f9;
   padding: 25px;
   border-radius: 20px;
 }
@@ -30,3 +31,11 @@
 .add_check{
     background-color: #f3f3f9;
 }
+
+@media screen and (min-width:767px) {
+  .cart_products{
+    margin-bottom: 20px;
+  }
+ 
+}
+
