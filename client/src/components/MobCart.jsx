@@ -14,20 +14,22 @@ export default function MobCart() {
       name: "Nike Air Force 1",
       price: 120,
       image: Shoe,
-      quantity: 1
+      quantity: 1,
+      category: 'Shoes'
     },
     {
       id: 2,
       name: "Adidas Ultraboost",
       price: 150,
       image: Shoe,
-      quantity: 1
+      quantity: 1,
+      category: 'Laptops'
     },
     {
       id: 3,
       name: "Converse Chuck Taylor",
       price: 80,
-
+category: 'Mobiles',
       image: Shoe,
       quantity: 1
     },
@@ -56,15 +58,24 @@ export default function MobCart() {
     <>
 
 
-<div className="d-flex justify-content-between align-items-center mb-2">
-  <div className="back-to-home">
-    <Link to="/" type='buton' className="btn"> <ChevronLeft/> </Link>
-  </div>
-  <div className="remove-all">
-  <button className="btn" onClick={handleRemoveAll}> <Trash/> </button>
+      <div className="mob-action ">
+      
+      <div className="d-flex justify-content-between align-items-center mb-4">
 
-  </div>
-</div>
+        <div className="back-to-home">
+          <Link to="/" type='buton' className="btn"> <ChevronLeft /> </Link>
+        </div>
+        
+        <div className="cart-title">
+          <h2 className='fw-bolder fs-1'>Cart</h2>
+        </div>
+        <div className="remove-all">
+          <button className="btn" onClick={handleRemoveAll}> <Trash /> </button>
+
+        </div>
+      </div>
+      
+      </div>
 
       <div className="mob-view-cart ">
         {
@@ -72,10 +83,10 @@ export default function MobCart() {
             <div key={item.id} className="single-item mb-4">
               <div className="d-flex justify-content-between border-bottom pb-3">
                 <div className="product_cate">
-                  <ShoppingBag /> <span className="ps-2"> Shoes </span>
+                  <ShoppingBag /> <span className="ps-2"> {item.category} </span>
                 </div>
                 <div className="cancel-item">
-                  <button className='border-0 text-danger bg-transparent' onClick={()=> handleRemoveItem(item.id)}>  <X /></button>
+                  <button className='border-0 text-danger bg-transparent' onClick={() => handleRemoveItem(item.id)}>  <X /></button>
                 </div>
               </div>
               <div className="d-flex  item-details mt-3">
@@ -89,9 +100,9 @@ export default function MobCart() {
                 </div>
                 <div className="item-action ms-auto d-flex flex-column justify-content-center">
 
-                  <button className='border-0 bg-transparent text-secondary  '  onClick={() => handleDecreaseQuantity(item.id)} ><Minus /></button>
+                  <button className='border-0 bg-transparent text-secondary ' onClick={() => handleIncreaseQuantity(item.id)}><Plus /></button>
                   <span className='px-2 '>{item.quantity}</span>
-                  <button className='border-0 bg-transparent text-secondary '  onClick={() => handleIncreaseQuantity(item.id)}><Plus /></button>
+                  <button className='border-0 bg-transparent text-secondary  ' onClick={() => handleDecreaseQuantity(item.id)} ><Minus /></button>
 
                 </div>
               </div>
@@ -109,10 +120,10 @@ export default function MobCart() {
             <div className="price fw-bold h3 mt-2"><sup className='pe-1' >$</sup>{totalAmount}</div>
           </div>
           <div className="checkout-btn w-50">
-            <a className="btn btn-primary border-0  text-white w-100">Check Out <span className='item-count'>
+            <a className="btn btn-primary border-0  text-nowrap text-white w-100">Check Out <span className='item-count'>
               {cartItems.length}
-              
-              </span></a>
+
+            </span></a>
 
           </div>
         </div>
