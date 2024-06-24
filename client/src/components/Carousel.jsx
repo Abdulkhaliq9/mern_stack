@@ -8,7 +8,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 export default function Carousel() {
   return (
     <>
-      <div className="row no-gutters">
+      <div className="row no-gutters mt-2">
         {/* Items Category */}
         {/* Image Slider for Product */}
         <div className="col-xxl-8 col-md-12">
@@ -17,7 +17,7 @@ export default function Carousel() {
             className="carousel slide"
             data-bs-ride="carousel"
           >
-            <div className="carousel-indicators ">
+            {/* <div className="carousel-indicators ">
               <button
                 type="button"
                 data-bs-target="#carouselExampleAutoplaying"
@@ -38,8 +38,8 @@ export default function Carousel() {
                 data-bs-slide-to={2}
                 aria-label="Slide 3"
               />
-            </div>
-            <div className="carousel-inner" style={{height:"410px"}}>
+            </div> */}
+            <div className="carousel-inner carousel-banner" >
               <div className="carousel-item active">
                 <img src={Slider1} className="d-block w-100 " alt="..." />
                 <div className="slider-content">
