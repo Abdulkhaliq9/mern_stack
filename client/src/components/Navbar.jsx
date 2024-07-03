@@ -26,7 +26,7 @@ export default function Navbar() {
       user: null,
       token: "",
     });
-    localStorage.removeItem("token");
+    sessionStorage.removeItem("token");
     toast.success("You have logged out successfully!");
   };
 

@@ -60,7 +60,7 @@ export default function ProductDetail() {
           <div className="row">
             <div className="col-md-6">
               <div className="image-side">
-                <div className="item-img">
+                <div className="item-img border-bottom">
                   <img
                     className="w-100"
                     src={mainImage}
@@ -71,8 +71,8 @@ export default function ProductDetail() {
                     onMouseLeave={offZoom}
                   />
                 </div>
-                <div className="item-other-img">
-                  <div className="row">
+                <div className="item-other-img w-50 mt-4">
+                  <div className="row ">
                     <div className="col-md-4">
                       <div
                         className="items-sm-img"
@@ -117,18 +117,16 @@ export default function ProductDetail() {
                 <div className="item-add-sub mt-3">
                   <div className="button d-flex align-items-center">
                     <button
-                      className={`btn btn-add icon ${
-                        count === 0 ? "disabled" : ""
-                      }`}
+                      className={`btn btn-add icon ${count === 0 ? "disabled" : ""
+                        }`}
                       onClick={handleCountDecrease}
                     >
                       <MinusCircle />
                     </button>
                     <div className="mx-auto fw-bold">{count}</div>
                     <button
-                      className={`btn btn-add icon ${
-                        count === 5 ? "disabled" : ""
-                      }`}
+                      className={`btn btn-add icon ${count === 5 ? "disabled" : ""
+                        }`}
                       onClick={handleCountIncrease}
                     >
                       <PlusCircle />
@@ -140,9 +138,8 @@ export default function ProductDetail() {
                     <div className="col-md-6">
                       <div className="cart-now">
                         <button
-                          className={`btn text-uppercase fs-5 me-3 ${
-                            count === 0 ? " disabled" : ""
-                          }`}
+                          className={`btn text-uppercase fs-5 me-3 ${count === 0 ? " disabled" : ""
+                            }`}
                         >
                           <ShoppingCart />
                           <span className="ms-2">Add to cart</span>
@@ -177,27 +174,24 @@ export default function ProductDetail() {
             <div className="info-content">
               <div className="d-flex justify-content-around align-items-center">
                 <a
-                  className={`button ${
-                    activeCategory === "description" ? "active" : ""
-                  }`}
+                  className={`button ${activeCategory === "description" ? "active" : ""
+                    }`}
                   id="description"
                   onClick={() => handleSectionClick("description")}
                 >
                   Description
                 </a>
                 <a
-                  className={`button ${
-                    activeCategory === "reviews" ? "active" : ""
-                  }`}
+                  className={`button ${activeCategory === "reviews" ? "active" : ""
+                    }`}
                   id="reviews"
                   onClick={() => handleSectionClick("reviews")}
                 >
                   Reviews
                 </a>
                 <a
-                  className={`button ${
-                    activeCategory === "returns" ? "active" : ""
-                  }`}
+                  className={`button ${activeCategory === "returns" ? "active" : ""
+                    }`}
                   id="shipping"
                   onClick={() => handleSectionClick("returns")}
                 >

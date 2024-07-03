@@ -30,7 +30,7 @@ export default function Login() {
           token: res.data.token,
         });
         toast.success(res.data.message);
-        localStorage.setItem(
+        sessionStorage.setItem(
           "auth",
           JSON.stringify({
             user: res.data.user,

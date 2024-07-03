@@ -16,13 +16,13 @@ export default function BackGround() {
     {/* <span /> */}
     {/* <span /> */}
     {/* <span /> */}
-    <span />
-    <span />
-    <span />
-    <span />
-    <span />
-    <span />
-    <span />
+    {/* <span /> */}
+    {/* <span /> */}
+    {/* <span /> */}
+    {/* <span /> */}
+    {/* <span /> */}
+    {/* <span /> */}
+    {/* <span /> */}
   </div>
   )
 }

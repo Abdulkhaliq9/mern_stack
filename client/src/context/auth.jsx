@@ -13,7 +13,7 @@ axios.defaults.headers.common['Authorization'] = auth?.token
 
   // Function to login the user and save
   useEffect(() => {
-    const data = localStorage.getItem("auth");
+    const data = sessionStorage.getItem("auth");
     if (data) {
       const parseData = JSON.parse(data);
       setAuth({ ...auth, user: parseData.user, token: parseData.token });

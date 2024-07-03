@@ -1,5 +1,5 @@
-import { Routes, Route } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
+import { Routes, Route } from "react-router-dom";
 import DashBoard from "./admin/pages/Dashboard.jsx";
 import User from "./pages/User.jsx";
 import Cart from "./pages/Cart.jsx"
