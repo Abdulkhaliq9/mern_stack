@@ -9,7 +9,7 @@ import {
   List,
   ShoppingBag,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useAuth } from "../context/auth";
 import toast from "react-hot-toast";
 
@@ -347,6 +347,10 @@ export default function Navbar() {
                 <>
                   <ul className="menu-inner d-block d-lg-none ">
                     <li className="menu-item">
+                      <NavLink  to ={`/dashboard/${auth?.user?.role === 1 ? "admin " : "user" }`} className="menu-link">
+                        Dashboard
+                      </NavLink>
+                    </li><li className="menu-item">
                       <a href="" className="menu-link">
                         Profile
                       </a>
@@ -373,13 +377,17 @@ export default function Navbar() {
                 <ul className="menu-inner mb-0 d-none d-lg-block ">
                   <li className="menu-item menu-dropdown">
                     <span className="menu-link">
-                      UserName <ChevronRight />
+                      {auth.user.name} <ChevronRight />
                     </span>
                     <div className="submenu megamenu megamenu-column-1 text-center p-0">
                       <div className="submenu-inner">
                         <Link href="#" className="submenu-link">
                           <User /> Profile
                         </Link>
+                      </div>{" "}    <div className="submenu-inner">
+                        <NavLink to={`/dashboard/${auth?.user?.role === 1 ? "admin" : "user"}`} className="submenu-link">
+                          <User /> Dashboard
+                        </NavLink>
                       </div>{" "}
                       <div className="submenu-inner">
                         <Link to="/cart" className="submenu-link">

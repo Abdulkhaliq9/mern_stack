@@ -25,7 +25,13 @@ router.post("/forgot-password",  forgotPasswordController)
 router.get("/test", verifyToken, isAdmin, testController);
 
 // protected route
-router.get("/user-auth", (req, res) => {
+router.get("/user-auth", verifyToken, (req, res) => {
+  res.status(200).send({ ok:true });
+});
+// protected route
+
+
+router.get("/admin-auth", verifyToken, isAdmin , (req, res) => {
   res.status(200).send({ ok:true });
 });
 // Export the router

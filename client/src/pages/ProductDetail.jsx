@@ -6,7 +6,7 @@ import Lap1 from "../assets/images/products/1.jpg";
 import Lap2 from "../assets/images/products/3.jpg";
 import Camera from "../assets/images/products/4.jpg";
 import { MinusCircle, PlusCircle, ShoppingCart } from "lucide-react";
-import "../css/components/pages/productdetail.css";
+import "../css/pages/productdetail.css";
 import Description from "../components/product-detail/Description";
 import Reviews from "../components/product-detail/Reviews";
 import ShippingReturn from "../components/product-detail/ShippingReturn";

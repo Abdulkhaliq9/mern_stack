@@ -1,6 +1,6 @@
 import { useState } from "react";
 import UserLayout from "../layouts/UserLayout";
-import "../css/components/pages/cart.css";
+import "../css/pages/cart.css";
 import { Minus, Plus, X } from "lucide-react";
 import Shoe from "../assets/images/products/shoe5.jpg";
 import MobCart from "../components/MobCart";

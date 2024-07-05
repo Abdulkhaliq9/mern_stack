@@ -1,7 +1,7 @@
 import React from "react";
 import UserLayout from "../layouts/UserLayout";
 import Shop_Banner from "../assets/images/shop_header.jpg";
-import "../css/components/pages/products.css";
+import "../css/pages/products.css";
 import ProductsList from "../components/ProductsList";
 
 import DropDown from "../components/DropDown";

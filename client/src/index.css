@@ -17,6 +17,8 @@
 
   --color8: #282c33;
   --color9: #c0c0c0;
+  --color10: rgba(242, 245, 250, 0.6);
+  --color11: #ab54db;
 
   --curve: 40;
 
@@ -34,7 +36,8 @@
 
 body {
   scroll-behavior: smooth;
-  
+  background-color: #f3f2f7;
+  /* background-image: linear-gradient(to right top, #695f65, #655c65, #615965, #5b5665, #545465, #4f5160, #4a4d5c, #454a57, #42444e, #3d3e44, #38383c, #333333);   */
 }
 
 h2 {

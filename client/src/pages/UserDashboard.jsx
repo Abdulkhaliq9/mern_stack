@@ -8,7 +8,7 @@ import BestSeller from "../components/BestSeller";
 import ProductCarousel from "../components/ProductCarousel";
 import { Toaster } from "react-hot-toast";
 // import BackGround from "../components/BackGround";
-export default function DashBoard() {
+export default function UserDashboard() {
   return (
     <>
       <UserLayout>
@@ -17,7 +17,7 @@ export default function DashBoard() {
 
         <div className="main-content">
 
-          <Toaster/>
+          <Toaster />
           <section
             className="category-menu-main-carousel mb-5"
             style={{ padding: "10px 0 0" }}
@@ -38,7 +38,7 @@ export default function DashBoard() {
           </section>
 
           <section className="mt-5">
-            
+
           </section>
         </div>
       </UserLayout>

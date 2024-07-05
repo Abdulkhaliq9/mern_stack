@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 // import Login from "../auth/Login"
 import { useNavigate } from "react-router-dom";
 
-export default function Spinner() {
+export default function Spinner({path = "auth/login"}) {
 const [count, setCount] = useState(5)
 const navigate = useNavigate();
 
@@ -10,10 +10,10 @@ const navigate = useNavigate();
     const interval = setInterval(() => {
        setCount((prevValue) => --prevValue)
     }, 1000);
-    count === 0 && navigate('/auth/login')
+    count === 0 && navigate(`/${path}`)
     return () => clearInterval(interval)
     
-}, [navigate, count]);
+}, [navigate, count , path]);
 
 
   return (
