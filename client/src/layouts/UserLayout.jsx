@@ -43,7 +43,7 @@ export default function UserLayout({ children }) {
             <Navbar />
           </header>
           <main>
-            <div className="container main-content">
+            <div className="container mx-auto main-content">
              
               {children}
             </div>

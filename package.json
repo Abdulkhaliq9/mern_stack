@@ -14,7 +14,7 @@
   "author": "SUBHANI",
   "license": "MAK",
   "dependencies": {
-    "axios": "^1.7.2",
+    "axios": "^1.7.7",
     "bcrypt": "^5.1.1",
     "colors": "^1.4.0",
     "concurrently": "^8.2.2",
