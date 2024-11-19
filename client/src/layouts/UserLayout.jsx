@@ -38,7 +38,7 @@ export default function UserLayout({ children }) {
 
 
           
-          <Toaster />
+          
           <header>
             <Navbar />
           </header>

@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import UserDashBoard from "./pages/UserDashboard.jsx";
 import AdminDashboard from "./admin/pages/AdminDashboard.jsx";
 import User from "./pages/UserDashboard.jsx";
-import Cart from "./pages/Cart.jsx"
+import Cart from "./pages/Cart.jsx";
 import ProductDetail from "./pages/ProductDetail.jsx";
 import Products from "./pages/Products.jsx";
 import Private from "./routes/Private.jsx";
@@ -13,6 +13,7 @@ import Register from "./auth/Register.jsx";
 import ForgotPassword from "./pages/ForgotPassword.jsx";
 import AddProducts from "./admin/pages/AddProducts.jsx";
 import AddCategory from "./admin/pages/AddCategory.jsx";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
@@ -23,13 +24,12 @@ function App() {
           <Route exact path="user" element={<UserDashBoard />} />
         </Route>
 
-
         <Route path="/dashboard" element={<AdminRoute />}>
           <Route exact path="admin" element={<AdminDashboard />} />
           <Route exact path="addproducts" element={<AddProducts />} />
           <Route exact path="addcategory" element={<AddCategory />} />
         </Route>
-       
+
         <Route exact path="/cart" element={<Cart />} />
 
         <Route exact path="/details" element={<ProductDetail />} />
@@ -40,10 +40,13 @@ function App() {
 
         <Route exact path="/auth/register" element={<Register />} />
 
-        <Route exact path="/pages/forgotpassword" element={<ForgotPassword />} />
-
-
+        <Route
+          exact
+          path="/pages/forgotpassword"
+          element={<ForgotPassword />}
+        />
       </Routes>
+      <Toaster/>
     </>
   );
 }

@@ -17,7 +17,7 @@ export default function UserDashboard() {
 
         <div className="main-content">
 
-          <Toaster />
+          
           <section
             className="category-menu-main-carousel mb-5"
             style={{ padding: "10px 0 0" }}
