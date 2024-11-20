@@ -2,11 +2,9 @@ import React from "react";
 // import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import UserLayout from "../layouts/UserLayout";
-import Carousel from "../components/Carousel";
-import Category from "../components/Category";
-import BestSeller from "../components/BestSeller";
-import ProductCarousel from "../components/ProductCarousel";
-import { Toaster } from "react-hot-toast";
+// import Carousel from "../components/Carousel";
+// import Category from "../components/Category";
+// import ProductCarousel from "../components/ProductCarousel";
 // import BackGround from "../components/BackGround";
 export default function UserDashboard() {
   return (
@@ -15,8 +13,8 @@ export default function UserDashboard() {
 
 
 
-        <div className="main-content">
-
+        {/* <div className="main-content"> */}
+{/* 
           
           <section
             className="category-menu-main-carousel mb-5"
@@ -24,13 +22,11 @@ export default function UserDashboard() {
           >
             <Carousel />
           </section>
-          {/* cateogaory */}
           <section className="category mb-5">
             <Category />
           </section>
 
           <section className="trending-products mb-5">
-            {/* <BestSeller /> */}
           </section>
 
           <section className="mb-5 ">
@@ -40,7 +36,7 @@ export default function UserDashboard() {
           <section className="mt-5">
 
           </section>
-        </div>
+        </div> */}
       </UserLayout>
     </>
   );

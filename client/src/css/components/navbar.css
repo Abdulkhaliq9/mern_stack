@@ -1,4 +1,4 @@
-@keyframes slideLeft {
+/* @keyframes slideLeft {
   0% {
     opacity: 0;
     transform: translateX(100%);
@@ -17,9 +17,9 @@
     opacity: 0;
     transform: translateX(100%);
   }
-}
+} */
 
-.centered {
+/* .centered {
   text-align: center;
   vertical-align: middle;
   margin-bottom: 1rem;
@@ -36,9 +36,9 @@
   color: var(--color6);
   background-color: var(--night-300);
   box-shadow: var(--shadow-medium);
-}
+} */
 
-.brand {
+/* .brand {
   font-family: inherit;
   font-size: 1.6rem;
   font-weight: 700;
@@ -47,22 +47,22 @@
   color: var(--color6);
   text-transform: uppercase;
   order: 1;
-}
+} */
 
 /* General CSS adjustments */
-.navbar {
+/* .navbar {
   background-color: var(--color4);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-}
+} */
 
 /* Flex properties to ensure visibility on mobile */
-.navbar-left, .navbar-center, .navbar-right {
+/* .navbar-left, .navbar-center, .navbar-right {
   display: flex;
   align-items: center;
-}
+} */
 
 /* Ensure navbar-right is properly displayed on smaller screens */
 @media only screen and (max-width: 992px) {
@@ -73,24 +73,24 @@
     margin-top: 1rem;
   }
 
-  .navbar-center {
+  /* .navbar-center {
     flex: 0 0 100%;
     order: 3;
     align-items: center;
-  }
+  } */
 
-  .menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    /* width: 75%; */
-    height: 100%;
-    z-index: 100;
-    overflow: hidden;
-    transform: translate(-100%);
-    background-color: var(--color6);
-    transition: all 0.4s ease-in-out;
-  }
+      /* .menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 75%;
+        height: 100%;
+        z-index: 100;
+        overflow: hidden;
+        transform: translate(-100%);
+        background-color: var(--color6);
+        transition: all 0.4s ease-in-out;
+      } */
   .menu.is-active {
     transform: translate(0%);
   }
@@ -104,12 +104,12 @@
   display: none;
   box-shadow: var(--shadow-medium);
 }
-.menu-item {
+/* .menu-item {
   display: inline-block;
   line-height: 1.5;
   padding-right: 1.25rem;
-}
-.menu-link {
+} */
+/* .menu-link {
   font-family: inherit;
   font-size: inherit;
   font-weight: 500;
@@ -121,13 +121,13 @@
   color: #333;
   text-transform: capitalize;
   transition: all 0.25s ease;
-}
-.menu-link > svg {
+} */
+/* .menu-link > svg {
   font-size: 1.35rem;
   margin-left: 0.25rem;
   transform: rotate(90deg);
-}
-.darkmode .menu-link {
+} */
+/* .darkmode .menu-link {
   color: var(--color6);
 }
 .menu-icon {
@@ -141,13 +141,13 @@
 }
 .darkmode .menu-icon {
   color: var(--color6);
-}
+} */
 @media only screen and (min-width: 993px) {
-  .menu-dropdown:hover > .submenu {
+  /* .menu-dropdown:hover > .submenu {
     opacity: 1;
     visibility: visible;
     margin-top: 1rem;
-  }
+  } */
 }
 @media only screen and (max-width: 992px) {
   .menu-header {
@@ -192,31 +192,31 @@
     color: #333;
   }
 
-  .menu-inner {
+  /* .menu-inner {
     height: 87%;
     margin-top: -3rem;
 
     overflow-y: auto;
     overflow-x: hidden;
-  } 
-  .menu-item {
+  }  */
+  /* .menu-item {
     display: block;
     line-height: 1;
     padding-inline: 0;
-  }
-  .menu-link {
+  } */
+  /* .menu-link {
     justify-content: space-between;
     height: 3.5rem;
     line-height: 2.5rem;
     padding-inline: 1.25rem;
-  }
+  } */
   .menu-link > svg {
     margin-left: 0.5rem;
     transform: rotate(0deg);
   }
 }
 
-.submenu {
+/* .submenu {
   position: absolute;
   width: 100%;
   height: auto;
@@ -230,13 +230,13 @@
   background-color: var(--color6);
   box-shadow: var(--shadow-medium);
   transition: all 0.25s ease-in-out;
-}
+} */
 
 .submenu-inner {
   flex: 0 0 25%;
   padding: 0 1rem;
 }
-.submenu-title {
+/* .submenu-title {
   font-family: inherit;
   font-size: inherit;
   font-weight: 500;
@@ -245,14 +245,14 @@
   color: var(--color4);
   text-transform: uppercase;
   transition: all 0.3s ease;
-}
+} */
 
-.submenu-item {
+/* .submenu-item {
   display: block;
   line-height: 1;
   margin: 0 auto;
-}
-.submenu-link {
+} */
+/* .submenu-link {
   display: inline-block;
   font-family: inherit;
   font-size: inherit;
@@ -263,7 +263,7 @@
   text-transform: capitalize;
   color: #333;
   transition: all 0.25s ease-in-out;
-}
+} */
 
 .submenu-image {
   display: block;
@@ -309,13 +309,13 @@
   }
 }
 
-.megamenu {
+/* .megamenu {
   left: 50%;
   width: 100%;
   height: auto;
   margin: 0 auto;
   transform: translateX(-50%);
-}
+} */
 .megamenu-column-1 {
   left: 91.99%;
   max-width: 15rem;

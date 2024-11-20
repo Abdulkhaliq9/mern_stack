@@ -2,7 +2,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { Routes, Route } from "react-router-dom";
 import UserDashBoard from "./pages/UserDashboard.jsx";
 import AdminDashboard from "./admin/pages/AdminDashboard.jsx";
-import User from "./pages/UserDashboard.jsx";
+// import User from "./pages/UserDashboard.jsx";
 import Cart from "./pages/Cart.jsx";
 import ProductDetail from "./pages/ProductDetail.jsx";
 import Products from "./pages/Products.jsx";
@@ -14,14 +14,16 @@ import ForgotPassword from "./pages/ForgotPassword.jsx";
 import AddProducts from "./admin/pages/AddProducts.jsx";
 import AddCategory from "./admin/pages/AddCategory.jsx";
 import { Toaster } from "react-hot-toast";
+import CheckOut from "./pages/CheckOut.jsx";
 
 function App() {
   return (
     <>
       <Routes>
-        <Route exact path="/" element={<User />} />
-        <Route exact path="/dashboard" element={<Private />}>
-          <Route exact path="user" element={<UserDashBoard />} />
+        {/* <Route exact path="/" element={<User />} /> */}
+        <Route exact path="/" element={<Private />}>
+          <Route index   element={<UserDashBoard />} />
+          <Route exact path="/checkout" element={<CheckOut />} />
         </Route>
 
         <Route path="/dashboard" element={<AdminRoute />}>
@@ -46,7 +48,7 @@ function App() {
           element={<ForgotPassword />}
         />
       </Routes>
-      <Toaster/>
+      <Toaster />
     </>
   );
 }

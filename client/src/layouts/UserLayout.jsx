@@ -29,24 +29,14 @@ export default function UserLayout({ children }) {
 
   return (
     <>
-    <BackGround/>
+      <BackGround />
       <div className="user-layout">
-        
         <div className="conatiner-layout">
-
-
-
-
-          
-          
           <header>
             <Navbar />
           </header>
           <main>
-            <div className="container mx-auto main-content">
-             
-              {children}
-            </div>
+            <div className="container mx-auto main-content">{children}</div>
           </main>
 
           {showButton && (
@@ -54,9 +44,9 @@ export default function UserLayout({ children }) {
               <BackToTop handleScrollToTop={handleScrollToTop} />
             </div>
           )}
-          <footer className="mt-5">
+          {/* <footer className="mt-5">
             <Footer />
-          </footer>
+          </footer> */}
         </div>
       </div>
     </>
