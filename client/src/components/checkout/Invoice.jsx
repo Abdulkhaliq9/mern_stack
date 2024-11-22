@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {} from "react";
 import { Formik, Form, Field, ErrorMessage, FieldArray } from "formik";
 // import * as Yup from "yup";
 import "tailwindcss/tailwind.css";
@@ -32,12 +32,6 @@ const initialValues = {
   items: [{ name: "", quantity: "", price: "", total: "" }],
 };
 
-const paymentTermsOptions = [
-  { value: "Select Term", label: "Select Term" },
-  { value: "NET 10 DAYS", label: "Net 10 Days" },
-  { value: "NET 20 DAYS", label: "Net 20 Days" },
-  { value: "NET 30 DAYS", label: "Net 30 Days" },
-];
 
 const InvoiceForms = () => {
   const handleSubmit = (values, { resetForm }) => {
@@ -55,7 +49,7 @@ const InvoiceForms = () => {
         validationSchema={InvoiceValidation}
         onSubmit={handleSubmit}
       >
-        {({ values, resetForm, setFieldValue }) => {
+        {({ values, resetForm }) => {
           return (
             <Form className="flex flex-col gap-10">
               <InvoiceHeader resetForm={resetForm} />
@@ -213,7 +207,7 @@ const InvoiceForms = () => {
 
                   {/* Items List */}
                   <FieldArray name="items">
-                    {({ remove, push }) => (
+                    {({  push }) => (
                       <>
                         <div className="flex flex-col gap-3 ">
                           <h4 className="text-lg font-bold ">Items List</h4>

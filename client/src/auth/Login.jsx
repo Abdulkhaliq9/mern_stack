@@ -51,19 +51,19 @@ export default function Login() {
     <UserLayout>
       {/* <BackGround/> */}
 
-      <div className=" login-card mt-5">
-        <div className="row">
-          <div className="col-md-6 img-bg">
+      <div className="py-[9px] px-[20px] bg-[rgba(242, 245, 250, 0.6)] rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[6.7px] border-[3px] border-white my-[50px]">
+        <div className="grid grid-cols-2">
+          <div className="bg-blue rounded-[50px] h-auto flex items-center justify-center" >
             <div className="">
               <img src={Person} alt="" className="img-fluid w-100 " />
             </div>
           </div>
 
-          <div className="col-lg-6 col-sm-12">
-            <div className="not-member d-flex justify-content-end">
+          <div className="">
+            <div className=" flex justify-end my-[15px] mx-[25px]">
               <p>
                 Not a member?
-                <Link to="/auth/register" className="ps-2">
+                <Link to="/auth/register" className="pl-2 text-blue">
                   Register Now
                 </Link>
               </p>
@@ -71,10 +71,10 @@ export default function Login() {
             <form
               onSubmit={handleSubmit}
               method="post "
-              className="d-flex flex-column justify-content-center align-items-center mt-5 w-100"
+              className="flex flex-col justify-center items-center mt-12 w-full"
             >
-              <div className="w-75">
-                <div className="d-flex flex-column align-items-center">
+              <div className="w-3/4">
+                <div className="flex flex-col items-center gap-5">
                   <h1>Hello Again!</h1>
                   <p>Welcome back you have been missed!</p>
                 </div>
@@ -84,7 +84,7 @@ export default function Login() {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="input-holders"
+                    className="p-[25px] rounded-[15px] w-full"
                     placeholder="Email"
                   />
                 </div>
@@ -94,19 +94,19 @@ export default function Login() {
                     required
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="input-holders"
+                    className="p-[25px] rounded-[15px] w-full"
                     placeholder="Password"
                   />
                 </div>
 
 
 
-                <button className="btn text-white mt-5 w-100 p-3" type="submit">
+                <button className="shadow-[0_25px_50px_#fe6b68] bg-orange rounded-2xl text-white mt-12 w-full p-3" type="submit">
                   Log In
                 </button>
 
 
-                <div className="mt-5 d-flex justify-content-end reset-password">
+                <div className="mt-12 flex justify-end reset-password">
                   <Link className="forgot" to="/pages/forgotpassword" style={{
                     color: "var(--color4)"
                   }}>Forgot Password!</Link>
@@ -114,22 +114,22 @@ export default function Login() {
               </div>
             </form>
 
-            <div className="social-media mt-5">
-              <p className="text-center">Or continue with</p>
-              <div className="d-flex justify-content-center align-items-center">
-                <ul className="list-unstyled d-flex justify-content-center social-icons">
-                  <li className="login-brands">
-                    <img src={Google} className="img-fluid" alt="logo" />
+            <div className="mt-12 flex flex-col gap-6">
+              <p className="text-center lf-style mr-[11px]">Or continue with</p>
+              <div className="flex justify-center items-center">
+                <ul className=" flex justify-center social-icons">
+                  <li className="w-[20%] h-[20%] m-[10px] ">
+                    <img src={Google} className="border-2 border-white object-contain w-full h-full rounded-[10px] p-[10px]" alt="logo" />
                   </li>
-                  <li className="login-brands">
+                  <li className="w-[20%] h-[20%] m-[10px] ">
                     <img
                       src={Apple}
-                      className="img-fluid bg-white apple"
+                      className="border-2 border-white object-contain w-full h-full rounded-[10px] p-[10px] bg-white apple"
                       alt="logo"
                     />
                   </li>
-                  <li className="login-brands">
-                    <img src={Fb} className="img-fluid" alt="logo" />
+                  <li className="w-[20%] h-[20%] m-[10px] ">
+                    <img src={Fb} className="border-2 border-white object-contain w-full h-full rounded-[10px] p-[10px]" alt="logo" />
                   </li>
                 </ul>
               </div>
