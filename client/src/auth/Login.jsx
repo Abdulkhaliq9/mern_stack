@@ -101,7 +101,7 @@ export default function Login() {
 
 
 
-                <button className="shadow-[0_25px_50px_#fe6b68] bg-orange rounded-2xl text-white mt-12 w-full p-3" type="submit">
+                <button className="shadow-[0_25px_50px_#fe6b68] bg-orange rounded-2xl cursor-pointer text-white mt-12 w-full p-3" type="submit">
                   Log In
                 </button>
 

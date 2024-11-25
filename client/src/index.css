@@ -2,14 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 /* fonts */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:wght@100&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap"); */
+/* @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:wght@100&display=swap"); */
+/* @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"); */
 
 /* font-family: 'Roboto', sans-serif;  */
 /* font-family: "Oswald", sans-serif; */
 
-:root {
+/* :root {
   --color1: #dadfe3;
   --color2: #fe6b68;
   --color3: #eed971;
@@ -29,13 +29,8 @@
   --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --night-300: hsl(217, 27%, 12%);
-}
+} */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 body {
   scroll-behavior: smooth;
@@ -43,23 +38,28 @@ body {
   /* background-image: linear-gradient(to right top, #695f65, #655c65, #615965, #5b5665, #545465, #4f5160, #4a4d5c, #454a57, #42444e, #3d3e44, #38383c, #333333);   */
 }
 
-h2 {
-  color: var(--color4);
+
+
+
+
+
+
+
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus,
+input[type="number"]:focus
+ {
+  box-shadow: none;
+  border: 3px solid #d894ff;
+  outline: #d894ff;
 }
 
-a {
-  text-decoration: none;
-  color: #1d2128;
-  cursor: pointer;
-}
-
-a:hover {
-  color: var(--color2);
-}
-ul {
-  list-style: none;
-}
-
-.icon {
-  border: none;
+input[type="email"]::placeholder,
+input[type="text"]::placeholder,
+input[type="number"]::placeholder,
+input[type="password"]::placeholder {
+  color: #aaa;
+  opacity: 1;
 }

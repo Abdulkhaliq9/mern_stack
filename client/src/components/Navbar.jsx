@@ -1,8 +1,7 @@
-import { useEffect, useRef } from "react";
+import {  useRef } from "react";
 import {
   ChevronRight,
-  ChevronLeft,
-  User,
+    User,
   LogOut,
   List,
   ShoppingBag,
@@ -20,7 +19,7 @@ export default function Navbar() {
 
   const handleLogOut = () => {
     setAuth({ user: null, token: "" });
-    sessionStorage.removeItem("token");
+    sessionStorage.removeItem('auth',"token");
     toast.success("You have logged out successfully!");
   };
 
@@ -110,7 +109,7 @@ export default function Navbar() {
                     </NavLink>
                     {item.dropdown && (
                      <div className="hidden group-hover:block transition-all ease-in-out">
-                       <div className="absolute w-full shadow-lg shadow-gray  py-4 px-8 left-1/2 mx-auto transform -translate-x-1/2 rounded-lg border-b-2 border-b-purple bg-white flex flex-wrap max-w-[62rem]">
+                       <div className="absolute z-10 w-full shadow-lg shadow-gray  py-4 px-8 left-1/2 mx-auto transform -translate-x-1/2 rounded-lg border-b-2 border-b-purple bg-white flex flex-wrap max-w-[62rem]">
                         {item.dropdown.map((sub, subIndex) => (
                           <div className="flex-[0_0_25%]" key={subIndex}>
                             <h4 className="font-medium py-3 text-purple">
@@ -151,7 +150,7 @@ export default function Navbar() {
                     {auth.user.name}{" "}
                     <ChevronRight className="text-xl ml-1 rotate-90" />
                   </span>
-                  <div className="absolute py-4 px-8 left-[85.99%] hidden group-hover:flex flex-wrap gap-5 rounded-lg border-t-2 border-t-purple shadow-md bg-white w-full max-w-[15rem]">
+                  <div className="absolute z-10 py-4 px-8 left-[85.99%] hidden group-hover:flex flex-wrap gap-5 rounded-lg border-t-2 border-t-purple shadow-md bg-white w-full max-w-[15rem]">
                     <div className="flex   hover:bg-gray p-2 hover:rounded-lg w-full ">
                       <Link
                         to="#"
@@ -185,13 +184,13 @@ export default function Navbar() {
                       </Link>
                     </div>
                     <div className="flex   hover:bg-gray p-2 hover:rounded-lg w-full">
-                      <Link
-                        to="/"
+                      <button
+                       
                         onClick={handleLogOut}
                         className="flex gap-5 font-medium whitespace-nowrap transition-all ease-in-out hover:text-white"
                       >
                         <LogOut /> LogOut
-                      </Link>
+                      </button>
                     </div>
                   </div>
                 </li>
