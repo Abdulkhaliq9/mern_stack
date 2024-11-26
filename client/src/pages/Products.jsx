@@ -3,6 +3,7 @@ import UserLayout from "../layouts/UserLayout";
 import useApi from "../hooks/UseApi";
 import toast from "react-hot-toast";
 import Spinner from "../components/Spinner";
+import { Link } from "react-router-dom";
 
 export default function Products() {
   const { request, loading } = useApi();
@@ -12,7 +13,7 @@ export default function Products() {
     const fetchProducts = async () => {
       try {
         const res = await request("/products", "get");
-        setProducts(res.data.products || []); // Adjust for the correct structure.
+        setProducts(res.data.products || []); 
       } catch (error) {
         console.error("Error fetching products:", error);
         toast.error(error.message || "Failed to load products");
@@ -26,27 +27,27 @@ export default function Products() {
 
   return (
     <UserLayout>
-      <div className="products-container my-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div className="products-container my-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4 px-5">
         {products.map((product) => (
           <div
             key={product.id}
             className="relative overflow-hidden transition-all ease-in-out rounded-lg bg-white shadow-md hover:scale-105 hover:shadow-xl"
           >
-             <div className="mx-auto w-[250px] h-[250px]" >
+             <div className="mx-auto size-[180px] sm:size-[250px]  p-5" >
                 <img
-                  className=" rounded-t-lg w-full h-full object-contain "
+                  className=" rounded-lg w-full h-full object-contain "
                   src={product.image}
                   alt={product.title || "Product"}
                 />
               </div>
             {product.discount > 0 && (
-              <div className="absolute top-0 left-0 w-28 translate-y-4 -translate-x-6 -rotate-45 bg-black flex items-center justify-center text-sm text-white">
+              <div className="absolute top-0 left-0 w-28 translate-y-4 -translate-x-6 -rotate-45 bg-blue flex items-center justify-center text-sm text-white">
                 {product.discount}% Off
               </div>
             )}
             <div className="flex flex-col justify-between mt-6 h-[45%] p-6">
               <a href="#">
-                <h5 className="text-xl font-semibold tracking-tight text-slate-900 line-clamp-2">
+                <h5 className="text-base sm:text-xl font-semibold tracking-tight text-slate-900 line-clamp-2">
                   {product.title || "Untitled Product"}
                 </h5>
               </a>
@@ -69,15 +70,15 @@ export default function Products() {
                   </svg>
                 ))}
               </div>
-              <div className="flex items-center justify-between">
+              <div className="  flex items-center justify-between">
                 <p>
                   <span className="text-3xl font-bold text-slate-900">
                     ${product.price || "0.00"}
                   </span>
                 </p>
-                <a
+                <Link
                   href="#"
-                  className="flex items-center rounded-md bg-slate-900 px-3 py-2 text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
+                  className=" flex items-center rounded-md bg-purple shadow-blue shadow- text-nowrap px-3 py-2 text-xs sm:text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -94,7 +95,7 @@ export default function Products() {
                     />
                   </svg>
                   Add to cart
-                </a>
+                </Link>
               </div>
             </div>
           </div>
