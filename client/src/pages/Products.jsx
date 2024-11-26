@@ -27,7 +27,7 @@ export default function Products() {
 
   return (
     <UserLayout>
-      <div className="products-container my-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4 px-5">
+      <div className="products-container my-28 grid gap-6 md:grid-cols-2 lg:grid-cols-4 px-5">
         {products.map((product) => (
           <div
             key={product.id}
