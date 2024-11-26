@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import Navbar from "../components/Navbar.jsx";
+import Navbar from "../components/navbar/Navbar.jsx";
 import BackToTop from "../components/BackToTop.jsx";
-import { Toaster } from "react-hot-toast";
 import Footer from "../components/Footer.jsx";
 import BackGround from "../components/BackGround.jsx";
 
@@ -33,7 +32,7 @@ export default function UserLayout({ children }) {
       <div className="user-layout">
         <div className="conatiner-layout">
           <header>
-            <Navbar />
+            <Navbar/>
           </header>
           <main>
             <div className="container mx-auto main-content">{children}</div>
