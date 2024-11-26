@@ -11,8 +11,8 @@ export default function Products() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await request("/products", "get");
-        setProducts(response.data.products || []); // Adjust for the correct structure.
+        const res = await request("/products", "get");
+        setProducts(res.data.products || []); // Adjust for the correct structure.
       } catch (error) {
         console.error("Error fetching products:", error);
         toast.error(error.message || "Failed to load products");

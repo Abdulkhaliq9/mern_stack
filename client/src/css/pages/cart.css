@@ -11,18 +11,18 @@
   border-radius: 20px;
 }
 
-.cart_items {
+/* .cart_items {
   border: 2px solid #eee;
   border-radius: 15px;
   padding: 12px;
-}
+} */
 
-.cart_items .cart_item_img {
+/* .cart_items .cart_item_img {
   width: 100px;
 }
 .cart_items .cart_item_img > img {
   border-radius: 15px;
-}
+} */
 
 .cart_items .cart_item_count svg {
   border: 1px solid #333;
