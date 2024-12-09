@@ -7,6 +7,7 @@ import {
   ShoppingBag,
   MenuIcon,
   CrossIcon,
+  ShoppingBagIcon,
 } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
 import { useAuth } from "../../context/auth";
@@ -81,13 +82,13 @@ export default function Navbar() {
   ];
 
   return (
-    <>
-      <nav className="bg-blue p-4 fixed top-0 left-0 right-0 shadow-xl z-10">
+    <div className="max-w-screen-xl mx-auto w-full px-5 ">
+      <nav className=" p-5 my-5  ">
         <div className="flex items-center justify-between">
           <section className="navbar-left flex items-center">
             <Link
               to="/"
-              className="text-2xl font-bold text-uppercase order-1 text-white"
+              className="text-2xl font-bold text-uppercase order-1 text-dark"
             >
               Mega Bazar
             </Link>
@@ -97,15 +98,15 @@ export default function Navbar() {
             <div className="menu">
               <div className="menu-header"></div>
 
-              <ul className=" flex itmes-center gap-6">
+              <ul className=" flex itmes-center gap-5">
                 {menuData.map((item, index) => (
                   <li className=" group" key={index}>
                     <NavLink
                       to={item.link}
                       className={({ isActive }) =>
                         isActive
-                          ? " text-dark bg-white px-5 py-2 rounded shadow-md shadow-purple font-bold"
-                          : "flex items-center text-white font-medium  "
+                          ? " text-dark py-2   text-purple font-bold"
+                          : "flex items-center text-dark font-medium  "
                       }
                     >
                       {item.name}
@@ -157,58 +158,64 @@ export default function Navbar() {
                 SignUp / LogIn
               </Link>
             ) : (
-              <ul className="menu-inner mb-0 ">
-                <li className="inline-block group">
-                  <span className="flex items-center text-white font-medium  justify-center cursor-pointer text-capitalize transition-all ease-linear">
-                    {auth.user.name}{" "}
-                    <ChevronRight className="text-xl ml-1 rotate-90" />
-                  </span>
-                  <div className="absolute z-10 py-4 px-8 left-[85.99%] hidden group-hover:flex flex-wrap gap-5 rounded-lg border-t-2 border-t-purple shadow-md bg-white w-full transition-all ease-linear max-w-[15rem]">
-                    <div className="flex hover:bg-gray p-2 hover:rounded-lg w-full">
-                      <Link
-                        to="#"
-                        className="flex gap-5 font-medium whitespace-nowrap transition-all ease-in-out hover:text-white"
-                      >
-                        <User /> Profile
-                      </Link>
-                    </div>
-                    <div className="flex hover:bg-gray p-2 hover:rounded-lg w-full">
-                      <NavLink
-                        to={`/dashboard/${
-                          auth.user.role === 1 ? "admin" : "user"
-                        }`}
-                        className="flex gap-5 font-medium whitespace-nowrap transition-all ease-in-out hover:text-white"
-                      >
-                        <User /> Dashboard
-                      </NavLink>
-                    </div>
-                    <div className="flex hover:bg-gray p-2 hover:rounded-lg w-full">
-                      <Link
-                        to="/cart"
-                        className="flex gap-5 font-medium whitespace-nowrap transition-all ease-in-out hover:text-white"
-                      >
-                        <ShoppingBag /> My Cart
-                      </Link>
-                    </div>
-                    <div className="flex hover:bg-gray p-2 hover:rounded-lg w-full">
-                      <Link
-                        to="/checkout"
-                        className="flex gap-5 font-medium whitespace-nowrap transition-all ease-in-out hover:text-white"
-                      >
-                        <List /> Check Out
-                      </Link>
-                    </div>
-                    <div className="flex hover:bg-gray p-2 hover:rounded-lg w-full">
-                      <button
-                        onClick={handleLogOut}
-                        className="flex gap-5 font-medium whitespace-nowrap transition-all ease-in-out hover:text-white"
-                      >
-                        <LogOut /> LogOut
-                      </button>
-                    </div>
-                  </div>
-                </li>
-              </ul>
+              <div className="flex gap-5 items-center">
+                <ShoppingBagIcon/>
+                <span className="text-dark px-2 text-sm">
+                  Items: <span className="font-bold">$799.99</span>
+                </span>
+              </div>
+              // <ul className="menu-inner mb-0 ">
+              //   <li className="inline-block group">
+              //     <span className="flex items-center text-white font-medium  justify-center cursor-pointer text-capitalize transition-all ease-linear">
+              //       {auth.user.name}{" "}
+              //       <ChevronRight className="text-xl ml-1 rotate-90" />
+              //     </span>
+              //     <div className="absolute z-10 py-4 px-8 left-[85.99%] hidden group-hover:flex flex-wrap gap-5 rounded-lg border-t-2 border-t-purple shadow-md bg-white w-full transition-all ease-linear max-w-[15rem]">
+              //       <div className="flex hover:bg-gray p-2 hover:rounded-lg w-full">
+              //         <Link
+              //           to="#"
+              //           className="flex gap-5 font-medium whitespace-nowrap transition-all ease-in-out hover:text-white"
+              //         >
+              //           <User /> Profile
+              //         </Link>
+              //       </div>
+              //       <div className="flex hover:bg-gray p-2 hover:rounded-lg w-full">
+              //         <NavLink
+              //           to={`/dashboard/${
+              //             auth.user.role === 1 ? "admin" : "user"
+              //           }`}
+              //           className="flex gap-5 font-medium whitespace-nowrap transition-all ease-in-out hover:text-white"
+              //         >
+              //           <User /> Dashboard
+              //         </NavLink>
+              //       </div>
+              //       <div className="flex hover:bg-gray p-2 hover:rounded-lg w-full">
+              //         <Link
+              //           to="/cart"
+              //           className="flex gap-5 font-medium whitespace-nowrap transition-all ease-in-out hover:text-white"
+              //         >
+              //           <ShoppingBag /> My Cart
+              //         </Link>
+              //       </div>
+              //       <div className="flex hover:bg-gray p-2 hover:rounded-lg w-full">
+              //         <Link
+              //           to="/checkout"
+              //           className="flex gap-5 font-medium whitespace-nowrap transition-all ease-in-out hover:text-white"
+              //         >
+              //           <List /> Check Out
+              //         </Link>
+              //       </div>
+              //       <div className="flex hover:bg-gray p-2 hover:rounded-lg w-full">
+              //         <button
+              //           onClick={handleLogOut}
+              //           className="flex gap-5 font-medium whitespace-nowrap transition-all ease-in-out hover:text-white"
+              //         >
+              //           <LogOut /> LogOut
+              //         </button>
+              //       </div>
+              //     </div>
+              //   </li>
+              // </ul>
             )}
           </section>
           <button
@@ -286,6 +293,6 @@ export default function Navbar() {
           </div>
         )}
       </nav>
-    </>
+    </div>
   );
 }

@@ -38,9 +38,9 @@ function App() {
 
         <Route exact path="/products" element={<Products />} />
 
-        <Route exact path="/auth/login" element={<LogIn />} />
+        <Route exact path="/login" element={<LogIn />} />
 
-        <Route exact path="/auth/register" element={<Register />} />
+        <Route exact path=" /register" element={<Register />} />
 
         <Route
           exact

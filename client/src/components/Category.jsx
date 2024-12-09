@@ -1,78 +1,46 @@
-import React from "react";
-import "../css/components/category.css";
-import Deals from "../assets/images/category/deals.jpg";
-import Fashion from "../assets/images/category/fashion.jpg";
-import Beauty from "../assets/images/category/beauty.jpg";
-import Electronics from "../assets/images/category/electronics.jpg";
-import Sports from "../assets/images/category/sports.jpg";
-import Toys from "../assets/images/category/toys.jpg";
-import Mother from "../assets/images/category/mother.jpg";
-import Jewelry from "../assets/images/category/jewelry.jpg";
-import HomeGarden from "../assets/images/category/homegarden.jpg";
+import React, { useEffect, useState } from 'react'
+import useApi from "../hooks/UseApi"
+import toast from 'react-hot-toast';
+
 export default function Category() {
+  const [categories, setCategories] = useState([])
+
+//   const fetchCategory = async () =>
+const {request} = useApi()
+
+const fetchCategory = async () => {
+  try {
+    const res = await request("/products/category", "get");
+    // setCategories(res.data);
+
+    setCategories(res.data.categories || []);
+  } catch (error) {
+    console.error("Error fetching products:", error);
+    toast.error(error.message || "Failed to load products");
+  }
+};
+useEffect(() => {
+fetchCategory()
+
+  
+  // return () => {
+    
+  // };
+}, []);
+
+
   return (
-    <>
-      <div className="category-heading">
-        <h2>Shop By category </h2>
-      </div>
-      <div className="category-list  ">
-        <div className="category-menu list-unstyled d-flex flex-row">
-          <div className="category-item">
-            <a href="">
-              <img src={Deals} alt="deals" />
-              <span className="categogy-name">Deals</span>
-            </a>
-          </div>
-          <div className="category-item">
-            <a href="">
-              <img src={Fashion} alt="fashion" />
-              <span className="categogy-name">Fashion</span>
-            </a>
-          </div>
-          <div className="category-item">
-            <a href="">
-              <img src={Toys} alt="toys" />
-              <span className="categogy-name">Toys</span>
-            </a>
-          </div>
-          <div className="category-item">
-            <a href="">
-              <img src={Beauty} alt="beauty" />
-              <span className="categogy-name">Beauty</span>
-            </a>
-          </div>
-          <div className="category-item">
-            <a href="">
-              <img src={Sports} alt="sports" />
-              <span className="categogy-name">Sports</span>
-            </a>
-          </div>
-          <div className="category-item">
-            <a href="">
-              <img src={Jewelry} alt="jewelry" />
-              <span className="categogy-name">Jewelry</span>
-            </a>
-          </div>
-          <div className="category-item">
-            <a href="">
-              <img src={Mother} alt="mother" />
-              <span className="categogy-name">Mother & Baby</span>
-            </a>
-          </div>
-          <div className="category-item">
-            <a href="">
-              <img src={Electronics} alt="electronice" />
-              <span className="categogy-name">Electronics</span>
-            </a>
-          </div>
-          <div className="category-item">
-            <a href="">
-              <img src={HomeGarden} alt="home & garden" />
-              <span className="categogy-name">Home & Garden</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </>
-  );
+    <div className='w-[300px] border  flex flex-col p-5 gap-5'>
+      <h2 className='font-bold rounded justify-center text-white h-10 flex items-center  bg-purple'>All Categories</h2>
+      <ul className=' flex flex-col justify-center gap-3'>
+       {
+        categories.map((category, index)=>(
+          <li className='uppercase rounded p-1 ' key={index}>
+            {category}
+          </li>
+        ))
+       }
+      </ul>
+    </div>
+  )
 }

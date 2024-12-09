@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import Navbar from "../components/navbar/Navbar.jsx";
+// import Navbar from "../components/navbar/Navbar.jsx";
 import BackToTop from "../components/BackToTop.jsx";
 import Footer from "../components/Footer.jsx";
 import BackGround from "../components/BackGround.jsx";
+import Header from "../components/layout/Header.jsx";
 
 export default function UserLayout({ children }) {
   const [showButton, setShowButton] = useState(false);
@@ -31,11 +32,12 @@ export default function UserLayout({ children }) {
       <BackGround />
       <div className="user-layout">
         <div className="conatiner-layout">
-          <header>
-            <Navbar/>
-          </header>
-          <main>
-            <div className="container mx-auto main-content">{children}</div>
+          <Header  />
+          {/* <header>
+            <Navbar />
+          </header> */}
+          <main className="max-w-screen-xl mx-auto w-full px-5">
+            {children}
           </main>
 
           {showButton && (

@@ -51,7 +51,7 @@ export default function Login() {
     <UserLayout>
       {/* <BackGround/> */}
 
-      <div className="py-[9px] px-[20px] bg-[rgba(242, 245, 250, 0.6)] rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[6.7px] border-[3px] border-white my-[50px]">
+      <div className="py-[9px] px-[20px] bg-[rgba(242, 245, 250, 0.6)] rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[6.7px] border-[3px] border-white mt-[100px]">
         <div className="grid grid-cols-2">
           <div className="bg-blue rounded-[50px] h-auto flex items-center justify-center" >
             <div className="">
@@ -78,7 +78,7 @@ export default function Login() {
                   <h1>Hello Again!</h1>
                   <p>Welcome back you have been missed!</p>
                 </div>
-                <div className="input-fields mt-3">
+                <div className=" mt-3">
                   <input
                     type="email"
                     required
@@ -88,7 +88,7 @@ export default function Login() {
                     placeholder="Email"
                   />
                 </div>
-                <div className="input-fields mt-3">
+                <div className=" mt-3">
                   <input
                     type="password"
                     required

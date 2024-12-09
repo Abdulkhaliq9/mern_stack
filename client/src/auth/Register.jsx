@@ -53,7 +53,7 @@ export default function Register() {
   return (
     <UserLayout>
       <BackGround />
-      <div className="py-[9px] px-[20px] bg-[rgba(242, 245, 250, 0.6)] rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[6.7px] border-[3px] border-white my-[50px]">
+      <div className="py-[9px] px-[20px] bg-[rgba(242, 245, 250, 0.6)] rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[6.7px] border-[3px] border-white mt-[100px]">
         <div className="grid grid-cols-2">
           <div className="">
             <div className="flex my-[15px] mx-[25px] justify-start">

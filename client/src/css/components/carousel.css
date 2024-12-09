@@ -2,7 +2,7 @@
   border-radius: 25px;
 }
 
-.carousel-inner.carousel-banner{
+/* .carousel-inner.carousel-banner{
   height: 410px !important;
   margin-bottom: 20px;
 }
@@ -16,38 +16,38 @@
 
   font-family: "Outfit", sans-serif;
  
-}
+} */
 
-.carousel .carousel-inner .carousel-item .slider-content .slider-category {
+/* .carousel .carousel-inner .carousel-item .slider-content .slider-category {
   font-size: 0.6875rem;
   line-height: 1;
   font-weight: 700;
   margin-bottom: 13px;
-}
+} */
 
-.carousel .carousel-inner .carousel-item .slider-content .slider-title {
+/* .carousel .carousel-inner .carousel-item .slider-content .slider-title {
   font-size: 2.75rem;
   margin-bottom: 19px;
   font-weight: 700;
   line-height: 48px;
-}
+} */
 
-.carousel .carousel-inner .carousel-item .slider-content .slider-description {
+/* .carousel .carousel-inner .carousel-item .slider-content .slider-description {
   margin-bottom: 15px;
-}
-.carousel .carousel-inner .carousel-item .slider-content .slider-shopnow .btn {
+} */
+/* .carousel .carousel-inner .carousel-item .slider-content .slider-shopnow .btn {
   width: 30%;
   color: #fff;
   background: var(--color4) !important;
-}
-.carousel
+} */
+/* .carousel
   .carousel-inner
   .carousel-item
   .slider-content
   .slider-shopnow
   .btn:hover {
   background: var(--color2) !important;
-}
+} */
 
 .category-menu-main-carousel .col-md-4 {
   margin-left: -15px;
