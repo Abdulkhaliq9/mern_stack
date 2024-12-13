@@ -46,7 +46,7 @@ export default function Carousel() {
 
   return (
   
-      <div className="relative  w-full h-[410px] border-gray-light bg-[rgba(242, 245, 250, 0.6)] rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[6.7px] border-[3px] ">
+      <div className="relative w-[930px] mt-5 h-[450px] justify-self-end border-gray-light bg-[rgba(242, 245, 250, 0.6)] rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[6.7px] border-[3px] ">
         {/* Slides */}
         <div className="relative overflow-hidden rounded-lg w-full  h-full">
           {slides.map((slide, index) => (

@@ -1,18 +1,17 @@
 import { useState, useEffect } from "react";
 import {
-  ChevronRight,
-  User,
-  LogOut,
-  List,
-  ShoppingBag,
+
   MenuIcon,
   CrossIcon,
   ShoppingBagIcon,
+  PhoneCall,
 } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
 import { useAuth } from "../../context/auth";
 import toast from "react-hot-toast";
 import useApi from "../../hooks/UseApi";
+import Category from "../Category";
+import Search from "../Search";
 
 export default function Navbar() {
   const [auth, setAuth] = useAuth();
@@ -154,7 +153,7 @@ export default function Navbar() {
 
           <section className="navbar-right hidden lg:block ">
             {!auth.user ? (
-              <Link to="/auth/login" className="text-white">
+              <Link to="/login" className="text-white">
                 SignUp / LogIn
               </Link>
             ) : (
@@ -293,6 +292,28 @@ export default function Navbar() {
           </div>
         )}
       </nav>
+      <div className="  px-5 flex  gap-5 ">
+        <Category />
+        <div className="flex flex-col w-full gap-5">
+          {" "}
+          <div className="flex justify-between  ">
+            <Search />
+
+             <div className="flex gap-6">
+               <div className="bg-gray-light rounded-full size-12 flex items-center justify-center">
+                 <PhoneCall className="text-purple " />
+               </div>
+               <div className="flex flex-col gap-2">
+                 <h2 className="font-bold">+92 000 000 000</h2>
+                 <p className="text-[#dfdfdf] text-sm">Support 24/7 time</p>
+               </div>
+             </div>
+           </div>
+          
+          {/* //  <Carousel className="" /> */}
+         </div>
+       </div> 
     </div>
+
   );
 }
