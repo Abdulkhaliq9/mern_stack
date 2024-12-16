@@ -1,11 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-
-  MenuIcon,
-  CrossIcon,
-  ShoppingBagIcon,
-  PhoneCall,
-} from "lucide-react";
+import { MenuIcon, CrossIcon, ShoppingBagIcon, PhoneCall } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
 import { useAuth } from "../../context/auth";
 import toast from "react-hot-toast";
@@ -81,7 +75,7 @@ export default function Navbar() {
   ];
 
   return (
-    <div className="max-w-screen-xl mx-auto w-full px-5 ">
+    <div className="max-w-screen-xl mx-auto w-full px-5  mb-5">
       <nav className=" p-5 my-5  ">
         <div className="flex items-center justify-between">
           <section className="navbar-left flex items-center">
@@ -158,7 +152,7 @@ export default function Navbar() {
               </Link>
             ) : (
               <div className="flex gap-5 items-center">
-                <ShoppingBagIcon/>
+                <ShoppingBagIcon />
                 <span className="text-dark px-2 text-sm">
                   Items: <span className="font-bold">$799.99</span>
                 </span>
@@ -239,7 +233,11 @@ export default function Navbar() {
                 >
                   <NavLink
                     to={item.link}
-                    className={ ({isActive}) => isActive ? "text-dark bg-blue px-5 py-2 w-full text-white rounded shadow-md shadow-purple font-bold" : " flex gap-5 font-medium whitespace-nowrap transition-all ease-in-out hover:text-white"}
+                    className={({ isActive }) =>
+                      isActive
+                        ? "text-dark bg-blue px-5 py-2 w-full text-white rounded shadow-md shadow-purple font-bold"
+                        : " flex gap-5 font-medium whitespace-nowrap transition-all ease-in-out hover:text-white"
+                    }
                   >
                     {item.name}
                   </NavLink>
@@ -292,28 +290,26 @@ export default function Navbar() {
           </div>
         )}
       </nav>
-      <div className="  px-5 flex  gap-5 ">
+      <div className="  px-5 flex lg:flex-row flex-col  gap-5   ">
         <Category />
         <div className="flex flex-col w-full gap-5">
           {" "}
           <div className="flex justify-between  ">
             <Search />
 
-             <div className="flex gap-6">
-               <div className="bg-gray-light rounded-full size-12 flex items-center justify-center">
-                 <PhoneCall className="text-purple " />
-               </div>
-               <div className="flex flex-col gap-2">
-                 <h2 className="font-bold">+92 000 000 000</h2>
-                 <p className="text-[#dfdfdf] text-sm">Support 24/7 time</p>
-               </div>
-             </div>
-           </div>
-          
+            <div className="flex gap-6  w-[192px]">
+              <div className="bg-gray-light rounded-full size-12 flex items-center justify-center">
+                <PhoneCall className="text-purple " />
+              </div>
+              <div className="flex flex-col gap-2">
+                <h2 className="font-bold">+92 000 000 000</h2>
+                <p className="text-[#dfdfdf] text-sm">Support 24/7 time</p>
+              </div>
+            </div>
+          </div>
           {/* //  <Carousel className="" /> */}
-         </div>
-       </div> 
+        </div>
+      </div>
     </div>
-
   );
 }

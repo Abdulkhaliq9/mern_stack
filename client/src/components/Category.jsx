@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import useApi from "../hooks/UseApi";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
@@ -33,7 +33,7 @@ export default function Category() {
       <button
         id="dropdown-button"
         type="button"
-        className="inline-flex justify-center items-center w-[260px] h-[47px] rounded-md border border-gray shadow-sm px-4 py-2 bg-purple text-sm font-medium text-white  focus:outline-none "
+        className="inline-flex justify-center items-center lg:w-[210px] xl:w-[260px] h-[47px] rounded-md border border-gray shadow-sm px-4 py-2 bg-blue text-sm font-medium text-white  focus:outline-none "
         aria-haspopup="true"
         aria-expanded={open}
         onClick={handleOpen}

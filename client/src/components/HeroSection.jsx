@@ -30,13 +30,21 @@ import Carousel from "./Carousel";
 //   );
 // }
 
-import React from 'react'
+import React from "react";
 
 export default function HeroSection() {
   return (
-    <div>
-      
-         <Carousel className="" />
+    <div className="grid grid-cols-12 gap-5 items-center px-5">
+      <Carousel className="" />
+
+      <div className="md:flex-col flex-row flex gap-5 col-span-4">
+        <div className=" w-full h-[210px]  border-gray-light bg-[rgba(242, 245, 250, 0.6)] rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[6.7px] border-[3px]">
+         
+        </div>
+        <div className=" w-full h-[210px]  border-gray-light bg-[rgba(242, 245, 250, 0.6)] rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[6.7px] border-[3px]">
+          
+        </div>
+      </div>
     </div>
-  )
+  );
 }
