@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react'  
 
 export default function CategorySection() {
   const categories = [
@@ -24,9 +24,8 @@ export default function CategorySection() {
     }
   ];
   return (
-    <>
-      <section className="container mx-auto px-4 py-12">
-        <h2 className="text-3xl font-bold text-center mb-8">Shop by Category</h2>
+    <div className="my-24">
+      <h2 className="text-3xl font-bold text-center mb-8">Shop by Category</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {categories.map((category) => (
             <div
@@ -44,7 +43,6 @@ export default function CategorySection() {
             </div>
           ))}
         </div>
-      </section>
-    </>
+    </div>
   );
 }

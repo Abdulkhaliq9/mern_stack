@@ -1,13 +1,14 @@
 import { Facebook, Instagram, Twitter } from "lucide-react";
-import {} from "react";
+import React from 'react'  
 import Navbar from "../../components/navbar/Navbar"
 import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
   <>
-    <div className="hidden md:flex justify-between items-center  py-2 bg-[#dfdfdf]  px-5">
-        <div className="text-sm text-gray-600">
+       <div className="bg-[#dfdfdf] ">
+    <div className="hidden md:flex justify-between items-center max-w-screen-xl mx-auto w-full    py-2  px-5">
+       <div className="text-sm text-gray-600">
           <span>support@example.com</span>
         </div>
         <div className="flex items-center space-x-4">
@@ -20,6 +21,7 @@ export default function Header() {
             Login
           </button>
         </div>
+       </div>
       </div>
     {/* <Navbar/> */}
   </>

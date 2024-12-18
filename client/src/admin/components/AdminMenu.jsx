@@ -1,5 +1,5 @@
 import { Boxes, User2, Home, Package } from 'lucide-react'
-import React from 'react'
+import React from 'react'  
 import { NavLink } from 'react-router-dom'
 
 export default function AdminMenu() {

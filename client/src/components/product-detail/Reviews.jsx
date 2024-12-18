@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'  
 import { Star } from "lucide-react";
 import M1 from "../../assets/images/member_8.jpg";
 

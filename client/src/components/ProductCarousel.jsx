@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'  
 import "../css/components/productcarousel.css";
 import Shoes from "../assets/images/products/shoe2.jpg";
 import Boot from "../assets/images/products/shoe1.jpg";

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'  
 import { useSearch } from "../context/searchContext";
 
 export default function Search({ placeholder = "Search" }) {

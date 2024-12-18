@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'  
 import Shoe from "../assets/images/products/shoe5.jpg";
 import Shoes from "../assets/images/products/shoe4.jpg";
 import {StarHalf,Star } from "lucide-react";
