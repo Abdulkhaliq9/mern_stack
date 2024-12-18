@@ -1,49 +1,43 @@
-// import React from "react";
 import Carousel from "./Carousel";
-// import Category from "./Category";
-// import Search from "./Search";
-// import { PhoneCall } from "lucide-react";
-
-// export default function HeroSection() {
-//   return (
-//     <>
-//       {/* <div className="   flex  gap-5 ">
-//         {/* <Category /> */}
-//         <div className="flex flex-col w-full gap-5">
-//           {" "}
-//           <div className="flex justify-between  ">
-//             {/* <Search /> */}
-
-//             <div className="flex gap-6">
-//               <div className="bg-gray-light rounded-full size-12 flex items-center justify-center">
-//                 <PhoneCall className="text-purple " />
-//               </div>
-//               <div className="flex flex-col gap-2">
-//                 <h2 className="font-bold">+92 000 000 000</h2>
-//                 <p className="text-[#dfdfdf] text-sm">Support 24/7 time</p>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div> */}
-//     </>
-//   );
-// }
 
 import React from "react";
 
 export default function HeroSection() {
+  const featuredProducts = [
+    {
+      id: 1,
+      image: "https://images.unsplash.com/photo-1523381140794-a1eef18a37c7",
+      title: "Premium Leather Bag",
+      price: 199.99,
+    },
+    {
+      id: 2,
+      image: "https://images.unsplash.com/photo-1560343090-f0409e92791a",
+      title: "Designer Watch",
+      price: 299.99,
+    },
+  ];
   return (
-    <div className="grid grid-cols-12 gap-5 items-center ">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 ">
       <Carousel className="" />
 
-      <div className="md:flex-col flex-row flex gap-5 col-span-4">
-        <div className=" w-full h-[210px]  border-gray-light bg-[rgba(242, 245, 250, 0.6)] rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[6.7px] border-[3px]">
-         
-        </div>
-        <div className=" w-full h-[210px]  border-gray-light bg-[rgba(242, 245, 250, 0.6)] rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[6.7px] border-[3px]">
-          
-        </div>
+      <div className="space-y-4">
+        {featuredProducts.map((product) => (
+          <div
+            key={product.id}
+            className="relative h-[190px] rounded-xl overflow-hidden backdrop-blur-md bg-white/30 shadow-lg hover:scale-105 transition-transform duration-300"
+          >
+            <img
+              src={product.image}
+              alt={product.title}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent text-white">
+              <h3 className="font-semibold">{product.title}</h3>
+              <p className="text-sm">${product.price.toFixed(2)}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
