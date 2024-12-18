@@ -34,7 +34,7 @@
 
 body {
   scroll-behavior: smooth;
-  background-color: #fff;
+  background-color: #f5f5f5;
   transition:0.3s all ease-out;
   /* background-image: linear-gradient(to right top, #695f65, #655c65, #615965, #5b5665, #545465, #4f5160, #4a4d5c, #454a57, #42444e, #3d3e44, #38383c, #333333);   */
 }

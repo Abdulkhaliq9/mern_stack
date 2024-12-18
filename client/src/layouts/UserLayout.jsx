@@ -4,6 +4,7 @@ import BackToTop from "../components/BackToTop.jsx";
 import Footer from "../components/Footer.jsx";
 import BackGround from "../components/BackGround.jsx";
 import Header from "../components/layout/Header.jsx";
+import Navbar from "../components/navbar/Navbar.jsx";
 
 export default function UserLayout({ children }) {
   const [showButton, setShowButton] = useState(false);
@@ -31,14 +32,12 @@ export default function UserLayout({ children }) {
     <>
       <BackGround />
       <div className="user-layout">
-        <div className="conatiner-layout">
-          <Header  />
-          {/* <header>
+        <div className="max-w-screen-xl mx-auto w-full ">
+          <header>
+            <Header />
             <Navbar />
-          </header> */}
-          <main className="max-w-screen-xl mx-auto w-full px-5">
-            {children}
-          </main>
+          </header>
+          <main className="">{children}</main>
 
           {showButton && (
             <div className="back-to-top">

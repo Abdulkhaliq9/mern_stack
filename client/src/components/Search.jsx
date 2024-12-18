@@ -11,7 +11,7 @@ export default function Search({ placeholder = "Search" }) {
   return (
     <form
       role="search"
-      className="mb-4 md:flex md:flex-wrap md:justify-between input-group"
+      className=" md:flex md:flex-wrap md:justify-between input-group"
     >
       <div className="h-[45px] border-[#dfdfdf] border rounded overflow-hidden flex">
         <label htmlFor="searchInput" className="sr-only">

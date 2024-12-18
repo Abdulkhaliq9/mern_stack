@@ -7,7 +7,7 @@ import Carousel from "./Carousel";
 // export default function HeroSection() {
 //   return (
 //     <>
-//       {/* <div className="  px-5 flex  gap-5 ">
+//       {/* <div className="   flex  gap-5 ">
 //         {/* <Category /> */}
 //         <div className="flex flex-col w-full gap-5">
 //           {" "}
@@ -34,7 +34,7 @@ import React from "react";
 
 export default function HeroSection() {
   return (
-    <div className="grid grid-cols-12 gap-5 items-center px-5">
+    <div className="grid grid-cols-12 gap-5 items-center ">
       <Carousel className="" />
 
       <div className="md:flex-col flex-row flex gap-5 col-span-4">
