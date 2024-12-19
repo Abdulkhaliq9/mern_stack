@@ -10,14 +10,14 @@ import { SearchProvider } from "./context/searchContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <AuthProvider>
-    <Router>
+    <ModalProvider>
+      <Router>
         <React.StrictMode>
-      <ModalProvider>
           <SearchProvider>
             <App />
           </SearchProvider>
-      </ModalProvider>
         </React.StrictMode>
-    </Router>
+      </Router>
+    </ModalProvider>
   </AuthProvider>
 );

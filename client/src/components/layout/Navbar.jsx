@@ -1,11 +1,12 @@
 import Category from "./Category";
+import Search from "../Search";
 
 import { useState } from "react";
 import {
   Cross,
   MenuIcon,
   Phone,
-  Search,
+  
   ShoppingCart,
   User,
 } from "lucide-react";
@@ -17,7 +18,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "Shop", path: "products" },
+    { name: "Shop", path: "/products" },
     { name: "About Us", path: "#" },
     { name: "Contact Us", path: "#" },
   ];
@@ -30,7 +31,7 @@ const Navbar = () => {
       <div className=" py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <div className="flex items-center">
+          <div className="flex items-center text-xl font-bold">
             {/* <img
               src="https://images.unsplash.com/photo-1614851099511-773084f6911d"
               alt="Logo"
@@ -130,18 +131,13 @@ const Navbar = () => {
         </div>
 
         {/* Search Bar */}
+
+
         <div className="flex-1 max-w-2xl px-4">
-          <div className="relative">
-            <input
-              type="text"
-              placeholder="Search products..."
-              className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
-            />
-            <button className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-blue-500">
-              <Search />
-            </button>
-          </div>
-        </div>
+      
+       <Search/>
+      </div>
+
 
         {/* Contact Info */}
         <div className="flex items-center space-x-4">
