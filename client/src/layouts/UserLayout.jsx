@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import BackToTop from "../components/BackToTop.jsx";
-import Footer from "../components/Footer.jsx";
+import BackToTop from "../components/layout/BackToTop.jsx";
+import Footer from "../components/layout/Footer.jsx";
 // import BackGround from "../components/BackGround.jsx";
 import Header from "../components/layout/Header.jsx";
-import Navbar from "../components/navbar/Navbar.jsx";
+import Navbar from "../components/layout/Navbar.jsx";
 
 export default function UserLayout({ children }) {
   const [showButton, setShowButton] = useState(false);
@@ -44,7 +44,7 @@ export default function UserLayout({ children }) {
             </div>
           )}
         </div>
-        <Footer/>
+        <Footer />
       </div>
     </>
   );

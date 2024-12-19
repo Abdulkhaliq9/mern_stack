@@ -1,37 +1,42 @@
-import Category from "../Category";
-
+import Category from "./Category";
 
 import { useState } from "react";
-import {Cross, Facebook, Instagram, MenuIcon, Phone, Search, ShoppingCart, Twitter, User} from "lucide-react"
+import {
+  Cross,
+  MenuIcon,
+  Phone,
+  Search,
+  ShoppingCart,
+  User,
+} from "lucide-react";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  const [isProfileOpen, setIsProfileOpen, isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
- 
-
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Shop", path: "products" },
     { name: "About Us", path: "#" },
-    { name: "Contact Us", path: "#" }
+    { name: "Contact Us", path: "#" },
   ];
 
   return (
     <div className="">
       {/* Top Section */}
-      
 
       {/* Main Navbar */}
       <div className=" py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center">
-            <img
+            {/* <img
               src="https://images.unsplash.com/photo-1614851099511-773084f6911d"
               alt="Logo"
               className="h-10 w-auto"
-            />
+            /> */}
+            Mega Mart
           </div>
 
           {/* Mobile Menu Button */}
@@ -48,7 +53,7 @@ const Navbar = () => {
               <NavLink
                 key={index}
                 to={link.path}
-                className="text-gray-600 hover:text-blue-600"
+                className="text-gray-600 hover:text-blue-600 active"
               >
                 {link.name}
               </NavLink>
@@ -69,9 +74,24 @@ const Navbar = () => {
               </button>
               {isProfileOpen && (
                 <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10">
-                  <NavLink to="" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</NavLink>
-                  <NavLink to="" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</NavLink>
-                  <NavLink to="" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Logout</NavLink>
+                  <NavLink
+                    to=""
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    Profile
+                  </NavLink>
+                  <NavLink
+                    to=""
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    Settings
+                  </NavLink>
+                  <NavLink
+                    to=""
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    Logout
+                  </NavLink>
                 </div>
               )}
             </div>
@@ -104,33 +124,33 @@ const Navbar = () => {
 
       {/* Bottom Section */}
       <div className="py-3 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          {/* Categories */}
+        {/* Categories */}
+        <div className="relative">
+          <Category />
+        </div>
+
+        {/* Search Bar */}
+        <div className="flex-1 max-w-2xl px-4">
           <div className="relative">
-            <Category/>
-          </div>
-
-          {/* Search Bar */}
-          <div className="flex-1 max-w-2xl px-4">
-            <div className="relative">
-              <input
-                type="text"
-                placeholder="Search products..."
-                className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
-              />
-              <button className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-blue-500">
-                <Search />
-              </button>
-            </div>
-          </div>
-
-          {/* Contact Info */}
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2 text-gray-600">
-              <Phone className="text-blue-600" />
-              <span>1-800-123-4567</span>
-            </div>
+            <input
+              type="text"
+              placeholder="Search products..."
+              className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
+            />
+            <button className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-blue-500">
+              <Search />
+            </button>
           </div>
         </div>
+
+        {/* Contact Info */}
+        <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 text-gray-600">
+            <Phone className="text-blue-600" />
+            <span>1-800-123-4567</span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

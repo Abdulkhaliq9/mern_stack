@@ -7,7 +7,7 @@ import Person from "../assets/images/auth/person.png";
 // import Fb from "../assets/images/auth/fb.png";
 // import Apple from "../assets/images/auth/apple.png";
 // import Google from "../assets/images/auth/google.png";
-import BackGround from "../components/BackGround";
+import BackGround from "../components/layout/BackGround";
 
 export default function Register() {
   const [name, setName] = useState("");
