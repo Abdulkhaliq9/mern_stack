@@ -2,7 +2,7 @@ import Category from "./Category";
 import Search from "../Search";
 
 import { useState } from "react";
-import {  MenuIcon, Phone, ShoppingCart, User, X } from "lucide-react";
+import { MenuIcon, Phone, ShoppingCart, User, X } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useCart } from "../../context/cartContext";
 import AddToCart from "../addtocart/AddToCart";
@@ -15,8 +15,8 @@ const Navbar = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Shop", path: "/products" },
-    { name: "About Us", path: "#" },
-    { name: "Contact Us", path: "#" },
+    { name: "About Us", path: "" },
+    { name: "Contact Us", path: "" },
   ];
 
   return (
@@ -27,7 +27,7 @@ const Navbar = () => {
       <div className=" py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <div className="flex items-center text-xl font-bold">
+          <div className="flex items-center text-lg sm:text-3xl font-bold">
             {/* <img
               src="https://images.unsplash.com/photo-1614851099511-773084f6911d"
               alt="Logo"
@@ -50,7 +50,11 @@ const Navbar = () => {
               <NavLink
                 key={index}
                 to={link.path}
-                className="text-gray-600 hover:text-blue-600 active"
+                className={({ isActive }) =>
+                  `text-dark hover:text-blue font-bold ${
+                    isActive ? "text-purple font-bold" : ""
+                  }`
+                }
               >
                 {link.name}
               </NavLink>
@@ -113,26 +117,30 @@ const Navbar = () => {
               <NavLink
                 key={index}
                 to={link.path}
-                className="block py-2 text-gray-600 hover:text-blue-600"
+                className={({ isActive }) =>
+                  `block py-2 text-dark font-bold hover:text-blue ${
+                    isActive ? "text-purple font-bold" : ""
+                  }`
+                }
               >
                 {link.name}
               </NavLink>
             ))}
             <div className="mt-4 flex items-center space-x-4">
-            <div className="relative">
-              <button
-                onClick={() => setIsCartOpen(!isCartOpen)}
-                className="  bg-blue  p-3 rounded-full cursor-pointer text-white transition-all"
-                aria-label="Shopping Cart"
-              >
-                <ShoppingCart className="text-xl text-dark" />
-                {getTotalItems() > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm">
-                    {getTotalItems()}
-                  </span>
-                )}
-              </button>
-            </div>
+              <div className="relative">
+                <button
+                  onClick={() => setIsCartOpen(!isCartOpen)}
+                  className="  bg-blue  p-3 rounded-full cursor-pointer text-white transition-all"
+                  aria-label="Shopping Cart"
+                >
+                  <ShoppingCart className="text-xl text-dark" />
+                  {getTotalItems() > 0 && (
+                    <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm">
+                      {getTotalItems()}
+                    </span>
+                  )}
+                </button>
+              </div>
               <button className="text-gray-600 hover:text-blue-600">
                 <User size={20} />
               </button>
@@ -142,7 +150,9 @@ const Navbar = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className={`py-3 grid grid-cols-12 gap-5 sm:flex  sm:flex-row justify-between items-center `}>
+      <div
+        className={`py-3 grid grid-cols-12 gap-5 sm:flex  sm:flex-row justify-between items-center `}
+      >
         {/* Categories */}
         <div className="relative col-span-6  sm:order-none order-1">
           <Category />

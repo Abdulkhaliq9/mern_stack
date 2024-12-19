@@ -32,7 +32,7 @@ export default function UserLayout({ children }) {
       {/* <BackGround /> */}
       <div className="user-layout">
         <Header />
-        <div className="max-w-screen-xl mx-auto w-full px-5 my-10">
+        <div className="max-w-screen-xl mx-auto w-full px-5 md:my-10">
           <header>
             <Navbar />
           </header>
