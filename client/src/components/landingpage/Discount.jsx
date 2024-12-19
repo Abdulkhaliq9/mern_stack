@@ -24,7 +24,7 @@ export default function Discount() {
     return () => clearInterval(timer);
   }, []);
   return (
-    <div className="bg-gradient-to-r from-blue to-orange rounded-2xl p-8 text-dark my-24" >
+    <div className="bg-gradient-to-r from-blue to-orange rounded-2xl p-8 text-dark import React from 'react'  " >
       <h2 className="text-3xl font-bold mb-4">Flash Sale Ending In</h2>
       <div className="flex space-x-4 mb-6">
         <div className="bg-white text-purple-600 rounded-lg p-3">

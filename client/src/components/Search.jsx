@@ -2,14 +2,9 @@
 import React, { useCallback } from "react";
 import { useSearch } from "../context/searchContext";
 import { SearchCheck } from "lucide-react";
+import { debounce } from "./Debounce";
 
-const debounce = (func, delay) => {
-  let timer;
-  return (...args) => {
-    clearTimeout(timer);
-    timer = setTimeout(() => func(...args), delay);
-  };
-};
+
 
 export default function Search() {
   const { searchTerm, updateSearchTerm } = useSearch();
@@ -34,7 +29,7 @@ export default function Search() {
       />
       <button
         type="button"
-        className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-blue-500"
+        className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray hover:text-blue-500"
         aria-label="Search"
       >
         <SearchCheck />

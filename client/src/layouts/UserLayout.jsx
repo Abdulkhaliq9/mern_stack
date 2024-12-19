@@ -32,11 +32,11 @@ export default function UserLayout({ children }) {
       {/* <BackGround /> */}
       <div className="user-layout">
         <Header />
-        <div className="max-w-screen-xl mx-auto w-full px-5 ">
+        <div className="max-w-screen-xl mx-auto w-full px-5 my-10">
           <header>
             <Navbar />
           </header>
-          <main className="">{children}</main>
+          <main className="flex flex-col gap-28 mt-10">{children}</main>
 
           {showButton && (
             <div className="back-to-top">

@@ -2,13 +2,18 @@ import { useEffect, useState } from "react";
 import UserLayout from "../layouts/UserLayout";
 import useApi from "../hooks/UseApi";
 import toast from "react-hot-toast";
-import { Star, Cross } from "lucide-react";
+import { Star, Cross, ShoppingBag } from "lucide-react";
 import { useSearch } from "../context/searchContext";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { useCart } from "../context/cartContext";
 
 
 export default function Products() {
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const {addToCart,} = useCart()
+  
+  
+  
 
   const [categories, setCategories] = useState([]);
 
@@ -67,9 +72,7 @@ export default function Products() {
 
   return (
     <UserLayout>
-      <div className="min-h-screen bg-gray-100 ">
-        <div className="max-w-7xl mx-auto">
-          <div className="relative h-64 overflow-hidden my-16">
+     <div className="relative h-64 overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1441986300917-64674bd600d8"
               alt="Store Banner"
@@ -77,7 +80,7 @@ export default function Products() {
             />
             <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
               <h1 className="text-4xl font-bold text-white">
-                Summer Collection 2024
+                All Products
               </h1>
             </div>
           </div>
@@ -177,10 +180,11 @@ export default function Products() {
             <div className="flex-1">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredProducts.length > 0 &&
-                  filteredProducts.map((product, index) => (
+                  filteredProducts.map((product) => (
                     <div
-                      className="bg-white rounded-2xl p-5 cursor-pointer hover:-translate-y-2 transition-all relative border border-purple"
-                      key={index}
+                      className="bg-white rounded-2xl p-5 cursor-pointer shadow-xl hover:-translate-y-2 transition-all relative border border-purple"
+                      key={product.id}
+
                     >
                       <div className="bg-gray-100 w-10 h-10 flex items-center justify-center rounded-full cursor-pointer absolute top-4 right-4">
                         <svg
@@ -210,17 +214,21 @@ export default function Products() {
                           Lorem ipsum dolor sit amet, consectetur adipiscing
                           elit.
                         </p>
-                        <h4 className="text-lg text-gray-800 font-bold mt-4">
+                     <div className="flex justify-between items-center">
+                     <h4 className="text-lg text-gray-800 font-bold mt-4">
                           $ {product.price}
                         </h4>
+                        <button   aria-label={` ${product.title}`}  onClick={() => addToCart(product)} className="border-blue flex items-center  group hover:bg-purple justify-center border rounded-full size-[50px]">
+                          <ShoppingBag  className="text-dark group-hover:text-white" />
+                        </button>
+                     </div>
                       </div>
                     </div>
                   ))}
               </div>
             </div>
           </div>
-        </div>
-      </div>{" "}
+     
     </UserLayout>
   );
 }
