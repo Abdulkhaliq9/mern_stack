@@ -1,13 +1,18 @@
-// make a modal context
+import React, { createContext, useContext, useRef, useState } from "react";
 import gsap from "gsap";
-import { createContext, useContext, useRef } from "react";
 
- const ModalContext = createContext();
+const ModalContext = createContext({
+  openAuthModal: () => {},
+  closeAuthModal: () => {},
+  isModalOpen: false,
+});
 
-// provider component
- const ModalProvider = ({ children }) => {
+export const ModalProvider = ({ children }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const authAnimation = useRef(null);
+
   const openAuthModal = () => {
+    setIsModalOpen(true);
     authAnimation.current = gsap
       .timeline({ defaults: { ease: "power2.inOut" } })
       .to("#authOverlay", {
@@ -47,17 +52,14 @@ import { createContext, useContext, useRef } from "react";
     if (authAnimation.current) {
       authAnimation.current.timeScale(1.6).reverse();
     }
+    setTimeout(() => setIsModalOpen(false), 800); // Ensure state changes after animation
   };
 
   return (
-    <ModalContext.Provider value={{ closeAuthModal, openAuthModal }}>
+    <ModalContext.Provider value={{ openAuthModal, closeAuthModal, isModalOpen }}>
       {children}
     </ModalContext.Provider>
   );
 };
 
-
-
-const useModal =  () => useContext(ModalContext)
-
-export {ModalProvider, useModal}
+export const useModal = () => useContext(ModalContext);
