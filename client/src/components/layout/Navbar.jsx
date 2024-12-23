@@ -6,11 +6,16 @@ import { MenuIcon, Phone, ShoppingCart, User, X } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useCart } from "../../context/cartContext";
 import AddToCart from "../addtocart/AddToCart";
+import { useAuth } from "../../context/auth";
+import { useModal } from "../../context/modalContext";
+import Login from "../../auth/Login";
 
 const Navbar = () => {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { getTotalItems, setIsCartOpen, isCartOpen } = useCart();
+  const { auth, logout } = useAuth();
+  const { activePopup,handlePopup } = useModal();
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -86,24 +91,35 @@ const Navbar = () => {
               </button>
               {isProfileOpen && (
                 <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10">
-                  <NavLink
-                    to=""
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Profile
-                  </NavLink>
-                  <NavLink
-                    to=""
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Settings
-                  </NavLink>
-                  <NavLink
-                    to=""
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Logout
-                  </NavLink>
+                  {auth?.user ? (
+                    <>
+                      <NavLink
+                        to="/profile"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      >
+                        Profile
+                      </NavLink>
+                      <button
+                        onClick={logout}
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      >
+                        Logout
+                      </button>
+                    </>
+                  ) : (
+                    <>
+                      <button
+                       type="button"
+                        onClick={() => handlePopup("login")}
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      >
+                        Login
+                      </button>
+                    {
+                      activePopup === "login" && <Login/>
+                    }
+                    </>
+                  )}
                 </div>
               )}
             </div>

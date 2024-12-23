@@ -1,155 +1,125 @@
 import { useState } from "react";
-import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
-import toast from "react-hot-toast";
 import { useAuth } from "../context/auth";
-// import UserLayout from "../layouts/UserLayout";
-// import Modal from "../components/Modal";
-import Person from "../assets/images/auth/person.png";
-import Fb from "../assets/images/auth/fb.png";
-import Apple from "../assets/images/auth/apple.png";
-import Google from "../assets/images/auth/google.png";
+import { Eye, EyeOff, Facebook, Instagram, LinkedinIcon } from "lucide-react";
+
 import Modal from "../components/Modal";
+import { useModal } from "../context/modalContext";
+import Register from "./Register";
 
 export default function Login() {
-  const [auth, setAuth] = useAuth();
+  const { login } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
-
-  const handleSubmit = async (e) => {
+  const { activePopup, handlePopup } = useModal();
+  // const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      const res = await axios.post("http://localhost:8080/api/v1/auth/login", {
-        email,
-        password,
-      });
-
-      if (res.data.success) {
-        setAuth({
-          user: res.data.user,
-          token: res.data.token,
-        });
-        toast.success(res.data.message);
-        sessionStorage.setItem(
-          "auth",
-          JSON.stringify({
-            user: res.data.user,
-            token: res.data.token,
-          })
-        );
-        navigate("/");
-      } else {
-        toast.error(res.data.message);
-      }
-    } catch (err) {
-      console.error("Error with login:", err);
-      toast.error("Error with Login");
-    }
+    // const payload = 
+    login({
+      email,
+      password,
+    })
+  
   };
 
   return (
-    <Modal>
-      <div className="py-[9px] px-[20px] bg-[rgba(242, 245, 250, 0.6)] rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[6.7px] border-[3px] border-white">
-        <div className="flex gap-16">
-          <div className="bg-blue rounded-[50px] h-auto flex items-center justify-center">
-            <div className="">
-              <img src={Person} alt="" className="img-fluid w-full " />
-            </div>
+    <>
+      <Modal heading="Login">
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div>
+            <label htmlFor="email" className="block text-white mb-2">
+              Email
+            </label>
+            <input
+              id="email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-10 border border-white border-opacity-20 focus:border-white focus:ring-2 focus:ring-white focus:ring-opacity-40 text-white placeholder-white placeholder-opacity-60 outline-none transition duration-300"
+              placeholder="Enter your email"
+              aria-label="Email input"
+            />
           </div>
 
-          <div className="">
-            <div className=" flex justify-end my-[15px] mx-[25px]">
-              <p>
-                Not a member?
-                <Link to="/auth/register" className="pl-2 text-blue">
-                  Register Now
-                </Link>
-              </p>
-            </div>
-            <form
-              onSubmit={handleSubmit}
-              method="post "
-              className="flex flex-col justify-center items-center mt-12 w-full"
+          <div className="relative">
+            <label htmlFor="password" className="block text-white mb-2">
+              Password
+            </label>
+            <input
+              id="password"
+              // type="password"
+              type={showPassword ? "text" : "password"}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full px-4 py-3 rounded-lg bg-white bg-opacity-10 border border-white border-opacity-20 focus:border-white focus:ring-2 focus:ring-white focus:ring-opacity-40 text-white placeholder-white placeholder-opacity-60 outline-none transition duration-300"
+              placeholder="Enter your password"
+              aria-label="Password input"
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-3 top-[60%] text-dark"
+              aria-label="Toggle password visibility"
             >
-              <div className="w-3/4">
-                <div className="flex flex-col items-center gap-5">
-                  <h1>Hello Again!</h1>
-                  <p>Welcome back you have been missed!</p>
-                </div>
-                <div className=" mt-3">
-                  <input
-                    type="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="p-[25px] rounded-[15px] w-full"
-                    placeholder="Email"
-                  />
-                </div>
-                <div className=" mt-3">
-                  <input
-                    type="password"
-                    required
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    className="p-[25px] rounded-[15px] w-full"
-                    placeholder="Password"
-                  />
-                </div>
-
-                <button
-                  className="shadow-[0_25px_50px_#fe6b68] bg-orange rounded-2xl cursor-pointer text-white mt-12 w-full p-3"
-                  type="submit"
-                >
-                  Log In
-                </button>
-
-                <div className="mt-12 flex justify-end reset-password">
-                  <Link
-                    className="forgot"
-                    to="/pages/forgotpassword"
-                    style={{
-                      color: "var(--color4)",
-                    }}
-                  >
-                    Forgot Password!
-                  </Link>
-                </div>
-              </div>
-            </form>
-
-            <div className="mt-12 flex flex-col gap-6">
-              <p className="text-center lf-style mr-[11px]">Or continue with</p>
-              <div className="flex justify-center items-center">
-                <ul className=" flex justify-center social-icons">
-                  <li className="w-[20%] h-[20%] m-[10px] ">
-                    <img
-                      src={Google}
-                      className="border-2 border-white object-contain w-full h-full rounded-[10px] p-[10px]"
-                      alt="logo"
-                    />
-                  </li>
-                  <li className="w-[20%] h-[20%] m-[10px] ">
-                    <img
-                      src={Apple}
-                      className="border-2 border-white object-contain w-full h-full rounded-[10px] p-[10px] bg-white apple"
-                      alt="logo"
-                    />
-                  </li>
-                  <li className="w-[20%] h-[20%] m-[10px] ">
-                    <img
-                      src={Fb}
-                      className="border-2 border-white object-contain w-full h-full rounded-[10px] p-[10px]"
-                      alt="logo"
-                    />
-                  </li>
-                </ul>
-              </div>
-            </div>
+              {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+            </button>
           </div>
-        </div>
-      </div>
-    </Modal>
+
+          <button
+            type="submit"
+            className="w-full py-3 bg-white bg-opacity-20 hover:bg-opacity-30 text-white rounded-lg font-semibold transition duration-300"
+          >
+            Login
+          </button>
+
+          <div className="relative flex items-center justify-center">
+            <div className="border-t border-white border-opacity-20 w-full"></div>
+            <span className="bg-transparent px-4 text-white text-sm">Or</span>
+            <div className="border-t border-white border-opacity-20 w-full"></div>
+          </div>
+
+          <div className="grid grid-cols-3 gap-4">
+            <button
+              type="button"
+              // onClick={() => handleSocialLogin("Google")}
+              className="flex items-center justify-center p-3 bg-white bg-opacity-10 hover:bg-opacity-20 rounded-lg transition duration-300"
+              aria-label="Login with Google"
+            >
+              <LinkedinIcon className="text-white text-xl" />
+            </button>
+            <button
+              type="button"
+              // onClick={() => handleSocialLogin("Facebook")}
+              className="flex items-center justify-center p-3 bg-white bg-opacity-10 hover:bg-opacity-20 rounded-lg transition duration-300"
+              aria-label="Login with Facebook"
+            >
+              <Facebook className="text-white text-xl" />
+            </button>
+            <button
+              type="button"
+              // onClick={() => handleSocialLogin("Apple")}
+              className="flex items-center justify-center p-3 bg-white bg-opacity-10 hover:bg-opacity-20 rounded-lg transition duration-300"
+              aria-label="Login with Apple"
+            >
+              <Instagram className="text-white text-xl" />
+            </button>
+          </div>
+        </form>
+        <p className="mt-8 text-center text-white">
+          Don&apos;t have an account? &nbsp;
+          <button
+            onClick={() => handlePopup("register")}
+            className="text-purple underline font-bold hover:text-gray-200 transition duration-300"
+            aria-label="Register"
+          >
+            Sign up
+          </button>
+        </p>
+      </Modal>
+      {activePopup === "register" && (
+        <Register activePopup={activePopup} handlePopup={handlePopup} />
+      )}
+    </>
   );
 }

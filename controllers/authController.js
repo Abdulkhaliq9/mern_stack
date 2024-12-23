@@ -7,13 +7,19 @@ export const registerController = async (req, res) => {
     const { name, email, password, address, phone, question } = req.body;
 
     // Validation
-    if (!name || !password || !email || !address || !phone || !question) {
+    // if (!name || !password || !email || !address || !phone || !question) {
+    //   return res.status(400).send({ error: "All fields are required" });
+    // }
+    if ( !password || !email ) {
       return res.status(400).send({ error: "All fields are required" });
     }
 
     // Check if the user already exists
-    const existingUser = await userModel.findOne({
-      $or: [{ email }, { phone }],
+    // const existingUser = await userModel.findOne({
+    //   $or: [{ email }, { phone }],
+    // });
+     const existingUser = await userModel.findOne({
+      $or: [{ email }],
     });
 
     if (existingUser) {
@@ -27,12 +33,12 @@ export const registerController = async (req, res) => {
     const hashedPassword = await hashPassword(password);
 
     const user = await new userModel({
-      name,
+      // name,
       email,
-      phone,
-      address,
+      // phone,
+      // address,
       password: hashedPassword,
-      question,
+      // question,
     }).save();
 
     res.status(201).send({
@@ -97,7 +103,8 @@ export const loginController = async (req, res) => {
         phone: user.phone,
         address: user.address,
         question: user.question,
-        role: user.role    },
+        role: user.role,
+      },
       token,
     });
   } catch (error) {

@@ -21,8 +21,8 @@ function App() {
     <>
       <Routes>
         {/* <Route exact path="/" element={<User />} /> */}
-        <Route exact path="/" element={<Private />}>
-          <Route index   element={<UserDashBoard />} />
+        <Route exact path="/" element={<UserDashBoard />} />
+        <Route element={<Private />}>
           <Route exact path="/checkout" element={<CheckOut />} />
         </Route>
 

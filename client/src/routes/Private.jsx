@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { useAuth } from "../context/auth";
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import axios from "axios";
-import Spinner from "../components/Spinner";
+// import Spinner from "../components/Spinner";
 export default function Private() {
   const [ok, setOk] = useState(false);
-  const [auth, setAuth] = useAuth();
+  const {auth} = useAuth();
   useEffect(() => {
     const authCheck = async () => {
       const res = await axios.get("http://localhost:8080/api/v1/auth/user-auth");
@@ -17,5 +17,5 @@ export default function Private() {
     };
     if (auth?.token) authCheck();
   }, [auth?.token]);
-  return ok ? <Outlet /> : <Spinner />;
+  return ok ? <Outlet /> : <Navigate to="/" />;
 }
